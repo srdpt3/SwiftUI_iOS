@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11884B0C2467425400904A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B0B2467425400904A22 /* AppDelegate.swift */; };
+		11884B0E2467425400904A22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B0D2467425400904A22 /* SceneDelegate.swift */; };
+		11884B112467425500904A22 /* DistanceEval.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11884B0F2467425500904A22 /* DistanceEval.xcdatamodeld */; };
+		11884B132467425500904A22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B122467425500904A22 /* ContentView.swift */; };
+		11884B152467425700904A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11884B142467425700904A22 /* Assets.xcassets */; };
+		11884B182467425700904A22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11884B172467425700904A22 /* Preview Assets.xcassets */; };
+		11884B1B2467425700904A22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11884B192467425700904A22 /* LaunchScreen.storyboard */; };
+		11884B262467425700904A22 /* DistanceEvalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B252467425700904A22 /* DistanceEvalTests.swift */; };
+		11884B312467425700904A22 /* DistanceEvalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B302467425700904A22 /* DistanceEvalUITests.swift */; };
+		11884B3F24674A9B00904A22 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B3E24674A9B00904A22 /* MapView.swift */; };
+		11884B4124675DC500904A22 /* DistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B4024675DC500904A22 /* DistanceManager.swift */; };
+		11884B432468654500904A22 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B422468654500904A22 /* SettingsView.swift */; };
+		11884B4524686D9B00904A22 /* SettingDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B4424686D9B00904A22 /* SettingDefaults.swift */; };
+		11884B4724686EE400904A22 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B4624686EE400904A22 /* SettingsManager.swift */; };
+		11884B492468877200904A22 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884B482468877200904A22 /* RingView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11884B222467425700904A22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11884B002467425400904A22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11884B072467425400904A22;
+			remoteInfo = DistanceEval;
+		};
+		11884B2D2467425700904A22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11884B002467425400904A22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11884B072467425400904A22;
+			remoteInfo = DistanceEval;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11884B082467425400904A22 /* DistanceEval.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceEval.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11884B0B2467425400904A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11884B0D2467425400904A22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		11884B102467425500904A22 /* DistanceEval.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DistanceEval.xcdatamodel; sourceTree = "<group>"; };
+		11884B122467425500904A22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		11884B142467425700904A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11884B172467425700904A22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		11884B1A2467425700904A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11884B1C2467425700904A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11884B212467425700904A22 /* DistanceEvalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistanceEvalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11884B252467425700904A22 /* DistanceEvalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceEvalTests.swift; sourceTree = "<group>"; };
+		11884B272467425700904A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11884B2C2467425700904A22 /* DistanceEvalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistanceEvalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11884B302467425700904A22 /* DistanceEvalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceEvalUITests.swift; sourceTree = "<group>"; };
+		11884B322467425700904A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11884B3E24674A9B00904A22 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		11884B4024675DC500904A22 /* DistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceManager.swift; sourceTree = "<group>"; };
+		11884B422468654500904A22 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		11884B4424686D9B00904A22 /* SettingDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDefaults.swift; sourceTree = "<group>"; };
+		11884B4624686EE400904A22 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		11884B482468877200904A22 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11884B052467425400904A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11884B1E2467425700904A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11884B292467425700904A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11884AFF2467425400904A22 = {
+			isa = PBXGroup;
+			children = (
+				11884B0A2467425400904A22 /* DistanceEval */,
+				11884B242467425700904A22 /* DistanceEvalTests */,
+				11884B2F2467425700904A22 /* DistanceEvalUITests */,
+				11884B092467425400904A22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11884B092467425400904A22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11884B082467425400904A22 /* DistanceEval.app */,
+				11884B212467425700904A22 /* DistanceEvalTests.xctest */,
+				11884B2C2467425700904A22 /* DistanceEvalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11884B0A2467425400904A22 /* DistanceEval */ = {
+			isa = PBXGroup;
+			children = (
+				11884B0B2467425400904A22 /* AppDelegate.swift */,
+				11884B0D2467425400904A22 /* SceneDelegate.swift */,
+				11884B122467425500904A22 /* ContentView.swift */,
+				11884B4024675DC500904A22 /* DistanceManager.swift */,
+				11884B142467425700904A22 /* Assets.xcassets */,
+				11884B192467425700904A22 /* LaunchScreen.storyboard */,
+				11884B1C2467425700904A22 /* Info.plist */,
+				11884B0F2467425500904A22 /* DistanceEval.xcdatamodeld */,
+				11884B162467425700904A22 /* Preview Content */,
+				11884B3E24674A9B00904A22 /* MapView.swift */,
+				11884B422468654500904A22 /* SettingsView.swift */,
+				11884B4424686D9B00904A22 /* SettingDefaults.swift */,
+				11884B4624686EE400904A22 /* SettingsManager.swift */,
+				11884B482468877200904A22 /* RingView.swift */,
+			);
+			path = DistanceEval;
+			sourceTree = "<group>";
+		};
+		11884B162467425700904A22 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				11884B172467425700904A22 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		11884B242467425700904A22 /* DistanceEvalTests */ = {
+			isa = PBXGroup;
+			children = (
+				11884B252467425700904A22 /* DistanceEvalTests.swift */,
+				11884B272467425700904A22 /* Info.plist */,
+			);
+			path = DistanceEvalTests;
+			sourceTree = "<group>";
+		};
+		11884B2F2467425700904A22 /* DistanceEvalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				11884B302467425700904A22 /* DistanceEvalUITests.swift */,
+				11884B322467425700904A22 /* Info.plist */,
+			);
+			path = DistanceEvalUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11884B072467425400904A22 /* DistanceEval */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11884B352467425700904A22 /* Build configuration list for PBXNativeTarget "DistanceEval" */;
+			buildPhases = (
+				11884B042467425400904A22 /* Sources */,
+				11884B052467425400904A22 /* Frameworks */,
+				11884B062467425400904A22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DistanceEval;
+			productName = DistanceEval;
+			productReference = 11884B082467425400904A22 /* DistanceEval.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11884B202467425700904A22 /* DistanceEvalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11884B382467425700904A22 /* Build configuration list for PBXNativeTarget "DistanceEvalTests" */;
+			buildPhases = (
+				11884B1D2467425700904A22 /* Sources */,
+				11884B1E2467425700904A22 /* Frameworks */,
+				11884B1F2467425700904A22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11884B232467425700904A22 /* PBXTargetDependency */,
+			);
+			name = DistanceEvalTests;
+			productName = DistanceEvalTests;
+			productReference = 11884B212467425700904A22 /* DistanceEvalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		11884B2B2467425700904A22 /* DistanceEvalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11884B3B2467425700904A22 /* Build configuration list for PBXNativeTarget "DistanceEvalUITests" */;
+			buildPhases = (
+				11884B282467425700904A22 /* Sources */,
+				11884B292467425700904A22 /* Frameworks */,
+				11884B2A2467425700904A22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11884B2E2467425700904A22 /* PBXTargetDependency */,
+			);
+			name = DistanceEvalUITests;
+			productName = DistanceEvalUITests;
+			productReference = 11884B2C2467425700904A22 /* DistanceEvalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11884B002467425400904A22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Dustin yang";
+				TargetAttributes = {
+					11884B072467425400904A22 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					11884B202467425700904A22 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 11884B072467425400904A22;
+					};
+					11884B2B2467425700904A22 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 11884B072467425400904A22;
+					};
+				};
+			};
+			buildConfigurationList = 11884B032467425400904A22 /* Build configuration list for PBXProject "DistanceEval" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11884AFF2467425400904A22;
+			productRefGroup = 11884B092467425400904A22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11884B072467425400904A22 /* DistanceEval */,
+				11884B202467425700904A22 /* DistanceEvalTests */,
+				11884B2B2467425700904A22 /* DistanceEvalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11884B062467425400904A22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11884B1B2467425700904A22 /* LaunchScreen.storyboard in Resources */,
+				11884B182467425700904A22 /* Preview Assets.xcassets in Resources */,
+				11884B152467425700904A22 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11884B1F2467425700904A22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11884B2A2467425700904A22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11884B042467425400904A22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11884B492468877200904A22 /* RingView.swift in Sources */,
+				11884B432468654500904A22 /* SettingsView.swift in Sources */,
+				11884B4124675DC500904A22 /* DistanceManager.swift in Sources */,
+				11884B0C2467425400904A22 /* AppDelegate.swift in Sources */,
+				11884B0E2467425400904A22 /* SceneDelegate.swift in Sources */,
+				11884B3F24674A9B00904A22 /* MapView.swift in Sources */,
+				11884B132467425500904A22 /* ContentView.swift in Sources */,
+				11884B4524686D9B00904A22 /* SettingDefaults.swift in Sources */,
+				11884B112467425500904A22 /* DistanceEval.xcdatamodeld in Sources */,
+				11884B4724686EE400904A22 /* SettingsManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11884B1D2467425700904A22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11884B262467425700904A22 /* DistanceEvalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11884B282467425700904A22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11884B312467425700904A22 /* DistanceEvalUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11884B232467425700904A22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11884B072467425400904A22 /* DistanceEval */;
+			targetProxy = 11884B222467425700904A22 /* PBXContainerItemProxy */;
+		};
+		11884B2E2467425700904A22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11884B072467425400904A22 /* DistanceEval */;
+			targetProxy = 11884B2D2467425700904A22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11884B192467425700904A22 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11884B1A2467425700904A22 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11884B332467425700904A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11884B342467425700904A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11884B362467425700904A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"DistanceEval/Preview Content\"";
+				DEVELOPMENT_TEAM = CSE9343A58;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = DistanceEval/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.DistanceEval;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11884B372467425700904A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"DistanceEval/Preview Content\"";
+				DEVELOPMENT_TEAM = CSE9343A58;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = DistanceEval/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.DistanceEval;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		11884B392467425700904A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = DistanceEvalTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.DistanceEvalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DistanceEval.app/DistanceEval";
+			};
+			name = Debug;
+		};
+		11884B3A2467425700904A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = DistanceEvalTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.DistanceEvalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DistanceEval.app/DistanceEval";
+			};
+			name = Release;
+		};
+		11884B3C2467425700904A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = DistanceEvalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.DistanceEvalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DistanceEval;
+			};
+			name = Debug;
+		};
+		11884B3D2467425700904A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = DistanceEvalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.DistanceEvalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DistanceEval;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11884B032467425400904A22 /* Build configuration list for PBXProject "DistanceEval" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11884B332467425700904A22 /* Debug */,
+				11884B342467425700904A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11884B352467425700904A22 /* Build configuration list for PBXNativeTarget "DistanceEval" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11884B362467425700904A22 /* Debug */,
+				11884B372467425700904A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11884B382467425700904A22 /* Build configuration list for PBXNativeTarget "DistanceEvalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11884B392467425700904A22 /* Debug */,
+				11884B3A2467425700904A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11884B3B2467425700904A22 /* Build configuration list for PBXNativeTarget "DistanceEvalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11884B3C2467425700904A22 /* Debug */,
+				11884B3D2467425700904A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		11884B0F2467425500904A22 /* DistanceEval.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				11884B102467425500904A22 /* DistanceEval.xcdatamodel */,
+			);
+			currentVersion = 11884B102467425500904A22 /* DistanceEval.xcdatamodel */;
+			path = DistanceEval.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 11884B002467425400904A22 /* Project object */;
+}
