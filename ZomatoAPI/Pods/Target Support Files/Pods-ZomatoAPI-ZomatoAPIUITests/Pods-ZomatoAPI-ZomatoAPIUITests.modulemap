@@ -1,0 +1,6 @@
+framework module Pods_ZomatoAPI_ZomatoAPIUITests {
+  umbrella header "Pods-ZomatoAPI-ZomatoAPIUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
