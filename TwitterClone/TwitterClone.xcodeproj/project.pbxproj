@@ -22,6 +22,8 @@
 		11A096A0246DF5F50079762A /* Observables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0969F246DF5F50079762A /* Observables.swift */; };
 		11A096A2246E019F0079762A /* TweetCellTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A096A1246E019F0079762A /* TweetCellTop.swift */; };
 		11A096A4246E17CE0079762A /* CreateTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A096A3246E17CE0079762A /* CreateTweet.swift */; };
+		11A096A6246F7FB90079762A /* multilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A096A5246F7FB90079762A /* multilineTextField.swift */; };
+		11A096A8246F8A950079762A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A096A7246F8A950079762A /* SearchView.swift */; };
 		56292C3FB4E7D87D69B98C0E /* Pods_TwitterCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C586E78D9295DFB62A4AB3E /* Pods_TwitterCloneTests.framework */; };
 		90EDFAF80A539CDA3E803DE4 /* Pods_TwitterClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC5737CF142CAD5367AA37F2 /* Pods_TwitterClone.framework */; };
 		ADC64B420BF2D28FDA9BA468 /* Pods_TwitterClone_TwitterCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25C508BEB9C52F141472472 /* Pods_TwitterClone_TwitterCloneUITests.framework */; };
@@ -67,6 +69,8 @@
 		11A0969F246DF5F50079762A /* Observables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observables.swift; sourceTree = "<group>"; };
 		11A096A1246E019F0079762A /* TweetCellTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellTop.swift; sourceTree = "<group>"; };
 		11A096A3246E17CE0079762A /* CreateTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweet.swift; sourceTree = "<group>"; };
+		11A096A5246F7FB90079762A /* multilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multilineTextField.swift; sourceTree = "<group>"; };
+		11A096A7246F8A950079762A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		25FF74E57A310A4B10161437 /* Pods-TwitterCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCloneTests.debug.xcconfig"; path = "Target Support Files/Pods-TwitterCloneTests/Pods-TwitterCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2B5396413AE27BE94C7322B8 /* Pods-TwitterCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCloneTests.release.xcconfig"; path = "Target Support Files/Pods-TwitterCloneTests/Pods-TwitterCloneTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C586E78D9295DFB62A4AB3E /* Pods_TwitterCloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterCloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +148,8 @@
 				11A0969F246DF5F50079762A /* Observables.swift */,
 				11A096A1246E019F0079762A /* TweetCellTop.swift */,
 				11A096A3246E17CE0079762A /* CreateTweet.swift */,
+				11A096A5246F7FB90079762A /* multilineTextField.swift */,
+				11A096A7246F8A950079762A /* SearchView.swift */,
 			);
 			path = TwitterClone;
 			sourceTree = "<group>";
@@ -440,12 +446,14 @@
 				11A096A0246DF5F50079762A /* Observables.swift in Sources */,
 				11A096A2246E019F0079762A /* TweetCellTop.swift in Sources */,
 				11A09617246B6BF70079762A /* TwitterClone.xcdatamodeld in Sources */,
+				11A096A6246F7FB90079762A /* multilineTextField.swift in Sources */,
 				11A0969E246DF3250079762A /* Datatypes.swift in Sources */,
 				11A096A4246E17CE0079762A /* CreateTweet.swift in Sources */,
 				11A09612246B6BF70079762A /* AppDelegate.swift in Sources */,
 				11A09619246B6BF70079762A /* ContentView.swift in Sources */,
 				11A0969C246DEFE90079762A /* HomeView.swift in Sources */,
 				11A09614246B6BF70079762A /* SceneDelegate.swift in Sources */,
+				11A096A8246F8A950079762A /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

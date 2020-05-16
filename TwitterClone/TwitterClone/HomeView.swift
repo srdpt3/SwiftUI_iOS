@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct HomeView: View {
-        @ObservedObject var observedData = getData()
+//        @ObservedObject var observedData = getData()
+    @EnvironmentObject var observedData : getData
 
         var body : some View{
             
@@ -39,7 +40,7 @@ struct HomeView: View {
                 .navigationBarTitle("Home",displayMode: .inline)
                 .navigationBarItems(leading:
                 
-                    Image("User Image").resizable().frame(width: 35, height: 35).clipShape(Circle()).onTapGesture {
+                    Image("Twitter").resizable().frame(width: 35, height: 35).clipShape(Circle()).onTapGesture {
                         
                         print("slide out menu ....")
                     }

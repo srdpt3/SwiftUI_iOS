@@ -23,7 +23,7 @@ struct ContentView: View {
                     
                 }.tag(0)
                 
-                Text("Search").tabItem {
+                SearchView().tabItem {
                     
                     Image("Search")
                     
@@ -73,3 +73,5 @@ struct ContentView: View {
             ContentView()
         }
 }
+
+

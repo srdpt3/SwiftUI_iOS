@@ -18,7 +18,7 @@ class getData : ObservableObject{
         
         let db = Firestore.firestore()
         
-        db.collection("tweets").addSnapshotListener { (snap, err) in
+        db.collection("tweets").order(by:"id").addSnapshotListener { (snap, err) in
             
             if err != nil{
                 

@@ -47,7 +47,7 @@ struct CreateTweet : View {
                 .clipShape(Capsule())
             }
             
-//            multilineTextField(txt: $txt)
+           multilineTextField(txt: $txt)
             
         }.padding()
     }
