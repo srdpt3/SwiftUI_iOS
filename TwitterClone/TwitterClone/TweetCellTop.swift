@@ -93,6 +93,6 @@ struct tweetCellMiddle : View {
     
     var body : some View{
         
-        AnimatedImage(url: URL(string: "https://dimg.donga.com/wps/ECONOMY/IMAGE/2020/03/20/100259164.2.jpg")!).resizable().frame(height: 300).cornerRadius(20).padding()
+        AnimatedImage(url: URL(string: pic)!).resizable().frame(height: 300).cornerRadius(20).padding()
     }
 }

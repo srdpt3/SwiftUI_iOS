@@ -18,7 +18,7 @@ class getData : ObservableObject{
         
         let db = Firestore.firestore()
         
-        db.collection("tweets").order(by:"id").addSnapshotListener { (snap, err) in
+        db.collection("tweets").addSnapshotListener { (snap, err) in
             
             if err != nil{
                 
@@ -70,13 +70,13 @@ class getData : ObservableObject{
     }
 }
 
-func postTweet(msg : String){
+func postTweet(msg : String, pic : String){
     
     let db = Firestore.firestore()
     
     // I'm going to use default name and image url.....
     
-    db.collection("tweets").document().setData(["name" : "dustin","id":"@dustin","msg":msg,"retweet":"0","likes":"0","pic":"","url":" Image URL "]) { (err) in
+    db.collection("tweets").document().setData(["name" : "dustin","id":"@dustin","msg":msg,"retweet":"0","likes":"0","pic":pic,"url":pic]) { (err) in
         
         if err != nil{
             
@@ -87,3 +87,5 @@ func postTweet(msg : String){
         print("success")
     }
 }
+
+
