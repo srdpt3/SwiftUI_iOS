@@ -20,7 +20,7 @@ struct SearchView: View {
                 
                 SearchCell(tag: i.tag, tweets: i.tweets)
                 
-            }.navigationBarTitle("",displayMode: .inline)
+            }.navigationBarTitle("트렌드",displayMode: .inline)
                 .navigationBarItems(leading:
                     
                     HStack{
@@ -78,7 +78,7 @@ struct SearchCell : View {
         VStack(alignment : .leading,spacing : 5){
             
             Text(tag).fontWeight(.heavy)
-            Text(tweets + " Tweets").fontWeight(.light)
+            Text(tweets + " 트윗").fontWeight(.light)
         }
     }
 }
