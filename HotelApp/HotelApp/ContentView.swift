@@ -53,16 +53,11 @@ struct Home : View {
             
             HStack{
                 
-                Text("$89")
+        
                 
                 Spacer()
                 
-                Button(action: {
-                    
-                }) {
-                    
-                    Image("Cart")
-                }
+
                 
             }.overlay(Image("hotel").resizable().frame(width: 40, height: 28))
             
@@ -73,7 +68,7 @@ struct Home : View {
                 bottomView().padding(.top, 15)
             }
   
-        }.padding()
+        }.padding(.top, 50)
     }
 }
 

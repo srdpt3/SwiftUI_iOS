@@ -1,0 +1,806 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11713BCE24742E4800002ACA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713BCD24742E4800002ACA /* AppDelegate.swift */; };
+		11713BD024742E4800002ACA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713BCF24742E4800002ACA /* SceneDelegate.swift */; };
+		11713BD324742E4800002ACA /* CoffeeOrderApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11713BD124742E4800002ACA /* CoffeeOrderApp.xcdatamodeld */; };
+		11713BD524742E4800002ACA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713BD424742E4800002ACA /* HomeView.swift */; };
+		11713BD724742E4A00002ACA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11713BD624742E4A00002ACA /* Assets.xcassets */; };
+		11713BDA24742E4A00002ACA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11713BD924742E4A00002ACA /* Preview Assets.xcassets */; };
+		11713BDD24742E4A00002ACA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11713BDB24742E4A00002ACA /* LaunchScreen.storyboard */; };
+		11713BE824742E4A00002ACA /* CoffeeOrderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713BE724742E4A00002ACA /* CoffeeOrderAppTests.swift */; };
+		11713BF324742E4A00002ACA /* CoffeeOrderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713BF224742E4A00002ACA /* CoffeeOrderAppUITests.swift */; };
+		11713C0324742FE600002ACA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11713C0224742FE600002ACA /* GoogleService-Info.plist */; };
+		11713C0B24745DB500002ACA /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 11713C0A24745DB500002ACA /* Model */; };
+		11713C0F24748B5100002ACA /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713C0E24748B5100002ACA /* Drink.swift */; };
+		11713C1324748B9C00002ACA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713C1124748B9C00002ACA /* Extensions.swift */; };
+		11713C1424748B9C00002ACA /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713C1224748B9C00002ACA /* FirebaseReference.swift */; };
+		11713C1524748B9C00002ACA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713C1024748B9C00002ACA /* Constants.swift */; };
+		11713C17247495BB00002ACA /* DrinkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713C16247495BB00002ACA /* DrinkRow.swift */; };
+		11713C1924749EFC00002ACA /* DrinkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713C1824749EFC00002ACA /* DrinkItem.swift */; };
+		11713C1B2474A47F00002ACA /* DrinkListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11713C1A2474A47F00002ACA /* DrinkListener.swift */; };
+		257CBBCA9BA221437EACBF52 /* Pods_CoffeeOrderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811B1347B60CC5C4C9E9B773 /* Pods_CoffeeOrderApp.framework */; };
+		52DC9F502039F22BC2C8C4DF /* Pods_CoffeeOrderAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38C232DEB2E0FAFD67BE242 /* Pods_CoffeeOrderAppTests.framework */; };
+		F7BEBE7610EECC6D3CC373E4 /* Pods_CoffeeOrderApp_CoffeeOrderAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A73832E343B013FC4977C2F /* Pods_CoffeeOrderApp_CoffeeOrderAppUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11713BE424742E4A00002ACA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11713BC224742E4800002ACA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11713BC924742E4800002ACA;
+			remoteInfo = CoffeeOrderApp;
+		};
+		11713BEF24742E4A00002ACA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11713BC224742E4800002ACA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11713BC924742E4800002ACA;
+			remoteInfo = CoffeeOrderApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11713BCA24742E4800002ACA /* CoffeeOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11713BCD24742E4800002ACA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11713BCF24742E4800002ACA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		11713BD224742E4800002ACA /* CoffeeOrderApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoffeeOrderApp.xcdatamodel; sourceTree = "<group>"; };
+		11713BD424742E4800002ACA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		11713BD624742E4A00002ACA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11713BD924742E4A00002ACA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		11713BDC24742E4A00002ACA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11713BDE24742E4A00002ACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11713BE324742E4A00002ACA /* CoffeeOrderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeOrderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11713BE724742E4A00002ACA /* CoffeeOrderAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeOrderAppTests.swift; sourceTree = "<group>"; };
+		11713BE924742E4A00002ACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11713BEE24742E4A00002ACA /* CoffeeOrderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeOrderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11713BF224742E4A00002ACA /* CoffeeOrderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeOrderAppUITests.swift; sourceTree = "<group>"; };
+		11713BF424742E4A00002ACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11713C0224742FE600002ACA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		11713C0A24745DB500002ACA /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
+		11713C0E24748B5100002ACA /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		11713C1024748B9C00002ACA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		11713C1124748B9C00002ACA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		11713C1224748B9C00002ACA /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
+		11713C16247495BB00002ACA /* DrinkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkRow.swift; sourceTree = "<group>"; };
+		11713C1824749EFC00002ACA /* DrinkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkItem.swift; sourceTree = "<group>"; };
+		11713C1A2474A47F00002ACA /* DrinkListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListener.swift; sourceTree = "<group>"; };
+		2DAD8EBDC43A9C52F42499AA /* Pods-CoffeeOrderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeOrderApp.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeOrderApp/Pods-CoffeeOrderApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4A73832E343B013FC4977C2F /* Pods_CoffeeOrderApp_CoffeeOrderAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeOrderApp_CoffeeOrderAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60A8A2B79899157BC0D882E7 /* Pods-CoffeeOrderApp-CoffeeOrderAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeOrderApp-CoffeeOrderAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeOrderApp-CoffeeOrderAppUITests/Pods-CoffeeOrderApp-CoffeeOrderAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6ED801D05D522E3A090C7F98 /* Pods-CoffeeOrderAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeOrderAppTests.release.xcconfig"; path = "Target Support Files/Pods-CoffeeOrderAppTests/Pods-CoffeeOrderAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		811B1347B60CC5C4C9E9B773 /* Pods_CoffeeOrderApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeOrderApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A38C232DEB2E0FAFD67BE242 /* Pods_CoffeeOrderAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeOrderAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C47CA73FAC6B43FF1E91F6B1 /* Pods-CoffeeOrderApp-CoffeeOrderAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeOrderApp-CoffeeOrderAppUITests.release.xcconfig"; path = "Target Support Files/Pods-CoffeeOrderApp-CoffeeOrderAppUITests/Pods-CoffeeOrderApp-CoffeeOrderAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E9202B9FFE562FBB1822EFE4 /* Pods-CoffeeOrderAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeOrderAppTests.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeOrderAppTests/Pods-CoffeeOrderAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE4CCABB356F7C4422B58A22 /* Pods-CoffeeOrderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeOrderApp.release.xcconfig"; path = "Target Support Files/Pods-CoffeeOrderApp/Pods-CoffeeOrderApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11713BC724742E4800002ACA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				257CBBCA9BA221437EACBF52 /* Pods_CoffeeOrderApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11713BE024742E4A00002ACA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52DC9F502039F22BC2C8C4DF /* Pods_CoffeeOrderAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11713BEB24742E4A00002ACA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7BEBE7610EECC6D3CC373E4 /* Pods_CoffeeOrderApp_CoffeeOrderAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11713BC124742E4800002ACA = {
+			isa = PBXGroup;
+			children = (
+				11713BCC24742E4800002ACA /* CoffeeOrderApp */,
+				11713BE624742E4A00002ACA /* CoffeeOrderAppTests */,
+				11713BF124742E4A00002ACA /* CoffeeOrderAppUITests */,
+				11713BCB24742E4800002ACA /* Products */,
+				35FFFC333A4740030ED10752 /* Pods */,
+				A0014E3FCDEE88B33FB2059D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		11713BCB24742E4800002ACA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11713BCA24742E4800002ACA /* CoffeeOrderApp.app */,
+				11713BE324742E4A00002ACA /* CoffeeOrderAppTests.xctest */,
+				11713BEE24742E4A00002ACA /* CoffeeOrderAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11713BCC24742E4800002ACA /* CoffeeOrderApp */ = {
+			isa = PBXGroup;
+			children = (
+				11713C0E24748B5100002ACA /* Drink.swift */,
+				11713C16247495BB00002ACA /* DrinkRow.swift */,
+				11713C1024748B9C00002ACA /* Constants.swift */,
+				11713C1124748B9C00002ACA /* Extensions.swift */,
+				11713C1224748B9C00002ACA /* FirebaseReference.swift */,
+				11713BCD24742E4800002ACA /* AppDelegate.swift */,
+				11713BCF24742E4800002ACA /* SceneDelegate.swift */,
+				11713BD424742E4800002ACA /* HomeView.swift */,
+				11713C0A24745DB500002ACA /* Model */,
+				11713BD624742E4A00002ACA /* Assets.xcassets */,
+				11713BDB24742E4A00002ACA /* LaunchScreen.storyboard */,
+				11713BDE24742E4A00002ACA /* Info.plist */,
+				11713C0224742FE600002ACA /* GoogleService-Info.plist */,
+				11713BD124742E4800002ACA /* CoffeeOrderApp.xcdatamodeld */,
+				11713BD824742E4A00002ACA /* Preview Content */,
+				11713C1824749EFC00002ACA /* DrinkItem.swift */,
+				11713C1A2474A47F00002ACA /* DrinkListener.swift */,
+			);
+			path = CoffeeOrderApp;
+			sourceTree = "<group>";
+		};
+		11713BD824742E4A00002ACA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				11713BD924742E4A00002ACA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		11713BE624742E4A00002ACA /* CoffeeOrderAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				11713BE724742E4A00002ACA /* CoffeeOrderAppTests.swift */,
+				11713BE924742E4A00002ACA /* Info.plist */,
+			);
+			path = CoffeeOrderAppTests;
+			sourceTree = "<group>";
+		};
+		11713BF124742E4A00002ACA /* CoffeeOrderAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				11713BF224742E4A00002ACA /* CoffeeOrderAppUITests.swift */,
+				11713BF424742E4A00002ACA /* Info.plist */,
+			);
+			path = CoffeeOrderAppUITests;
+			sourceTree = "<group>";
+		};
+		35FFFC333A4740030ED10752 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DAD8EBDC43A9C52F42499AA /* Pods-CoffeeOrderApp.debug.xcconfig */,
+				EE4CCABB356F7C4422B58A22 /* Pods-CoffeeOrderApp.release.xcconfig */,
+				60A8A2B79899157BC0D882E7 /* Pods-CoffeeOrderApp-CoffeeOrderAppUITests.debug.xcconfig */,
+				C47CA73FAC6B43FF1E91F6B1 /* Pods-CoffeeOrderApp-CoffeeOrderAppUITests.release.xcconfig */,
+				E9202B9FFE562FBB1822EFE4 /* Pods-CoffeeOrderAppTests.debug.xcconfig */,
+				6ED801D05D522E3A090C7F98 /* Pods-CoffeeOrderAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A0014E3FCDEE88B33FB2059D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				811B1347B60CC5C4C9E9B773 /* Pods_CoffeeOrderApp.framework */,
+				4A73832E343B013FC4977C2F /* Pods_CoffeeOrderApp_CoffeeOrderAppUITests.framework */,
+				A38C232DEB2E0FAFD67BE242 /* Pods_CoffeeOrderAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11713BC924742E4800002ACA /* CoffeeOrderApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11713BF724742E4A00002ACA /* Build configuration list for PBXNativeTarget "CoffeeOrderApp" */;
+			buildPhases = (
+				9374E11CCA1958DECA07B12F /* [CP] Check Pods Manifest.lock */,
+				11713BC624742E4800002ACA /* Sources */,
+				11713BC724742E4800002ACA /* Frameworks */,
+				11713BC824742E4800002ACA /* Resources */,
+				546C1F97DD9504DCF623CAC3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoffeeOrderApp;
+			productName = CoffeeOrderApp;
+			productReference = 11713BCA24742E4800002ACA /* CoffeeOrderApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11713BE224742E4A00002ACA /* CoffeeOrderAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11713BFA24742E4A00002ACA /* Build configuration list for PBXNativeTarget "CoffeeOrderAppTests" */;
+			buildPhases = (
+				3BC2B00E594BCD9D545E0946 /* [CP] Check Pods Manifest.lock */,
+				11713BDF24742E4A00002ACA /* Sources */,
+				11713BE024742E4A00002ACA /* Frameworks */,
+				11713BE124742E4A00002ACA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11713BE524742E4A00002ACA /* PBXTargetDependency */,
+			);
+			name = CoffeeOrderAppTests;
+			productName = CoffeeOrderAppTests;
+			productReference = 11713BE324742E4A00002ACA /* CoffeeOrderAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		11713BED24742E4A00002ACA /* CoffeeOrderAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11713BFD24742E4A00002ACA /* Build configuration list for PBXNativeTarget "CoffeeOrderAppUITests" */;
+			buildPhases = (
+				7937C51DC6419023AB3734A5 /* [CP] Check Pods Manifest.lock */,
+				11713BEA24742E4A00002ACA /* Sources */,
+				11713BEB24742E4A00002ACA /* Frameworks */,
+				11713BEC24742E4A00002ACA /* Resources */,
+				8844502CFEF75C0EB7044637 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11713BF024742E4A00002ACA /* PBXTargetDependency */,
+			);
+			name = CoffeeOrderAppUITests;
+			productName = CoffeeOrderAppUITests;
+			productReference = 11713BEE24742E4A00002ACA /* CoffeeOrderAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11713BC224742E4800002ACA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Dustin yang";
+				TargetAttributes = {
+					11713BC924742E4800002ACA = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					11713BE224742E4A00002ACA = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 11713BC924742E4800002ACA;
+					};
+					11713BED24742E4A00002ACA = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 11713BC924742E4800002ACA;
+					};
+				};
+			};
+			buildConfigurationList = 11713BC524742E4800002ACA /* Build configuration list for PBXProject "CoffeeOrderApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11713BC124742E4800002ACA;
+			productRefGroup = 11713BCB24742E4800002ACA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11713BC924742E4800002ACA /* CoffeeOrderApp */,
+				11713BE224742E4A00002ACA /* CoffeeOrderAppTests */,
+				11713BED24742E4A00002ACA /* CoffeeOrderAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11713BC824742E4800002ACA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11713C0B24745DB500002ACA /* Model in Resources */,
+				11713C0324742FE600002ACA /* GoogleService-Info.plist in Resources */,
+				11713BDD24742E4A00002ACA /* LaunchScreen.storyboard in Resources */,
+				11713BDA24742E4A00002ACA /* Preview Assets.xcassets in Resources */,
+				11713BD724742E4A00002ACA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11713BE124742E4A00002ACA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11713BEC24742E4A00002ACA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BC2B00E594BCD9D545E0946 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoffeeOrderAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		546C1F97DD9504DCF623CAC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoffeeOrderApp/Pods-CoffeeOrderApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoffeeOrderApp/Pods-CoffeeOrderApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoffeeOrderApp/Pods-CoffeeOrderApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7937C51DC6419023AB3734A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoffeeOrderApp-CoffeeOrderAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8844502CFEF75C0EB7044637 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoffeeOrderApp-CoffeeOrderAppUITests/Pods-CoffeeOrderApp-CoffeeOrderAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoffeeOrderApp-CoffeeOrderAppUITests/Pods-CoffeeOrderApp-CoffeeOrderAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoffeeOrderApp-CoffeeOrderAppUITests/Pods-CoffeeOrderApp-CoffeeOrderAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9374E11CCA1958DECA07B12F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoffeeOrderApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11713BC624742E4800002ACA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11713BD324742E4800002ACA /* CoffeeOrderApp.xcdatamodeld in Sources */,
+				11713C1924749EFC00002ACA /* DrinkItem.swift in Sources */,
+				11713C1324748B9C00002ACA /* Extensions.swift in Sources */,
+				11713C1424748B9C00002ACA /* FirebaseReference.swift in Sources */,
+				11713BCE24742E4800002ACA /* AppDelegate.swift in Sources */,
+				11713BD524742E4800002ACA /* HomeView.swift in Sources */,
+				11713C0F24748B5100002ACA /* Drink.swift in Sources */,
+				11713C1B2474A47F00002ACA /* DrinkListener.swift in Sources */,
+				11713BD024742E4800002ACA /* SceneDelegate.swift in Sources */,
+				11713C17247495BB00002ACA /* DrinkRow.swift in Sources */,
+				11713C1524748B9C00002ACA /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11713BDF24742E4A00002ACA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11713BE824742E4A00002ACA /* CoffeeOrderAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11713BEA24742E4A00002ACA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11713BF324742E4A00002ACA /* CoffeeOrderAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11713BE524742E4A00002ACA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11713BC924742E4800002ACA /* CoffeeOrderApp */;
+			targetProxy = 11713BE424742E4A00002ACA /* PBXContainerItemProxy */;
+		};
+		11713BF024742E4A00002ACA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11713BC924742E4800002ACA /* CoffeeOrderApp */;
+			targetProxy = 11713BEF24742E4A00002ACA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11713BDB24742E4A00002ACA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11713BDC24742E4A00002ACA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11713BF524742E4A00002ACA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11713BF624742E4A00002ACA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11713BF824742E4A00002ACA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DAD8EBDC43A9C52F42499AA /* Pods-CoffeeOrderApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CoffeeOrderApp/Preview Content\"";
+				DEVELOPMENT_TEAM = CSE9343A58;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CoffeeOrderApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.CoffeeOrderApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11713BF924742E4A00002ACA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE4CCABB356F7C4422B58A22 /* Pods-CoffeeOrderApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CoffeeOrderApp/Preview Content\"";
+				DEVELOPMENT_TEAM = CSE9343A58;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CoffeeOrderApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.CoffeeOrderApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		11713BFB24742E4A00002ACA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9202B9FFE562FBB1822EFE4 /* Pods-CoffeeOrderAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = CoffeeOrderAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.CoffeeOrderAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoffeeOrderApp.app/CoffeeOrderApp";
+			};
+			name = Debug;
+		};
+		11713BFC24742E4A00002ACA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ED801D05D522E3A090C7F98 /* Pods-CoffeeOrderAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = CoffeeOrderAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.CoffeeOrderAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoffeeOrderApp.app/CoffeeOrderApp";
+			};
+			name = Release;
+		};
+		11713BFE24742E4A00002ACA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60A8A2B79899157BC0D882E7 /* Pods-CoffeeOrderApp-CoffeeOrderAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = CoffeeOrderAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.CoffeeOrderAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoffeeOrderApp;
+			};
+			name = Debug;
+		};
+		11713BFF24742E4A00002ACA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C47CA73FAC6B43FF1E91F6B1 /* Pods-CoffeeOrderApp-CoffeeOrderAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = CoffeeOrderAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.CoffeeOrderAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoffeeOrderApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11713BC524742E4800002ACA /* Build configuration list for PBXProject "CoffeeOrderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11713BF524742E4A00002ACA /* Debug */,
+				11713BF624742E4A00002ACA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11713BF724742E4A00002ACA /* Build configuration list for PBXNativeTarget "CoffeeOrderApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11713BF824742E4A00002ACA /* Debug */,
+				11713BF924742E4A00002ACA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11713BFA24742E4A00002ACA /* Build configuration list for PBXNativeTarget "CoffeeOrderAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11713BFB24742E4A00002ACA /* Debug */,
+				11713BFC24742E4A00002ACA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11713BFD24742E4A00002ACA /* Build configuration list for PBXNativeTarget "CoffeeOrderAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11713BFE24742E4A00002ACA /* Debug */,
+				11713BFF24742E4A00002ACA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		11713BD124742E4800002ACA /* CoffeeOrderApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				11713BD224742E4800002ACA /* CoffeeOrderApp.xcdatamodel */,
+			);
+			currentVersion = 11713BD224742E4800002ACA /* CoffeeOrderApp.xcdatamodel */;
+			path = CoffeeOrderApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 11713BC224742E4800002ACA /* Project object */;
+}
