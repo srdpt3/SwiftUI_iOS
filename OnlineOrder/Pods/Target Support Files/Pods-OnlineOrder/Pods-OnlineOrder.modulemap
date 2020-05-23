@@ -1,0 +1,6 @@
+framework module Pods_OnlineOrder {
+  umbrella header "Pods-OnlineOrder-umbrella.h"
+
+  export *
+  module * { export * }
+}

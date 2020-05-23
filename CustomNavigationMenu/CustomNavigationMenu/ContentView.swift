@@ -22,7 +22,7 @@ struct ContentView: View {
                 VStack(alignment: .leading, spacing: 25){
                     
                     HStack(spacing : 15){
-                        Image("pic").resizable().frame(width: 65, height: 65)
+                        Image("pic1").resizable().frame(width: 65, height: 65).cornerRadius(30)
                         VStack(alignment: .leading, spacing: 12){
                             Text("Doosun").fontWeight(.bold)
                             Text("New York, US")

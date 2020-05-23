@@ -1,0 +1,782 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11F452F8247824A200A41C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F452F7247824A200A41C50 /* AppDelegate.swift */; };
+		11F452FA247824A200A41C50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F452F9247824A200A41C50 /* SceneDelegate.swift */; };
+		11F452FD247824A200A41C50 /* OnlineOrder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11F452FB247824A200A41C50 /* OnlineOrder.xcdatamodeld */; };
+		11F452FF247824A200A41C50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F452FE247824A200A41C50 /* ContentView.swift */; };
+		11F45301247824A600A41C50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F45300247824A600A41C50 /* Assets.xcassets */; };
+		11F45304247824A600A41C50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11F45303247824A600A41C50 /* Preview Assets.xcassets */; };
+		11F45307247824A600A41C50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11F45305247824A600A41C50 /* LaunchScreen.storyboard */; };
+		11F45312247824A600A41C50 /* OnlineOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F45311247824A600A41C50 /* OnlineOrderTests.swift */; };
+		11F4531D247824A600A41C50 /* OnlineOrderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4531C247824A600A41C50 /* OnlineOrderUITests.swift */; };
+		11F4532B247824FC00A41C50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11F4532A247824FC00A41C50 /* GoogleService-Info.plist */; };
+		11F4532D247851CF00A41C50 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4532C247851CF00A41C50 /* Category.swift */; };
+		11F4532F247851E000A41C50 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F4532E247851E000A41C50 /* Cart.swift */; };
+		140892A802128FD13C4FBC43 /* Pods_OnlineOrder_OnlineOrderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D28D8F81D7F136EB82AB22 /* Pods_OnlineOrder_OnlineOrderUITests.framework */; };
+		CD8FA0429B734EF489893D8C /* Pods_OnlineOrderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA75A7803048BEA003F014C /* Pods_OnlineOrderTests.framework */; };
+		D4F05E9AD380FA76E31BE86E /* Pods_OnlineOrder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F827D9B4C0EB4622422E6CC1 /* Pods_OnlineOrder.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11F4530E247824A600A41C50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11F452EC247824A200A41C50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11F452F3247824A200A41C50;
+			remoteInfo = OnlineOrder;
+		};
+		11F45319247824A600A41C50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11F452EC247824A200A41C50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11F452F3247824A200A41C50;
+			remoteInfo = OnlineOrder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04D28D8F81D7F136EB82AB22 /* Pods_OnlineOrder_OnlineOrderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineOrder_OnlineOrderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C90A13B43EAB6F544C8AE44 /* Pods-OnlineOrder-OnlineOrderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineOrder-OnlineOrderUITests.release.xcconfig"; path = "Target Support Files/Pods-OnlineOrder-OnlineOrderUITests/Pods-OnlineOrder-OnlineOrderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		11F452F4247824A200A41C50 /* OnlineOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F452F7247824A200A41C50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11F452F9247824A200A41C50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		11F452FC247824A200A41C50 /* OnlineOrder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OnlineOrder.xcdatamodel; sourceTree = "<group>"; };
+		11F452FE247824A200A41C50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		11F45300247824A600A41C50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11F45303247824A600A41C50 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		11F45306247824A600A41C50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11F45308247824A600A41C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F4530D247824A600A41C50 /* OnlineOrderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineOrderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F45311247824A600A41C50 /* OnlineOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineOrderTests.swift; sourceTree = "<group>"; };
+		11F45313247824A600A41C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F45318247824A600A41C50 /* OnlineOrderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineOrderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11F4531C247824A600A41C50 /* OnlineOrderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineOrderUITests.swift; sourceTree = "<group>"; };
+		11F4531E247824A600A41C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F4532A247824FC00A41C50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		11F4532C247851CF00A41C50 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		11F4532E247851E000A41C50 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		5759A7F0BBD419976F594B5A /* Pods-OnlineOrder-OnlineOrderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineOrder-OnlineOrderUITests.debug.xcconfig"; path = "Target Support Files/Pods-OnlineOrder-OnlineOrderUITests/Pods-OnlineOrder-OnlineOrderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7DA75A7803048BEA003F014C /* Pods_OnlineOrderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineOrderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B95276B075F2E8A249068B /* Pods-OnlineOrderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineOrderTests.debug.xcconfig"; path = "Target Support Files/Pods-OnlineOrderTests/Pods-OnlineOrderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8C49888E5B7C618F3DBA433 /* Pods-OnlineOrder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineOrder.release.xcconfig"; path = "Target Support Files/Pods-OnlineOrder/Pods-OnlineOrder.release.xcconfig"; sourceTree = "<group>"; };
+		BF94448E72B895C3AF24DDA2 /* Pods-OnlineOrderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineOrderTests.release.xcconfig"; path = "Target Support Files/Pods-OnlineOrderTests/Pods-OnlineOrderTests.release.xcconfig"; sourceTree = "<group>"; };
+		F6DD35E8877CE174B5756677 /* Pods-OnlineOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineOrder.debug.xcconfig"; path = "Target Support Files/Pods-OnlineOrder/Pods-OnlineOrder.debug.xcconfig"; sourceTree = "<group>"; };
+		F827D9B4C0EB4622422E6CC1 /* Pods_OnlineOrder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineOrder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11F452F1247824A200A41C50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F05E9AD380FA76E31BE86E /* Pods_OnlineOrder.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F4530A247824A600A41C50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD8FA0429B734EF489893D8C /* Pods_OnlineOrderTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F45315247824A600A41C50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				140892A802128FD13C4FBC43 /* Pods_OnlineOrder_OnlineOrderUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11F452EB247824A200A41C50 = {
+			isa = PBXGroup;
+			children = (
+				11F452F6247824A200A41C50 /* OnlineOrder */,
+				11F45310247824A600A41C50 /* OnlineOrderTests */,
+				11F4531B247824A600A41C50 /* OnlineOrderUITests */,
+				11F452F5247824A200A41C50 /* Products */,
+				62A0B56A555548D646978584 /* Pods */,
+				C3669F3BCAE3A5D8B5A11954 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		11F452F5247824A200A41C50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11F452F4247824A200A41C50 /* OnlineOrder.app */,
+				11F4530D247824A600A41C50 /* OnlineOrderTests.xctest */,
+				11F45318247824A600A41C50 /* OnlineOrderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11F452F6247824A200A41C50 /* OnlineOrder */ = {
+			isa = PBXGroup;
+			children = (
+				11F452F7247824A200A41C50 /* AppDelegate.swift */,
+				11F452F9247824A200A41C50 /* SceneDelegate.swift */,
+				11F452FE247824A200A41C50 /* ContentView.swift */,
+				11F45300247824A600A41C50 /* Assets.xcassets */,
+				11F45305247824A600A41C50 /* LaunchScreen.storyboard */,
+				11F4532A247824FC00A41C50 /* GoogleService-Info.plist */,
+				11F45308247824A600A41C50 /* Info.plist */,
+				11F452FB247824A200A41C50 /* OnlineOrder.xcdatamodeld */,
+				11F45302247824A600A41C50 /* Preview Content */,
+				11F4532C247851CF00A41C50 /* Category.swift */,
+				11F4532E247851E000A41C50 /* Cart.swift */,
+			);
+			path = OnlineOrder;
+			sourceTree = "<group>";
+		};
+		11F45302247824A600A41C50 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				11F45303247824A600A41C50 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		11F45310247824A600A41C50 /* OnlineOrderTests */ = {
+			isa = PBXGroup;
+			children = (
+				11F45311247824A600A41C50 /* OnlineOrderTests.swift */,
+				11F45313247824A600A41C50 /* Info.plist */,
+			);
+			path = OnlineOrderTests;
+			sourceTree = "<group>";
+		};
+		11F4531B247824A600A41C50 /* OnlineOrderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				11F4531C247824A600A41C50 /* OnlineOrderUITests.swift */,
+				11F4531E247824A600A41C50 /* Info.plist */,
+			);
+			path = OnlineOrderUITests;
+			sourceTree = "<group>";
+		};
+		62A0B56A555548D646978584 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F6DD35E8877CE174B5756677 /* Pods-OnlineOrder.debug.xcconfig */,
+				A8C49888E5B7C618F3DBA433 /* Pods-OnlineOrder.release.xcconfig */,
+				5759A7F0BBD419976F594B5A /* Pods-OnlineOrder-OnlineOrderUITests.debug.xcconfig */,
+				0C90A13B43EAB6F544C8AE44 /* Pods-OnlineOrder-OnlineOrderUITests.release.xcconfig */,
+				94B95276B075F2E8A249068B /* Pods-OnlineOrderTests.debug.xcconfig */,
+				BF94448E72B895C3AF24DDA2 /* Pods-OnlineOrderTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C3669F3BCAE3A5D8B5A11954 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F827D9B4C0EB4622422E6CC1 /* Pods_OnlineOrder.framework */,
+				04D28D8F81D7F136EB82AB22 /* Pods_OnlineOrder_OnlineOrderUITests.framework */,
+				7DA75A7803048BEA003F014C /* Pods_OnlineOrderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11F452F3247824A200A41C50 /* OnlineOrder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11F45321247824A600A41C50 /* Build configuration list for PBXNativeTarget "OnlineOrder" */;
+			buildPhases = (
+				67EB2AE6BEC686511D6779B2 /* [CP] Check Pods Manifest.lock */,
+				11F452F0247824A200A41C50 /* Sources */,
+				11F452F1247824A200A41C50 /* Frameworks */,
+				11F452F2247824A200A41C50 /* Resources */,
+				4BD32A01EA60E32A7A47683F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OnlineOrder;
+			productName = OnlineOrder;
+			productReference = 11F452F4247824A200A41C50 /* OnlineOrder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11F4530C247824A600A41C50 /* OnlineOrderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11F45324247824A600A41C50 /* Build configuration list for PBXNativeTarget "OnlineOrderTests" */;
+			buildPhases = (
+				F92BE2BCC41F8129EB1C5354 /* [CP] Check Pods Manifest.lock */,
+				11F45309247824A600A41C50 /* Sources */,
+				11F4530A247824A600A41C50 /* Frameworks */,
+				11F4530B247824A600A41C50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11F4530F247824A600A41C50 /* PBXTargetDependency */,
+			);
+			name = OnlineOrderTests;
+			productName = OnlineOrderTests;
+			productReference = 11F4530D247824A600A41C50 /* OnlineOrderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		11F45317247824A600A41C50 /* OnlineOrderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11F45327247824A600A41C50 /* Build configuration list for PBXNativeTarget "OnlineOrderUITests" */;
+			buildPhases = (
+				4F692DB31306548C220D3AF8 /* [CP] Check Pods Manifest.lock */,
+				11F45314247824A600A41C50 /* Sources */,
+				11F45315247824A600A41C50 /* Frameworks */,
+				11F45316247824A600A41C50 /* Resources */,
+				C8A7E4D0EC411CA52D282CAA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11F4531A247824A600A41C50 /* PBXTargetDependency */,
+			);
+			name = OnlineOrderUITests;
+			productName = OnlineOrderUITests;
+			productReference = 11F45318247824A600A41C50 /* OnlineOrderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11F452EC247824A200A41C50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Dustin yang";
+				TargetAttributes = {
+					11F452F3247824A200A41C50 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					11F4530C247824A600A41C50 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 11F452F3247824A200A41C50;
+					};
+					11F45317247824A600A41C50 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 11F452F3247824A200A41C50;
+					};
+				};
+			};
+			buildConfigurationList = 11F452EF247824A200A41C50 /* Build configuration list for PBXProject "OnlineOrder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11F452EB247824A200A41C50;
+			productRefGroup = 11F452F5247824A200A41C50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11F452F3247824A200A41C50 /* OnlineOrder */,
+				11F4530C247824A600A41C50 /* OnlineOrderTests */,
+				11F45317247824A600A41C50 /* OnlineOrderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11F452F2247824A200A41C50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F45307247824A600A41C50 /* LaunchScreen.storyboard in Resources */,
+				11F45304247824A600A41C50 /* Preview Assets.xcassets in Resources */,
+				11F45301247824A600A41C50 /* Assets.xcassets in Resources */,
+				11F4532B247824FC00A41C50 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F4530B247824A600A41C50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F45316247824A600A41C50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BD32A01EA60E32A7A47683F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineOrder/Pods-OnlineOrder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineOrder/Pods-OnlineOrder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineOrder/Pods-OnlineOrder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F692DB31306548C220D3AF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnlineOrder-OnlineOrderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67EB2AE6BEC686511D6779B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnlineOrder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8A7E4D0EC411CA52D282CAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineOrder-OnlineOrderUITests/Pods-OnlineOrder-OnlineOrderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineOrder-OnlineOrderUITests/Pods-OnlineOrder-OnlineOrderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineOrder-OnlineOrderUITests/Pods-OnlineOrder-OnlineOrderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F92BE2BCC41F8129EB1C5354 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnlineOrderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11F452F0247824A200A41C50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F452F8247824A200A41C50 /* AppDelegate.swift in Sources */,
+				11F4532F247851E000A41C50 /* Cart.swift in Sources */,
+				11F4532D247851CF00A41C50 /* Category.swift in Sources */,
+				11F452FD247824A200A41C50 /* OnlineOrder.xcdatamodeld in Sources */,
+				11F452FF247824A200A41C50 /* ContentView.swift in Sources */,
+				11F452FA247824A200A41C50 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F45309247824A600A41C50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F45312247824A600A41C50 /* OnlineOrderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11F45314247824A600A41C50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F4531D247824A600A41C50 /* OnlineOrderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11F4530F247824A600A41C50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11F452F3247824A200A41C50 /* OnlineOrder */;
+			targetProxy = 11F4530E247824A600A41C50 /* PBXContainerItemProxy */;
+		};
+		11F4531A247824A600A41C50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11F452F3247824A200A41C50 /* OnlineOrder */;
+			targetProxy = 11F45319247824A600A41C50 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11F45305247824A600A41C50 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11F45306247824A600A41C50 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11F4531F247824A600A41C50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11F45320247824A600A41C50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11F45322247824A600A41C50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6DD35E8877CE174B5756677 /* Pods-OnlineOrder.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"OnlineOrder/Preview Content\"";
+				DEVELOPMENT_TEAM = CSE9343A58;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = OnlineOrder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.OnlineOrder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11F45323247824A600A41C50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8C49888E5B7C618F3DBA433 /* Pods-OnlineOrder.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"OnlineOrder/Preview Content\"";
+				DEVELOPMENT_TEAM = CSE9343A58;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = OnlineOrder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.OnlineOrder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		11F45325247824A600A41C50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94B95276B075F2E8A249068B /* Pods-OnlineOrderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = OnlineOrderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.OnlineOrderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnlineOrder.app/OnlineOrder";
+			};
+			name = Debug;
+		};
+		11F45326247824A600A41C50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF94448E72B895C3AF24DDA2 /* Pods-OnlineOrderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = OnlineOrderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.OnlineOrderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnlineOrder.app/OnlineOrder";
+			};
+			name = Release;
+		};
+		11F45328247824A600A41C50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5759A7F0BBD419976F594B5A /* Pods-OnlineOrder-OnlineOrderUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = OnlineOrderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.OnlineOrderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OnlineOrder;
+			};
+			name = Debug;
+		};
+		11F45329247824A600A41C50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C90A13B43EAB6F544C8AE44 /* Pods-OnlineOrder-OnlineOrderUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = OnlineOrderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = frontyard.OnlineOrderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OnlineOrder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11F452EF247824A200A41C50 /* Build configuration list for PBXProject "OnlineOrder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11F4531F247824A600A41C50 /* Debug */,
+				11F45320247824A600A41C50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11F45321247824A600A41C50 /* Build configuration list for PBXNativeTarget "OnlineOrder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11F45322247824A600A41C50 /* Debug */,
+				11F45323247824A600A41C50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11F45324247824A600A41C50 /* Build configuration list for PBXNativeTarget "OnlineOrderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11F45325247824A600A41C50 /* Debug */,
+				11F45326247824A600A41C50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11F45327247824A600A41C50 /* Build configuration list for PBXNativeTarget "OnlineOrderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11F45328247824A600A41C50 /* Debug */,
+				11F45329247824A600A41C50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		11F452FB247824A200A41C50 /* OnlineOrder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				11F452FC247824A200A41C50 /* OnlineOrder.xcdatamodel */,
+			);
+			currentVersion = 11F452FC247824A200A41C50 /* OnlineOrder.xcdatamodel */;
+			path = OnlineOrder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 11F452EC247824A200A41C50 /* Project object */;
+}
