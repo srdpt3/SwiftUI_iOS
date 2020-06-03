@@ -68,7 +68,7 @@ struct Home : View {
                                     VStack(alignment: .leading, spacing: 12){
                                         Image(j.image).resizable()
                                             .frame(width: 135, height: 160).onTapGesture {
-                                                self.show.toggle()
+                                              
                                         }
                                         Text(j.name).font(.caption).lineLimit(1)
                                         Text(j.rating).font(.caption)

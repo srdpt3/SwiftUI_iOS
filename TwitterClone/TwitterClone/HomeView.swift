@@ -18,6 +18,9 @@ struct HomeView: View {
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         
+                       
+                        
+                        
                         VStack(alignment: .leading){
                             
                             ForEach(observedData.datas){i in
