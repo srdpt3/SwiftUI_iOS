@@ -32,7 +32,7 @@ struct ContentView: View {
                 self.locations.append(newLocation)
                 
                 
-                if self.locations.count == 2{
+                if self.locations.count = = 2{
                     let locationA = CLLocation(latitude: (self.locations.first?.coordinate.latitude)!, longitude: (self.locations.first?.coordinate.longitude)!)
                     
                     let locationB = CLLocation(latitude: (self.locations.last?.coordinate.latitude)!, longitude: (self.locations.last?.coordinate.longitude)!)
