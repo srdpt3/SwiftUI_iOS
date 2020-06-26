@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		115F71C924A4F1920081AF74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F71C824A4F1920081AF74 /* AppDelegate.swift */; };
+		115F71CB24A4F1920081AF74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F71CA24A4F1920081AF74 /* SceneDelegate.swift */; };
+		115F71CE24A4F1920081AF74 /* DatingAPP_POC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 115F71CC24A4F1920081AF74 /* DatingAPP_POC.xcdatamodeld */; };
+		115F71D024A4F1920081AF74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F71CF24A4F1920081AF74 /* ContentView.swift */; };
+		115F71D224A4F1970081AF74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115F71D124A4F1970081AF74 /* Assets.xcassets */; };
+		115F71D524A4F1970081AF74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115F71D424A4F1970081AF74 /* Preview Assets.xcassets */; };
+		115F71D824A4F1970081AF74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115F71D624A4F1970081AF74 /* LaunchScreen.storyboard */; };
+		115F71E324A4F1970081AF74 /* DatingAPP_POCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F71E224A4F1970081AF74 /* DatingAPP_POCTests.swift */; };
+		115F71EE24A4F1970081AF74 /* DatingAPP_POCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F71ED24A4F1970081AF74 /* DatingAPP_POCUITests.swift */; };
+		115F71FC24A57CBD0081AF74 /* BottomTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115F71FB24A57CBD0081AF74 /* BottomTray.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		115F71DF24A4F1970081AF74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 115F71BD24A4F1920081AF74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 115F71C424A4F1920081AF74;
+			remoteInfo = DatingAPP_POC;
+		};
+		115F71EA24A4F1970081AF74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 115F71BD24A4F1920081AF74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 115F71C424A4F1920081AF74;
+			remoteInfo = DatingAPP_POC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		115F71C524A4F1920081AF74 /* DatingAPP_POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingAPP_POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		115F71C824A4F1920081AF74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		115F71CA24A4F1920081AF74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		115F71CD24A4F1920081AF74 /* DatingAPP_POC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatingAPP_POC.xcdatamodel; sourceTree = "<group>"; };
+		115F71CF24A4F1920081AF74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		115F71D124A4F1970081AF74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		115F71D424A4F1970081AF74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		115F71D724A4F1970081AF74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		115F71D924A4F1970081AF74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		115F71DE24A4F1970081AF74 /* DatingAPP_POCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatingAPP_POCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		115F71E224A4F1970081AF74 /* DatingAPP_POCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingAPP_POCTests.swift; sourceTree = "<group>"; };
+		115F71E424A4F1970081AF74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		115F71E924A4F1970081AF74 /* DatingAPP_POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatingAPP_POCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		115F71ED24A4F1970081AF74 /* DatingAPP_POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingAPP_POCUITests.swift; sourceTree = "<group>"; };
+		115F71EF24A4F1970081AF74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		115F71FB24A57CBD0081AF74 /* BottomTray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTray.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		115F71C224A4F1920081AF74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		115F71DB24A4F1970081AF74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		115F71E624A4F1970081AF74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		115F71BC24A4F1920081AF74 = {
+			isa = PBXGroup;
+			children = (
+				115F71C724A4F1920081AF74 /* DatingAPP_POC */,
+				115F71E124A4F1970081AF74 /* DatingAPP_POCTests */,
+				115F71EC24A4F1970081AF74 /* DatingAPP_POCUITests */,
+				115F71C624A4F1920081AF74 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		115F71C624A4F1920081AF74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				115F71C524A4F1920081AF74 /* DatingAPP_POC.app */,
+				115F71DE24A4F1970081AF74 /* DatingAPP_POCTests.xctest */,
+				115F71E924A4F1970081AF74 /* DatingAPP_POCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		115F71C724A4F1920081AF74 /* DatingAPP_POC */ = {
+			isa = PBXGroup;
+			children = (
+				115F71C824A4F1920081AF74 /* AppDelegate.swift */,
+				115F71CA24A4F1920081AF74 /* SceneDelegate.swift */,
+				115F71CF24A4F1920081AF74 /* ContentView.swift */,
+				115F71D124A4F1970081AF74 /* Assets.xcassets */,
+				115F71D624A4F1970081AF74 /* LaunchScreen.storyboard */,
+				115F71D924A4F1970081AF74 /* Info.plist */,
+				115F71CC24A4F1920081AF74 /* DatingAPP_POC.xcdatamodeld */,
+				115F71D324A4F1970081AF74 /* Preview Content */,
+				115F71FB24A57CBD0081AF74 /* BottomTray.swift */,
+			);
+			path = DatingAPP_POC;
+			sourceTree = "<group>";
+		};
+		115F71D324A4F1970081AF74 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				115F71D424A4F1970081AF74 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		115F71E124A4F1970081AF74 /* DatingAPP_POCTests */ = {
+			isa = PBXGroup;
+			children = (
+				115F71E224A4F1970081AF74 /* DatingAPP_POCTests.swift */,
+				115F71E424A4F1970081AF74 /* Info.plist */,
+			);
+			path = DatingAPP_POCTests;
+			sourceTree = "<group>";
+		};
+		115F71EC24A4F1970081AF74 /* DatingAPP_POCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				115F71ED24A4F1970081AF74 /* DatingAPP_POCUITests.swift */,
+				115F71EF24A4F1970081AF74 /* Info.plist */,
+			);
+			path = DatingAPP_POCUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		115F71C424A4F1920081AF74 /* DatingAPP_POC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 115F71F224A4F1970081AF74 /* Build configuration list for PBXNativeTarget "DatingAPP_POC" */;
+			buildPhases = (
+				115F71C124A4F1920081AF74 /* Sources */,
+				115F71C224A4F1920081AF74 /* Frameworks */,
+				115F71C324A4F1920081AF74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DatingAPP_POC;
+			productName = DatingAPP_POC;
+			productReference = 115F71C524A4F1920081AF74 /* DatingAPP_POC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		115F71DD24A4F1970081AF74 /* DatingAPP_POCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 115F71F524A4F1970081AF74 /* Build configuration list for PBXNativeTarget "DatingAPP_POCTests" */;
+			buildPhases = (
+				115F71DA24A4F1970081AF74 /* Sources */,
+				115F71DB24A4F1970081AF74 /* Frameworks */,
+				115F71DC24A4F1970081AF74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				115F71E024A4F1970081AF74 /* PBXTargetDependency */,
+			);
+			name = DatingAPP_POCTests;
+			productName = DatingAPP_POCTests;
+			productReference = 115F71DE24A4F1970081AF74 /* DatingAPP_POCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		115F71E824A4F1970081AF74 /* DatingAPP_POCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 115F71F824A4F1970081AF74 /* Build configuration list for PBXNativeTarget "DatingAPP_POCUITests" */;
+			buildPhases = (
+				115F71E524A4F1970081AF74 /* Sources */,
+				115F71E624A4F1970081AF74 /* Frameworks */,
+				115F71E724A4F1970081AF74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				115F71EB24A4F1970081AF74 /* PBXTargetDependency */,
+			);
+			name = DatingAPP_POCUITests;
+			productName = DatingAPP_POCUITests;
+			productReference = 115F71E924A4F1970081AF74 /* DatingAPP_POCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		115F71BD24A4F1920081AF74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Dustin yang";
+				TargetAttributes = {
+					115F71C424A4F1920081AF74 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					115F71DD24A4F1970081AF74 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 115F71C424A4F1920081AF74;
+					};
+					115F71E824A4F1970081AF74 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 115F71C424A4F1920081AF74;
+					};
+				};
+			};
+			buildConfigurationList = 115F71C024A4F1920081AF74 /* Build configuration list for PBXProject "DatingAPP_POC" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 115F71BC24A4F1920081AF74;
+			productRefGroup = 115F71C624A4F1920081AF74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				115F71C424A4F1920081AF74 /* DatingAPP_POC */,
+				115F71DD24A4F1970081AF74 /* DatingAPP_POCTests */,
+				115F71E824A4F1970081AF74 /* DatingAPP_POCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		115F71C324A4F1920081AF74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				115F71D824A4F1970081AF74 /* LaunchScreen.storyboard in Resources */,
+				115F71D524A4F1970081AF74 /* Preview Assets.xcassets in Resources */,
+				115F71D224A4F1970081AF74 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		115F71DC24A4F1970081AF74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		115F71E724A4F1970081AF74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		115F71C124A4F1920081AF74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				115F71CE24A4F1920081AF74 /* DatingAPP_POC.xcdatamodeld in Sources */,
+				115F71FC24A57CBD0081AF74 /* BottomTray.swift in Sources */,
+				115F71C924A4F1920081AF74 /* AppDelegate.swift in Sources */,
+				115F71D024A4F1920081AF74 /* ContentView.swift in Sources */,
+				115F71CB24A4F1920081AF74 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		115F71DA24A4F1970081AF74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				115F71E324A4F1970081AF74 /* DatingAPP_POCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		115F71E524A4F1970081AF74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				115F71EE24A4F1970081AF74 /* DatingAPP_POCUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		115F71E024A4F1970081AF74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 115F71C424A4F1920081AF74 /* DatingAPP_POC */;
+			targetProxy = 115F71DF24A4F1970081AF74 /* PBXContainerItemProxy */;
+		};
+		115F71EB24A4F1970081AF74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 115F71C424A4F1920081AF74 /* DatingAPP_POC */;
+			targetProxy = 115F71EA24A4F1970081AF74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		115F71D624A4F1970081AF74 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				115F71D724A4F1970081AF74 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		115F71F024A4F1970081AF74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		115F71F124A4F1970081AF74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		115F71F324A4F1970081AF74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"DatingAPP_POC/Preview Content\"";
+				DEVELOPMENT_TEAM = CSE9343A58;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = DatingAPP_POC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.DatingAPP-POC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		115F71F424A4F1970081AF74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"DatingAPP_POC/Preview Content\"";
+				DEVELOPMENT_TEAM = CSE9343A58;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = DatingAPP_POC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.DatingAPP-POC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		115F71F624A4F1970081AF74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = DatingAPP_POCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.DatingAPP-POCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DatingAPP_POC.app/DatingAPP_POC";
+			};
+			name = Debug;
+		};
+		115F71F724A4F1970081AF74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = DatingAPP_POCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.DatingAPP-POCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DatingAPP_POC.app/DatingAPP_POC";
+			};
+			name = Release;
+		};
+		115F71F924A4F1970081AF74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = DatingAPP_POCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.DatingAPP-POCUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DatingAPP_POC;
+			};
+			name = Debug;
+		};
+		115F71FA24A4F1970081AF74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = DatingAPP_POCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.DatingAPP-POCUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DatingAPP_POC;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		115F71C024A4F1920081AF74 /* Build configuration list for PBXProject "DatingAPP_POC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				115F71F024A4F1970081AF74 /* Debug */,
+				115F71F124A4F1970081AF74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		115F71F224A4F1970081AF74 /* Build configuration list for PBXNativeTarget "DatingAPP_POC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				115F71F324A4F1970081AF74 /* Debug */,
+				115F71F424A4F1970081AF74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		115F71F524A4F1970081AF74 /* Build configuration list for PBXNativeTarget "DatingAPP_POCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				115F71F624A4F1970081AF74 /* Debug */,
+				115F71F724A4F1970081AF74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		115F71F824A4F1970081AF74 /* Build configuration list for PBXNativeTarget "DatingAPP_POCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				115F71F924A4F1970081AF74 /* Debug */,
+				115F71FA24A4F1970081AF74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		115F71CC24A4F1920081AF74 /* DatingAPP_POC.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				115F71CD24A4F1920081AF74 /* DatingAPP_POC.xcdatamodel */,
+			);
+			currentVersion = 115F71CD24A4F1920081AF74 /* DatingAPP_POC.xcdatamodel */;
+			path = DatingAPP_POC.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 115F71BD24A4F1920081AF74 /* Project object */;
+}

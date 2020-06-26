@@ -45,7 +45,8 @@ struct MovieListView: View {
                 
                 Group {
                     if topRatedState.movies != nil {
-                        MovieBackdropCarouselView(title: "평점 좋은영화들", movies: topRatedState.movies!)
+//                        MovieBackdropCarouselView(title: "평점 좋은영화들", movies: topRatedState.movies!)
+                        ContentView2()
                         
                     } else {
                         LoadingView(isLoading: self.topRatedState.isLoading, error: self.topRatedState.error) {
@@ -72,7 +73,7 @@ struct MovieListView: View {
                 
                 
             }
-            .navigationBarTitle("요즘영화뭐가재밋냐 ").font(.caption)
+            .navigationBarTitle("요즘영화뭐가재밋냐 ").font(.caption).navigationBarHidden(true)
             .navigationBarItems(leading:
                 HStack{
                     Image("pic").renderingMode(.original).resizable().frame(width: 30, height: 30).cornerRadius(15)

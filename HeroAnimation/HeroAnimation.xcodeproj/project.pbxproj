@@ -16,6 +16,8 @@
 		1103D20F248739A70068C5A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1103D20D248739A70068C5A5 /* LaunchScreen.storyboard */; };
 		1103D21A248739A70068C5A5 /* HeroAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1103D219248739A70068C5A5 /* HeroAnimationTests.swift */; };
 		1103D225248739A70068C5A5 /* HeroAnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1103D224248739A70068C5A5 /* HeroAnimationUITests.swift */; };
+		1103D3B7248DEE060068C5A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1103D3B6248DEE060068C5A5 /* ContentView.swift */; };
+		1103D3B9248DEE4C0068C5A5 /* MovieBackdropCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1103D3B8248DEE4C0068C5A5 /* MovieBackdropCarouselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		1103D220248739A70068C5A5 /* HeroAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeroAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1103D224248739A70068C5A5 /* HeroAnimationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnimationUITests.swift; sourceTree = "<group>"; };
 		1103D226248739A70068C5A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1103D3B6248DEE060068C5A5 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../SwiftUITMDb/SwiftUITMDbV2-master/SwiftUIMovieDb/Views/ContentView.swift"; sourceTree = "<group>"; };
+		1103D3B8248DEE4C0068C5A5 /* MovieBackdropCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBackdropCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +108,9 @@
 				1103D1FF248739A40068C5A5 /* AppDelegate.swift */,
 				1103D201248739A40068C5A5 /* SceneDelegate.swift */,
 				1103D206248739A40068C5A5 /* ContentView.swift */,
+				1103D3B6248DEE060068C5A5 /* ContentView.swift */,
 				1103D208248739A70068C5A5 /* Assets.xcassets */,
+				1103D3B8248DEE4C0068C5A5 /* MovieBackdropCarouselView.swift */,
 				1103D20D248739A70068C5A5 /* LaunchScreen.storyboard */,
 				1103D210248739A70068C5A5 /* Info.plist */,
 				1103D203248739A40068C5A5 /* HeroAnimation.xcdatamodeld */,
@@ -273,7 +279,9 @@
 				1103D200248739A40068C5A5 /* AppDelegate.swift in Sources */,
 				1103D205248739A40068C5A5 /* HeroAnimation.xcdatamodeld in Sources */,
 				1103D207248739A40068C5A5 /* ContentView.swift in Sources */,
+				1103D3B7248DEE060068C5A5 /* ContentView.swift in Sources */,
 				1103D202248739A40068C5A5 /* SceneDelegate.swift in Sources */,
+				1103D3B9248DEE4C0068C5A5 /* MovieBackdropCarouselView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
