@@ -1,0 +1,6 @@
+framework module Pods_Gleem_DatingTests {
+  umbrella header "Pods-Gleem_DatingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

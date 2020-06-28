@@ -1,0 +1,6 @@
+framework module Pods_DatingAPP_POCTests {
+  umbrella header "Pods-DatingAPP_POCTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

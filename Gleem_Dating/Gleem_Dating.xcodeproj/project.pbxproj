@@ -1,0 +1,798 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		112B5B3224A90C05008B2887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B3124A90C05008B2887 /* AppDelegate.swift */; };
+		112B5B3424A90C05008B2887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B3324A90C05008B2887 /* SceneDelegate.swift */; };
+		112B5B3724A90C05008B2887 /* Gleem_Dating.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B3524A90C05008B2887 /* Gleem_Dating.xcdatamodeld */; };
+		112B5B3924A90C05008B2887 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B3824A90C05008B2887 /* ContentView.swift */; };
+		112B5B3B24A90C06008B2887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112B5B3A24A90C06008B2887 /* Assets.xcassets */; };
+		112B5B3E24A90C06008B2887 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112B5B3D24A90C06008B2887 /* Preview Assets.xcassets */; };
+		112B5B4124A90C06008B2887 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112B5B3F24A90C06008B2887 /* LaunchScreen.storyboard */; };
+		112B5B4C24A90C06008B2887 /* Gleem_DatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B4B24A90C06008B2887 /* Gleem_DatingTests.swift */; };
+		112B5B5724A90C06008B2887 /* Gleem_DatingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B5624A90C06008B2887 /* Gleem_DatingUITests.swift */; };
+		112B5B6524A90CB2008B2887 /* BottomTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B6424A90CB2008B2887 /* BottomTray.swift */; };
+		112B5B6724A90CC6008B2887 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B6624A90CC6008B2887 /* ChartView.swift */; };
+		112B5B6924A90CD5008B2887 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B6824A90CD5008B2887 /* TopView.swift */; };
+		112B5B6B24A90CE3008B2887 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B6A24A90CE3008B2887 /* BottomView.swift */; };
+		112B5B6D24A90CF7008B2887 /* observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B6C24A90CF7008B2887 /* observer.swift */; };
+		112B5B6F24A90D11008B2887 /* datatype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B6E24A90D11008B2887 /* datatype.swift */; };
+		112B5B7124A90D2F008B2887 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 112B5B7024A90D2F008B2887 /* GoogleService-Info.plist */; };
+		753728A39276C3D4F2C7EE4B /* Pods_Gleem_DatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF75DF834D22EEB7FA97ED /* Pods_Gleem_DatingTests.framework */; };
+		DB0AF84CA582DE46872F91D7 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC525681C6A07521620DB07 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework */; };
+		ECD827094910EF9092B1E9DC /* Pods_Gleem_Dating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8F3E4B4629E9A75FE42665 /* Pods_Gleem_Dating.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		112B5B4824A90C06008B2887 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 112B5B2624A90C05008B2887 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 112B5B2D24A90C05008B2887;
+			remoteInfo = Gleem_Dating;
+		};
+		112B5B5324A90C06008B2887 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 112B5B2624A90C05008B2887 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 112B5B2D24A90C05008B2887;
+			remoteInfo = Gleem_Dating;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		112B5B2E24A90C05008B2887 /* Gleem_Dating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gleem_Dating.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		112B5B3124A90C05008B2887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		112B5B3324A90C05008B2887 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		112B5B3624A90C05008B2887 /* Gleem_Dating.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gleem_Dating.xcdatamodel; sourceTree = "<group>"; };
+		112B5B3824A90C05008B2887 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		112B5B3A24A90C06008B2887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		112B5B3D24A90C06008B2887 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		112B5B4024A90C06008B2887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		112B5B4224A90C06008B2887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		112B5B4724A90C06008B2887 /* Gleem_DatingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gleem_DatingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		112B5B4B24A90C06008B2887 /* Gleem_DatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gleem_DatingTests.swift; sourceTree = "<group>"; };
+		112B5B4D24A90C06008B2887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		112B5B5224A90C06008B2887 /* Gleem_DatingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gleem_DatingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		112B5B5624A90C06008B2887 /* Gleem_DatingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gleem_DatingUITests.swift; sourceTree = "<group>"; };
+		112B5B5824A90C06008B2887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		112B5B6424A90CB2008B2887 /* BottomTray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTray.swift; sourceTree = "<group>"; };
+		112B5B6624A90CC6008B2887 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		112B5B6824A90CD5008B2887 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		112B5B6A24A90CE3008B2887 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		112B5B6C24A90CF7008B2887 /* observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = observer.swift; sourceTree = "<group>"; };
+		112B5B6E24A90D11008B2887 /* datatype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datatype.swift; sourceTree = "<group>"; };
+		112B5B7024A90D2F008B2887 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		148F8E47BB0FB24D89F287C2 /* Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating-Gleem_DatingUITests/Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		18EC2BD23B165D06CCF2EDBF /* Pods-Gleem_Dating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating.debug.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating.debug.xcconfig"; sourceTree = "<group>"; };
+		1A523AB4C67D5F55CDC394E4 /* Pods-Gleem_Dating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating.release.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating.release.xcconfig"; sourceTree = "<group>"; };
+		22CF75DF834D22EEB7FA97ED /* Pods_Gleem_DatingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gleem_DatingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F8F3E4B4629E9A75FE42665 /* Pods_Gleem_Dating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gleem_Dating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC525681C6A07521620DB07 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gleem_Dating_Gleem_DatingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A3DDDE56458DF5F9876F32B /* Pods-Gleem_DatingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_DatingTests.debug.xcconfig"; path = "Target Support Files/Pods-Gleem_DatingTests/Pods-Gleem_DatingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		797EA8F912C8E500283809EB /* Pods-Gleem_Dating-Gleem_DatingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating-Gleem_DatingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating-Gleem_DatingUITests/Pods-Gleem_Dating-Gleem_DatingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8FF67F8FB8662C10D5E77A0E /* Pods-Gleem_DatingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_DatingTests.release.xcconfig"; path = "Target Support Files/Pods-Gleem_DatingTests/Pods-Gleem_DatingTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		112B5B2B24A90C05008B2887 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECD827094910EF9092B1E9DC /* Pods_Gleem_Dating.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		112B5B4424A90C06008B2887 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				753728A39276C3D4F2C7EE4B /* Pods_Gleem_DatingTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		112B5B4F24A90C06008B2887 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB0AF84CA582DE46872F91D7 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		112B5B2524A90C05008B2887 = {
+			isa = PBXGroup;
+			children = (
+				112B5B7024A90D2F008B2887 /* GoogleService-Info.plist */,
+				112B5B3024A90C05008B2887 /* Gleem_Dating */,
+				112B5B4A24A90C06008B2887 /* Gleem_DatingTests */,
+				112B5B5524A90C06008B2887 /* Gleem_DatingUITests */,
+				112B5B2F24A90C05008B2887 /* Products */,
+				3DB5F5EDE2588C38632A1735 /* Pods */,
+				70593C00F533CF579FDE7437 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		112B5B2F24A90C05008B2887 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				112B5B2E24A90C05008B2887 /* Gleem_Dating.app */,
+				112B5B4724A90C06008B2887 /* Gleem_DatingTests.xctest */,
+				112B5B5224A90C06008B2887 /* Gleem_DatingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		112B5B3024A90C05008B2887 /* Gleem_Dating */ = {
+			isa = PBXGroup;
+			children = (
+				112B5B3124A90C05008B2887 /* AppDelegate.swift */,
+				112B5B3324A90C05008B2887 /* SceneDelegate.swift */,
+				112B5B3824A90C05008B2887 /* ContentView.swift */,
+				112B5B3A24A90C06008B2887 /* Assets.xcassets */,
+				112B5B3F24A90C06008B2887 /* LaunchScreen.storyboard */,
+				112B5B4224A90C06008B2887 /* Info.plist */,
+				112B5B3524A90C05008B2887 /* Gleem_Dating.xcdatamodeld */,
+				112B5B3C24A90C06008B2887 /* Preview Content */,
+				112B5B6424A90CB2008B2887 /* BottomTray.swift */,
+				112B5B6624A90CC6008B2887 /* ChartView.swift */,
+				112B5B6824A90CD5008B2887 /* TopView.swift */,
+				112B5B6A24A90CE3008B2887 /* BottomView.swift */,
+				112B5B6C24A90CF7008B2887 /* observer.swift */,
+				112B5B6E24A90D11008B2887 /* datatype.swift */,
+			);
+			path = Gleem_Dating;
+			sourceTree = "<group>";
+		};
+		112B5B3C24A90C06008B2887 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				112B5B3D24A90C06008B2887 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		112B5B4A24A90C06008B2887 /* Gleem_DatingTests */ = {
+			isa = PBXGroup;
+			children = (
+				112B5B4B24A90C06008B2887 /* Gleem_DatingTests.swift */,
+				112B5B4D24A90C06008B2887 /* Info.plist */,
+			);
+			path = Gleem_DatingTests;
+			sourceTree = "<group>";
+		};
+		112B5B5524A90C06008B2887 /* Gleem_DatingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				112B5B5624A90C06008B2887 /* Gleem_DatingUITests.swift */,
+				112B5B5824A90C06008B2887 /* Info.plist */,
+			);
+			path = Gleem_DatingUITests;
+			sourceTree = "<group>";
+		};
+		3DB5F5EDE2588C38632A1735 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18EC2BD23B165D06CCF2EDBF /* Pods-Gleem_Dating.debug.xcconfig */,
+				1A523AB4C67D5F55CDC394E4 /* Pods-Gleem_Dating.release.xcconfig */,
+				797EA8F912C8E500283809EB /* Pods-Gleem_Dating-Gleem_DatingUITests.debug.xcconfig */,
+				148F8E47BB0FB24D89F287C2 /* Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig */,
+				6A3DDDE56458DF5F9876F32B /* Pods-Gleem_DatingTests.debug.xcconfig */,
+				8FF67F8FB8662C10D5E77A0E /* Pods-Gleem_DatingTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		70593C00F533CF579FDE7437 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F8F3E4B4629E9A75FE42665 /* Pods_Gleem_Dating.framework */,
+				3FC525681C6A07521620DB07 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework */,
+				22CF75DF834D22EEB7FA97ED /* Pods_Gleem_DatingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		112B5B2D24A90C05008B2887 /* Gleem_Dating */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 112B5B5B24A90C06008B2887 /* Build configuration list for PBXNativeTarget "Gleem_Dating" */;
+			buildPhases = (
+				050A9C7A04D8D9B62E9F834E /* [CP] Check Pods Manifest.lock */,
+				112B5B2A24A90C05008B2887 /* Sources */,
+				112B5B2B24A90C05008B2887 /* Frameworks */,
+				112B5B2C24A90C05008B2887 /* Resources */,
+				CEC54D2FE8792BA8839D0A1E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gleem_Dating;
+			productName = Gleem_Dating;
+			productReference = 112B5B2E24A90C05008B2887 /* Gleem_Dating.app */;
+			productType = "com.apple.product-type.application";
+		};
+		112B5B4624A90C06008B2887 /* Gleem_DatingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 112B5B5E24A90C06008B2887 /* Build configuration list for PBXNativeTarget "Gleem_DatingTests" */;
+			buildPhases = (
+				D952E4FCB143DDDB2983491A /* [CP] Check Pods Manifest.lock */,
+				112B5B4324A90C06008B2887 /* Sources */,
+				112B5B4424A90C06008B2887 /* Frameworks */,
+				112B5B4524A90C06008B2887 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				112B5B4924A90C06008B2887 /* PBXTargetDependency */,
+			);
+			name = Gleem_DatingTests;
+			productName = Gleem_DatingTests;
+			productReference = 112B5B4724A90C06008B2887 /* Gleem_DatingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		112B5B5124A90C06008B2887 /* Gleem_DatingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 112B5B6124A90C06008B2887 /* Build configuration list for PBXNativeTarget "Gleem_DatingUITests" */;
+			buildPhases = (
+				3F4E1D8FD84C64E11F43AD2E /* [CP] Check Pods Manifest.lock */,
+				112B5B4E24A90C06008B2887 /* Sources */,
+				112B5B4F24A90C06008B2887 /* Frameworks */,
+				112B5B5024A90C06008B2887 /* Resources */,
+				C6DC8F14EE205BED7A5C4E16 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				112B5B5424A90C06008B2887 /* PBXTargetDependency */,
+			);
+			name = Gleem_DatingUITests;
+			productName = Gleem_DatingUITests;
+			productReference = 112B5B5224A90C06008B2887 /* Gleem_DatingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		112B5B2624A90C05008B2887 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Dustin yang";
+				TargetAttributes = {
+					112B5B2D24A90C05008B2887 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					112B5B4624A90C06008B2887 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 112B5B2D24A90C05008B2887;
+					};
+					112B5B5124A90C06008B2887 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 112B5B2D24A90C05008B2887;
+					};
+				};
+			};
+			buildConfigurationList = 112B5B2924A90C05008B2887 /* Build configuration list for PBXProject "Gleem_Dating" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 112B5B2524A90C05008B2887;
+			productRefGroup = 112B5B2F24A90C05008B2887 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				112B5B2D24A90C05008B2887 /* Gleem_Dating */,
+				112B5B4624A90C06008B2887 /* Gleem_DatingTests */,
+				112B5B5124A90C06008B2887 /* Gleem_DatingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		112B5B2C24A90C05008B2887 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112B5B4124A90C06008B2887 /* LaunchScreen.storyboard in Resources */,
+				112B5B3E24A90C06008B2887 /* Preview Assets.xcassets in Resources */,
+				112B5B3B24A90C06008B2887 /* Assets.xcassets in Resources */,
+				112B5B7124A90D2F008B2887 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		112B5B4524A90C06008B2887 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		112B5B5024A90C06008B2887 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		050A9C7A04D8D9B62E9F834E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gleem_Dating-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F4E1D8FD84C64E11F43AD2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gleem_Dating-Gleem_DatingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6DC8F14EE205BED7A5C4E16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gleem_Dating-Gleem_DatingUITests/Pods-Gleem_Dating-Gleem_DatingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gleem_Dating-Gleem_DatingUITests/Pods-Gleem_Dating-Gleem_DatingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gleem_Dating-Gleem_DatingUITests/Pods-Gleem_Dating-Gleem_DatingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEC54D2FE8792BA8839D0A1E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D952E4FCB143DDDB2983491A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gleem_DatingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		112B5B2A24A90C05008B2887 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112B5B6D24A90CF7008B2887 /* observer.swift in Sources */,
+				112B5B6924A90CD5008B2887 /* TopView.swift in Sources */,
+				112B5B3224A90C05008B2887 /* AppDelegate.swift in Sources */,
+				112B5B6524A90CB2008B2887 /* BottomTray.swift in Sources */,
+				112B5B6B24A90CE3008B2887 /* BottomView.swift in Sources */,
+				112B5B3424A90C05008B2887 /* SceneDelegate.swift in Sources */,
+				112B5B3924A90C05008B2887 /* ContentView.swift in Sources */,
+				112B5B3724A90C05008B2887 /* Gleem_Dating.xcdatamodeld in Sources */,
+				112B5B6724A90CC6008B2887 /* ChartView.swift in Sources */,
+				112B5B6F24A90D11008B2887 /* datatype.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		112B5B4324A90C06008B2887 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112B5B4C24A90C06008B2887 /* Gleem_DatingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		112B5B4E24A90C06008B2887 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				112B5B5724A90C06008B2887 /* Gleem_DatingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		112B5B4924A90C06008B2887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 112B5B2D24A90C05008B2887 /* Gleem_Dating */;
+			targetProxy = 112B5B4824A90C06008B2887 /* PBXContainerItemProxy */;
+		};
+		112B5B5424A90C06008B2887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 112B5B2D24A90C05008B2887 /* Gleem_Dating */;
+			targetProxy = 112B5B5324A90C06008B2887 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		112B5B3F24A90C06008B2887 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				112B5B4024A90C06008B2887 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		112B5B5924A90C06008B2887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		112B5B5A24A90C06008B2887 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		112B5B5C24A90C06008B2887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18EC2BD23B165D06CCF2EDBF /* Pods-Gleem_Dating.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Gleem_Dating/Preview Content\"";
+				DEVELOPMENT_TEAM = CSE9343A58;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Gleem_Dating/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.Gleem-Dating";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		112B5B5D24A90C06008B2887 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A523AB4C67D5F55CDC394E4 /* Pods-Gleem_Dating.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Gleem_Dating/Preview Content\"";
+				DEVELOPMENT_TEAM = CSE9343A58;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Gleem_Dating/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.Gleem-Dating";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		112B5B5F24A90C06008B2887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A3DDDE56458DF5F9876F32B /* Pods-Gleem_DatingTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = Gleem_DatingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.Gleem-DatingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gleem_Dating.app/Gleem_Dating";
+			};
+			name = Debug;
+		};
+		112B5B6024A90C06008B2887 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FF67F8FB8662C10D5E77A0E /* Pods-Gleem_DatingTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = Gleem_DatingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.Gleem-DatingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gleem_Dating.app/Gleem_Dating";
+			};
+			name = Release;
+		};
+		112B5B6224A90C06008B2887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 797EA8F912C8E500283809EB /* Pods-Gleem_Dating-Gleem_DatingUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = Gleem_DatingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.Gleem-DatingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gleem_Dating;
+			};
+			name = Debug;
+		};
+		112B5B6324A90C06008B2887 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 148F8E47BB0FB24D89F287C2 /* Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CSE9343A58;
+				INFOPLIST_FILE = Gleem_DatingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "frontyard.Gleem-DatingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gleem_Dating;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		112B5B2924A90C05008B2887 /* Build configuration list for PBXProject "Gleem_Dating" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				112B5B5924A90C06008B2887 /* Debug */,
+				112B5B5A24A90C06008B2887 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		112B5B5B24A90C06008B2887 /* Build configuration list for PBXNativeTarget "Gleem_Dating" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				112B5B5C24A90C06008B2887 /* Debug */,
+				112B5B5D24A90C06008B2887 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		112B5B5E24A90C06008B2887 /* Build configuration list for PBXNativeTarget "Gleem_DatingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				112B5B5F24A90C06008B2887 /* Debug */,
+				112B5B6024A90C06008B2887 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		112B5B6124A90C06008B2887 /* Build configuration list for PBXNativeTarget "Gleem_DatingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				112B5B6224A90C06008B2887 /* Debug */,
+				112B5B6324A90C06008B2887 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		112B5B3524A90C05008B2887 /* Gleem_Dating.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				112B5B3624A90C05008B2887 /* Gleem_Dating.xcdatamodel */,
+			);
+			currentVersion = 112B5B3624A90C05008B2887 /* Gleem_Dating.xcdatamodel */;
+			path = Gleem_Dating.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 112B5B2624A90C05008B2887 /* Project object */;
+}

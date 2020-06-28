@@ -29,7 +29,8 @@ struct BottomTray: View {
                         .padding(.vertical)
                     
                     Divider()
-                    
+                    ChartView().frame(height: 300)
+
                     ScrollView(showsIndicators: false) {
                         Text(self.selectedCard?.name ?? "")
                             .padding()

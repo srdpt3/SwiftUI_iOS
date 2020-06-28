@@ -10,9 +10,30 @@ import SwiftUI
 let screen2 = UIScreen.main
 
 struct ContentView: View {
+    @State var showLiked = false
+    
     var body: some View {
         
-        Home()
+        
+        ZStack{
+            
+            Color("LightWhite").edgesIgnoringSafeArea(.all)
+            
+//            if obs.users.isEmpty{
+//
+//                Loader()
+//            }
+            
+            VStack{
+                
+                TopView(show: $showLiked)
+                
+//                SwipeView()
+                
+                BottomView()
+            }
+            
+        }
     }
 }
 
@@ -21,6 +42,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+
 
 struct Home : View {
     
@@ -32,20 +56,13 @@ struct Home : View {
     @State var bottomDragState: CGSize = .zero
     var heightBanner = (screen2.bounds.height * 0.65)
     @State var showFull = false
-
-    @State var data = [
-        
-        Card(id: 0, img: "p1", name: "Jill", show: false),
-        Card(id: 1, img: "p2", name: "Emma", show: false),
-        Card(id: 2, img: "p3", name: "Catherine", show: false),
-        Card(id: 3, img: "p4", name: "iJustine", show: false),
-        Card(id: 4, img: "p5", name: "Juliana", show: false),
-        Card(id: 5, img: "p6", name: "Lilly", show: false),
-        Card(id: 6, img: "p7", name: "Emily", show: false)
-        
-    ]
+    @ObservedObject var viewModel : ShuffleViewModel = ShuffleViewModel()
+    
+    
     
     var body : some View{
+        
+        
         GeometryReader { proxy in
             ZStack {
                 Ellipse().fill(Color(red: 78/255, green: 88/255, blue: 81/255))
@@ -68,8 +85,10 @@ struct Home : View {
                     .padding(.horizontal)
                     .padding(.top)
                     //                    Spacer()
+                    
+                    
                     HStack(spacing: 15){
-                        ForEach(self.data){i in
+                        ForEach(self.viewModel.listData){i in
                             
                             CardView(data: i)
                                 .offset(x: self.x)
@@ -82,7 +101,6 @@ struct Home : View {
                             .highPriorityGesture(DragGesture()
                                 
                             .onChanged({ (value) in
-                                
                                 if value.translation.width > 0{
                                     
                                     self.x = value.location.x
@@ -113,7 +131,7 @@ struct Home : View {
                                     else{
                                         
                                         
-                                        if -value.translation.width > ((self.screen - 80) / 2) && Int(self.count) !=  (self.data.count - 1){
+                                        if -value.translation.width > ((self.screen - 80) / 2) && Int(self.count) !=  (self.viewModel.listData.count - 1){
                                             
                                             self.count += 1
                                             self.updateHeight(value: Int(self.count))
@@ -131,14 +149,16 @@ struct Home : View {
                     .frame(width: UIScreen.main.bounds.width)
                     .offset(x: self.op)
                     
+                    
+                    
                     Spacer()
                 }            .background(Color.black.opacity(0.07).edgesIgnoringSafeArea(.bottom))
                     .animation(.spring())
                     .onAppear {
                         
-                        self.op = ((self.screen + 15) * CGFloat(self.data.count / 2)) - (self.data.count % 2 == 0 ? ((self.screen + 15) / 2) : 0)
+                        self.op = ((self.screen + 15) * CGFloat(self.viewModel.listData.count / 2)) - (self.viewModel.listData.count % 2 == 0 ? ((self.screen + 15) / 2) : 0)
                         
-                        self.data[0].show = true
+                        self.viewModel.listData[0].show = true
                 }
                 .blur(radius: self.selectedCard == nil ? 0 : 50)
                 ZStack {
@@ -156,7 +176,7 @@ struct Home : View {
                 .blur(radius: self.bottomDragState.height > 0 ? min(self.bottomDragState.height, 50) : 0)
                 .animation(.easeInOut)
                 
-                 BottomTray(selectedCard: self.selectedCard, isScrollDisabled: !self.showFull)
+                BottomTray(selectedCard: self.selectedCard, isScrollDisabled: !self.showFull)
                     .frame(maxWidth: .infinity)
                     .frame(height: screen2.bounds.height * 0.7)
                     .padding(.top)
@@ -210,12 +230,12 @@ struct Home : View {
     func updateHeight(value : Int){
         
         
-        for i in 0..<data.count{
+        for i in 0..<self.viewModel.listData.count{
             
-            data[i].show = false
+            self.viewModel.listData[i].show = false
         }
         
-        data[value].show = true
+        self.viewModel.listData[value].show = true
     }
     
 }
@@ -244,10 +264,31 @@ struct CardView : View {
     }
 }
 
-struct Card : Identifiable {
+struct Card : Identifiable , Hashable{
     
     var id : Int
     var img : String
     var name : String
     var show : Bool
+}
+
+class ShuffleViewModel : ObservableObject {
+    //    @Published var listData = ["one", "two", "three", "four"]
+    
+    @Published var listData = [
+        
+        Card(id: 0, img: "p1", name: "Jill", show: false),
+        Card(id: 1, img: "p2", name: "Emma", show: false),
+        Card(id: 2, img: "p3", name: "Catherine", show: false),
+        Card(id: 3, img: "p4", name: "iJustine", show: false),
+        Card(id: 4, img: "p5", name: "Juliana", show: false),
+        Card(id: 5, img: "p6", name: "Lilly", show: false),
+        Card(id: 6, img: "p7", name: "Emily", show: false)
+        
+    ]
+    
+    func shuffle() {
+        listData.shuffle()
+        //or listData = dictionary.shuffled().prefix(upTo: 10)
+    }
 }
