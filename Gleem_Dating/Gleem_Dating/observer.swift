@@ -16,9 +16,41 @@ class observer : ObservableObject{
     
     
     init() {
-        
+        self.reload()
+        //        let db = Firestore.firestore()
+        //
+        //        db.collection("users").getDocuments { (snap, err) in
+        //
+        //            if err != nil{
+        //
+        //                print((err?.localizedDescription)!)
+        //                return
+        //            }
+        //
+        //            for i in snap!.documents{
+        //
+        //                let name = i.get("name") as! String
+        //                let age = i.get("age") as! String
+        //                let image = i.get("image") as! String
+        //                let id = i.documentID
+        //                let status = i.get("status") as! String
+        //
+        //                print(image)
+        //                print(name)
+        //
+        //                //                if status == ""{
+        //
+        //                self.users.append(datatype(id: id, name: name, image: image, age: age, swipe: 0, degree: 0))
+        //
+        //                //                }
+        //
+        //            }
+        //        }
+    }
+    
+    func reload(){
         let db = Firestore.firestore()
-        
+        self.users.removeAll()
         db.collection("users").getDocuments { (snap, err) in
             
             if err != nil{
@@ -33,32 +65,48 @@ class observer : ObservableObject{
                 let age = i.get("age") as! String
                 let image = i.get("image") as! String
                 let id = i.documentID
-                let status = i.get("status") as! String
+                //                let status = i.get("status") as! String
                 
                 
-                if status == ""{
-                    
+                //                if status == "liked"{
+                print(image)
+                print(name)
                 self.users.append(datatype(id: id, name: name, image: image, age: age, swipe: 0, degree: 0))
-                    
-                }
-
+                
+                //                }
+                
             }
         }
+        self.last = -1
     }
+    
     
     func update(id : datatype,value : CGFloat,degree : Double){
         
         for i in 0..<self.users.count{
             
             if self.users[i].id == id.id{
-                
+                print("last is \(i)")
+
                 self.users[i].swipe = value
                 self.users[i].degree = degree
                 self.last = i
+                
             }
         }
     }
+    func update2(id : datatype,value : CGFloat,degree : Double){
+        
+        for i in 0..<self.users.count{
+            
+            if self.users[i].id == id.id{
 
+                self.users[i].swipe = value
+                
+            }
+        }
+    }
+    
     
     func updateDB(id : datatype,status : String){
         
@@ -77,25 +125,27 @@ class observer : ObservableObject{
             for i in 0..<self.users.count{
                 
                 if self.users[i].id == id.id{
-                    
-                    if status == "liked"{
-                        
-                        self.users[i].swipe = 500
-                    }
-                    else if status == "reject"{
-                        
-                        self.users[i].swipe = -500
-                    }
-                    else{
-                        
-                        self.users[i].swipe = 0
-                    }
+                    self.users[i].swipe = 500
+                    //                    if status == "liked"{
+                    //                        print("liked")
+                    //
+                    //                        self.users[i].swipe = 500
+                    //                    }
+                    //                    else if status == "reject"{
+                    //
+                    //                        self.users[i].swipe = -500
+                    //                    }
+                    //                    else{
+                    //                        print("ㅁㄴㅇㄹㅁㄴㅇ")
+                    //
+                    //                        self.users[i].swipe = 0
+                    //                    }
                 }
             }
             
-            if status == "liked"{
+            if status == "voted"{
                 
-                db.collection("liked").document(id.id).setData(["name":id.name,"age":id.age,"image":id.image]) { (err) in
+                db.collection("voted").document(id.id).setData(["name":id.name,"age":id.age,"image":id.image]) { (err) in
                     
                     if err != nil{
                         
@@ -105,17 +155,17 @@ class observer : ObservableObject{
                 }
             }
             
-            if status == ""{
-                
-                db.collection("liked").document(id.id).delete { (err) in
-                    
-                    if err != nil{
-                        
-                        print((err?.localizedDescription)!)
-                        return
-                    }
-                }
-            }
+//            if status == ""{
+//
+//                db.collection("liked").document(id.id).delete { (err) in
+//
+//                    if err != nil{
+//
+//                        print((err?.localizedDescription)!)
+//                        return
+//                    }
+//                }
+//            }
             
         }
     }
@@ -123,22 +173,3 @@ class observer : ObservableObject{
 }
 
 
-//Loader.swift
-
-import SwiftUI
-
-
-struct Loader : UIViewRepresentable {
-    
-    func makeUIView(context: UIViewRepresentableContext<Loader>) -> UIActivityIndicatorView {
-        
-        let indicator = UIActivityIndicatorView(style: .large)
-        indicator.startAnimating()
-        return indicator
-    }
-    
-    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<Loader>) {
-        
-        
-    }
-}

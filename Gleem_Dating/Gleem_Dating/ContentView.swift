@@ -10,31 +10,10 @@ import SwiftUI
 let screen2 = UIScreen.main
 
 struct ContentView: View {
-    @State var showLiked = false
+    
     
     var body: some View {
-        TopView(show: $showLiked)
-        //
-        
-//        ZStack{
-//
-//            Color("LightWhite").edgesIgnoringSafeArea(.all)
-//
-////            if obs.users.isEmpty{
-////
-////                Loader()
-////            }
-//
-//            VStack{
-//
-//                TopView(show: $showLiked)
-//
-////                SwipeView()
-//
-//                BottomView()
-//            }
-//
-//        }
+        Home()
     }
 }
 
@@ -44,10 +23,206 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
-
-
 struct Home : View {
+    @State var index = 0
+    @State var expand = false
+    
+    var body: some View {
+        NavigationView{
+            VStack(spacing: 0){
+                
+                HStack(spacing: 20){
+                    Button(action: {
+
+                    }){
+                        Image("gleem_resized").resizable().frame(width: 120, height: 50)
+
+                    }.buttonStyle(PlainButtonStyle())
+
+                    Spacer()
+                    Button(action: {
+
+                    }){
+                        Image(systemName: "magnifyingglass").resizable().frame(width: 20, height: 22).foregroundColor(.white)
+                    }
+
+                    Button(action: {
+
+                    }){
+                        Image(systemName: "flag").resizable().frame(width: 20, height: 22).foregroundColor(.white)
+                    }
+                }
+                .padding().padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top).background(Color("Color-5"))
+                
+                
+                
+                ZStack(alignment: .bottom){
+                    GeometryReader{_ in
+                        VStack{
+                            
+                            if self.index == 0{
+                                MainView()
+                                
+                            }
+                            
+                            
+                            Text("")
+                        }
+                    }.background(Color.black.opacity(0.06))
+                    
+                    
+                    ZStack(alignment: .top){
+                        Circle().trim(from: 0.5, to: self.expand ? 1:0.5).fill(Color("Color-5")).frame(width: screen2.bounds.width, height: screen2.bounds.width)
+                        
+                        ZStack{
+                            Button(action: {
+                                
+                            }){
+                                VStack(spacing: 10){
+                                    Image(systemName: "star").font(.title).foregroundColor(.white)
+                                    Text("관심대상").fontWeight(.bold).foregroundColor(.white)
+                                }
+                            }.offset(x: -100, y:75)
+                            
+                            Button(action: {
+                                
+                            }){
+                                VStack(spacing: 10){
+                                    Image(systemName: "paperplane").font(.title).foregroundColor(.white)
+                                    Text("채팅").fontWeight(.bold).foregroundColor(.white)
+                                }
+                            }.offset(y: 30)
+                            
+                            
+                            Button(action: {
+                                
+                            }){
+                                VStack(spacing: 10){
+                                    Image(systemName: "square.and.arrow.up").font(.title).foregroundColor(.white)
+                                    Text("공유").fontWeight(.bold).foregroundColor(.white)
+                                }
+                            }.offset(x: 100, y:75)
+                        }.opacity(self.expand ? 1 : 0)
+                    }.offset(y: screen2.bounds.width /  1.6)
+                    
+                    
+                    
+                    
+                }.clipped()
+                
+                TabBar(index: self.$index, expand : self.$expand)
+            }.edgesIgnoringSafeArea(.top)
+        }
+        
+    }
+}
+
+class Host: UIHostingController<ContentView> {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
+
+
+struct TabBar : View {
+    @Binding var index : Int
+    @Binding var expand : Bool
+    var body: some View {
+        HStack{
+            Button(action: {
+                self.index = 0
+                
+            }){
+                Image(systemName:"rectangle.stack.person.crop").resizable().frame(width: 25, height: 25)
+                    .foregroundColor(self.index == 0 ? Color("Color-5"):Color.black.opacity(0.3))
+            }
+            
+            
+            Spacer(minLength:  0 )
+            
+            Button(action: {
+                self.index = 1
+                
+            }){
+                Image("add_pic").resizable().frame(width: 25, height: 25)
+                    .foregroundColor(self.index == 1 ? Color("Color-5"):Color.black.opacity(0.3))
+            }
+            Spacer(minLength:  0 )
+            
+            
+            Button(action: {
+                
+                withAnimation(Animation.default.speed(0.6)){
+                    self.expand.toggle()
+                }
+                //                  self.index = 1
+                
+            }){
+                //                Image(self.expand ? "xmark" : "29"   ).resizable().frame(width: 25, height: 25)
+                Image(self.expand ? "cancel" : "50"   ).resizable().frame(width: 50, height: 50).cornerRadius(25).foregroundColor(Color("Color"))
+                    .font(.title)
+            }.offset(x: 0, y: -20).buttonStyle(PlainButtonStyle())
+            Spacer(minLength:  0 )
+            
+            
+            Button(action: {
+                self.index = 2
+                
+            }){
+                Image(systemName: "heart").resizable().frame(width: 25, height: 25)
+                    .foregroundColor(self.index == 2 ? Color("Color-5"):Color.black.opacity(0.3))
+            }
+            Spacer(minLength:  0 )
+            
+            Button(action: {
+                self.index = 3
+            }){
+                Image("settings").resizable().frame(width: 25, height: 25)
+                    .foregroundColor(self.index == 3 ? Color("Color-5"):Color.black.opacity(0.3))
+            }
+        }
+        .padding(.horizontal, 35)
+        .padding(.top , 10)
+        .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 0)
+        .padding(.top, -10)
+    }
+}
+
+
+
+
+struct MainView : View {
+    @EnvironmentObject var obs : observer
+    
+    @State var showLiked = false
+    var body: some View{
+        NavigationView{
+
+            ZStack{
+                
+                
+                
+                if obs.users.isEmpty{
+                    
+                    Loader()
+                }
+                
+                VStack{
+                    
+                    //                TopView(show: $showLiked)
+                    
+                    SwipeView(users: self.obs.users)
+                    
+                   BottomView()
+                }
+                
+            }.padding(.bottom, 20)
+        }
+        
+    }
+}
+
+struct Home2 : View {
     
     @State var x : CGFloat = 0
     @State var count : CGFloat = 0
@@ -177,43 +352,43 @@ struct Home : View {
                 .blur(radius: self.bottomDragState.height > 0 ? min(self.bottomDragState.height, 50) : 0)
                 .animation(.easeInOut)
                 
-                BottomTray(selectedCard: self.selectedCard, isScrollDisabled: !self.showFull)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: screen2.bounds.height * 0.7)
-                    .padding(.top)
-                    .padding(.bottom, 32)
-                    .background(Color.white)
-                    .cornerRadius(30)
-                    .shadow(radius: 24)
-                    .offset(y: self.selectedCard == nil ? screen2.bounds.height : screen2.bounds.height * 0.5)
-                    .offset(y: self.bottomDragState.height)
-                    .gesture(DragGesture().onChanged({ (value) in
-                        self.bottomDragState = value.translation
-                        
-                        if self.showFull {
-                            self.bottomDragState.height += -300
-                        }
-                        
-                        if self.bottomDragState.height < -300 {
-                            self.bottomDragState.height = -300
-                        }
-                        
-                    }).onEnded({ (value) in
-                        withAnimation(Animation.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0)) {
-                            if self.bottomDragState.height > 100 {
-                                self.selectedCard = nil
-                                self.bottomDragState = .zero
-                            }
-                            
-                            if self.bottomDragState.height < -200 || self.bottomDragState.height < -100 {
-                                self.bottomDragState.height = -300
-                                self.showFull = true
-                            } else {
-                                self.bottomDragState = .zero
-                                self.showFull = false
-                            }
-                        }
-                    }))
+                //                BottomTray(selectedCard: self.selectedCard, isScrollDisabled: !self.showFull)
+                //                    .frame(maxWidth: .infinity)
+                //                    .frame(height: screen2.bounds.height * 0.7)
+                //                    .padding(.top)
+                //                    .padding(.bottom, 32)
+                //                    .background(Color.white)
+                //                    .cornerRadius(30)
+                //                    .shadow(radius: 24)
+                //                    .offset(y: self.selectedCard == nil ? screen2.bounds.height : screen2.bounds.height * 0.5)
+                //                    .offset(y: self.bottomDragState.height)
+                //                    .gesture(DragGesture().onChanged({ (value) in
+                //                        self.bottomDragState = value.translation
+                //
+                //                        if self.showFull {
+                //                            self.bottomDragState.height += -300
+                //                        }
+                //
+                //                        if self.bottomDragState.height < -300 {
+                //                            self.bottomDragState.height = -300
+                //                        }
+                //
+                //                    }).onEnded({ (value) in
+                //                        withAnimation(Animation.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0)) {
+                //                            if self.bottomDragState.height > 100 {
+                //                                self.selectedCard = nil
+                //                                self.bottomDragState = .zero
+                //                            }
+                //
+                //                            if self.bottomDragState.height < -200 || self.bottomDragState.height < -100 {
+                //                                self.bottomDragState.height = -300
+                //                                self.showFull = true
+                //                            } else {
+                //                                self.bottomDragState = .zero
+                //                                self.showFull = false
+                //                            }
+                //                        }
+                //                    }))
                 
                 
                 
