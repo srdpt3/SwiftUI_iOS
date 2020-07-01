@@ -15,9 +15,9 @@ struct ExpandView: View {
     @Binding var show : Bool
     @Binding var isVoted: Bool
     @State var voted: Bool = false
-
-//    @State var buttonSelected: Bool = false
-
+    
+    //    @State var buttonSelected: Bool = false
+    
     var body: some View{
         
         VStack{
@@ -35,7 +35,6 @@ struct ExpandView: View {
                     
                     withAnimation{
                         self.show.toggle()
-                        self.isVoted.toggle()
                     }
                     
                 }) {
@@ -78,53 +77,50 @@ struct ExpandView: View {
                     
                     
                     if(self.voted == false){
-                                            VStack(spacing: 15){
-                                                HStack(spacing : 25){
-                                                    AttrButtonView(title:"개족같이 생김")
-                                                    //                        Spacer()
-                                                    AttrButtonView(title:"존잘러")
-                                                    
-                                                }.padding(.horizontal, 10)
-                                                //                    ChartView().frame(width: UIScreen.main.bounds.width, height: 300)
-                                                HStack(spacing : 20){
-                                                    AttrButtonView(title:"차도남")
-                                                    //                        Spacer()
-                                                    AttrButtonView(title:"머리스타일 잘어울림")
-                                                    
-                                                }.padding(.horizontal, 10)
-                                                
-                                                HStack(spacing : 30){
-                                                    AttrButtonView(title:"섹시함")
-                                                    
-                                                    
-                                                }.padding(.horizontal, 30)
-                                                
-                                                Button(action: {
-                                                          // ACTION
-                                                    self.voted.toggle()
-                        //                                  self.show.toggle()
-                        //                      self.
-                        //                                  self.selectedCard = self.obs.users[0]
-                        //
-                                                      }) {
-                                                          Text("첫인상반영하고 결과보기".uppercased())
-                                                              .font(.system(.subheadline, design: .rounded))
-                                                              .fontWeight(.heavy)
-                                                              .padding(.horizontal, 50)
-                                                              .padding(.vertical, 10).foregroundColor(Color("Color2"))
-                                                              .background(
-                                                                  Capsule().stroke(Color("Color2"), lineWidth: 2)
-                                                          )
-//                                                            .animation(
-//                                                              Animation.easeInOut(duration: 1)
-//                                                                  .delay(1)
-//                                                          )
-                                                }
-                                                Spacer()
-                                            }
+                        VStack(spacing: 8){
+                            HStack(spacing : 12){
+                                AttrButtonView(title:"개족같이 생김")
+                                //                        Spacer()
+                                AttrButtonView(title:"존잘러")
+                                AttrButtonView(title:"섹시함")
 
+                                
+                            }.padding(.horizontal, 5)
+                            //                    ChartView().frame(width: UIScreen.main.bounds.width, height: 300)
+                            HStack(spacing : 12){
+                                AttrButtonView(title:"차도남")
+                                //                        Spacer()
+                                AttrButtonView(title:"머리스타일 잘어울림")
+                                
+                            }.padding(.horizontal, 5)
+                            
+                           
+                            Spacer()
+                            Button(action: {
+                                // ACTION
+                                self.voted.toggle()
+                                self.isVoted.toggle()
+
+                                //
+                            }) {
+                                Text("첫인상반영하고 결과보기".uppercased())
+                                    .font(.system(.subheadline, design: .rounded))
+                                    .fontWeight(.heavy)
+                                    .padding(.horizontal, 50)
+                                    .padding(.vertical, 10).foregroundColor( Color("Color2-1"))
+                                    .background(
+                                        Capsule().stroke( Color("Color2-1"), lineWidth: 2)
+                                )
+                                //                                                            .animation(
+                                //                                                              Animation.easeInOut(duration: 1)
+                                //                                                                  .delay(1)
+                                //                                                          )
+                            }
+                            Spacer()
+                        }.background(Color.clear)
+                        
                     }else{
-                        ChartView().frame(width: UIScreen.main.bounds.width , height: 280)  .padding(.top, -20)
+                        ChartView().frame(width: UIScreen.main.bounds.width / 1.2 , height: 280)  .padding(.top, -20)
                     }
                     
                     

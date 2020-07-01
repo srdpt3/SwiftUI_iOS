@@ -34,18 +34,18 @@ struct NeumorphicButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .padding(15)
+            .padding(15).padding(.horizontal, 5)
             .background(
                 ZStack {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .shadow(color: .white, radius: configuration.isPressed ? 7: 10, x: configuration.isPressed ? -5: -15, y: configuration.isPressed ? -5: -15)
-                        .shadow(color: .gray, radius: configuration.isPressed ? 7: 10, x: configuration.isPressed ? 5: 15, y: configuration.isPressed ? 5: 15)
+                        .shadow(color: .white, radius: configuration.isPressed ? 8: 15, x: configuration.isPressed ? -5: -15, y: configuration.isPressed ? -5: -15)
+                        .shadow(color: .clear, radius: configuration.isPressed ? 8: 15, x: configuration.isPressed ? 5: 15, y: configuration.isPressed ? 5: 15)
                         .blendMode(.overlay)
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
                         .fill(self.isPressed ? Color("Color2-1") : bgColor)
                 }
         )
-             .scaleEffect(self.isPressed ? 0.95: 1)
+             .scaleEffect(self.isPressed ? 0.9: 1)
             .foregroundColor(self.isPressed ? Color.white : Color.black)
             .animation(.spring())
     }

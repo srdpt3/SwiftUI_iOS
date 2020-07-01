@@ -54,7 +54,7 @@ struct ChartView: UIViewRepresentable {
             .dataLabelsEnabled(true)
             //            .xAxisVisible(true)
             .animationType(.easeInBack)//图形渲染动画类型为"bounce"
-            .colorsTheme(["#49C1B6", "#FDC20A", "#F78320", "#068E81", "#EA007B"])
+            .colorsTheme(["#F78320", "#FDC20A", "#F78320", "#068E81", "#EA007B"])
             
             .markerRadius(0)
             .polar(true)

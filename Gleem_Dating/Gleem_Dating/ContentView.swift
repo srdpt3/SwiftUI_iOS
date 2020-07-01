@@ -28,7 +28,7 @@ struct Home : View {
     @State var expand = false
     
     var body: some View {
-
+     
             VStack(spacing: 0){
   
                 
@@ -39,10 +39,10 @@ struct Home : View {
                             if self.index == 0{
                                 MainView()
                                 
+                            }else if self.index == 3{
+                                SettingsView()
                             }
                             
-                            
-                            Text("")
                         }
                     }.background(Color.black.opacity(0.06))
                     
@@ -189,7 +189,7 @@ struct MainView : View {
                     
                     SwipeView(users: self.obs.users).padding(.bottom, 10).padding(.top, 20)
                     
-                    BottomView()
+                   BottomView().listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
                 }
                 
             }.padding(.bottom, 5)

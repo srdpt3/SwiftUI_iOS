@@ -71,11 +71,14 @@ struct BottomView : View {
 
 
                     }) {
-                        Image(systemName: "arrow.right").resizable().frame(width: 20, height: 20).padding(.all, 5)
+                        Image(systemName: "arrow.right").resizable().frame(width: 25, height: 25).padding(.all, 8)
                     }.foregroundColor(.black)
                         .background(Color.white)
-                        .shadow(radius: 40)
-                        .clipShape(Circle())
+                        .shadow(radius: 45)
+                        .clipShape(Circle()).animation(
+                            Animation.easeInOut(duration: 2)
+                                .delay(1)
+                        )
                 }
                 
                 

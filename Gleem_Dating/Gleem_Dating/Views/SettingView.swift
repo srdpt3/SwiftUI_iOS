@@ -14,95 +14,99 @@ import FirebaseAuth
 struct SettingsView: View {
     @State private var result: Result<MFMailComposeResult, Error>? = nil
     @State private var isShowingMailView = false
-    @Binding var isSettingsOpen: Bool
     @State  var showLoginView = false
     @EnvironmentObject var session: SessionStore
     
     var body: some View {
-        ZStack {
-            
-            Form {
-                Section(header: Text("Feedback").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
-                    SectionButton(image: "star.circle.fill", label: "Rate this app", isShowingMailView: $isShowingMailView)
-                    
-                    SectionButton(image: "envelope.circle.fill", label: "Send feedback", isShowingMailView: $isShowingMailView)
-                }
+        
+        NavigationView{
+            ZStack {
                 
-                Section(header: Text("About this app").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
-                    Text("This app is designed to help search movies. Using the app, you can watch trailers, read reviews and get movie info all from within the app").font(.caption)
-                    Text("You can also follow users to share your favorite list").font(.caption)
-
-                }
-                
-                Section(header: Text("Credit").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
-                    VStack(alignment: .leading, spacing: 10){
-                        Text("The Movie Database (TMDb) API").font(.footnote)
+                Form {
+                    Section(header: Text("피드백").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
+                        SectionButton(image: "star.circle.fill", label: "앱평가하기", isShowingMailView: $isShowingMailView)
+                        
+                        SectionButton(image: "envelope.circle.fill", label: "피드백보내기", isShowingMailView: $isShowingMailView)
                     }
                     
+                    Section(header: Text("어플리케이션 소개 ").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
+                        Text("2000억짜리앱").font(.caption)
+                        Text("You can also follow users to share your favorite list").font(.caption)
+                        
+                    }
                     
-                }
-  
-                
-                Section(header: Text("Authentication").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
-                    //                    SectionButton(image: "emoji", label: "LogIn", showLoginView: $showLoginView)
-                    
-                    
-                    Button(action: {
-                        if(Auth.auth().currentUser != nil){
-                            self.session.unbind()
-                            self.session.logout()
-                            
-                        }else{
-                            
+                    Section(header: Text("크레딧").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
+                        VStack(alignment: .leading, spacing: 10){
+                            Text("").font(.footnote)
                         }
-                        self.showLoginView.toggle()
-                        //                        print(Auth.auth().currentUser!.email)
-                    }) {
-                        HStack{
-                            Image("login").resizable().frame(width: 30, height: 30)   .font(.title)
-                            Text(Auth.auth().currentUser != nil ? "Logout" : "Login").foregroundColor(Color("Color2")).font(.subheadline).bold()
-                            
-                        }
+                        
                         
                     }
                     
                     
-                }
-
-                Section(header: Text("Developer").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
-                      VStack(alignment: .leading, spacing: 10){
-                          
-                          Button("Dustin Yang  - Github page") {UIApplication.shared.open(URL(string: "https://github.com/srdpt3")!)}
-                          
-                      }
-                      
-                      
-                  }
-                
-                
-                if UIDevice.current.userInterfaceIdiom == .pad {
-                    Button(action: {
-                        self.isSettingsOpen.toggle()
-                    }) {
-                        Text("Dismiss")
+                    Section(header: Text("인증").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
+                        //                    SectionButton(image: "emoji", label: "LogIn", showLoginView: $showLoginView)
+                        
+                        
+                        Button(action: {
+                            if(Auth.auth().currentUser != nil){
+                                self.session.unbind()
+                                self.session.logout()
+                                
+                            }else{
+                                
+                            }
+                            self.showLoginView.toggle()
+                            //                        print(Auth.auth().currentUser!.email)
+                        }) {
+                            HStack{
+                                Image("로그인").resizable().frame(width: 30, height: 30)   .font(.title)
+                                Text(Auth.auth().currentUser != nil ? "로그아웃" : "로그인").foregroundColor(Color("Color2")).font(.subheadline).bold()
+                                
+                            }
+                            
+                        }
+                        
+                        
                     }
+                    
+                    Section(header: Text("개발자").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
+                        VStack(alignment: .leading, spacing: 10){
+                            
+                            Button("Dustin Yang  - Github page") {UIApplication.shared.open(URL(string: "https://github.com/srdpt3")!)}
+                            
+                        }
+                        
+                        
+                    }
+                    
+                    
+                    //                if UIDevice.current.userInterfaceIdiom == .pad {
+                    //                    Button(action: {
+                    //                        self.isSettingsOpen.toggle()
+                    //                    }) {
+                    //                        Text("Dismiss")
+                    //                    }
+                    //                }
+                }
+                
+                
+                //            if (showLoginView) {
+                //                LoginView(showLoginView: self.$showLoginView)
+                //                    .transition(.move(edge: .bottom))
+                //                    .animation(.default)
+                //            }
+                
+                if (isShowingMailView) {
+                    mailView()
+                        .transition(.move(edge: .bottom))
+                        .animation(.default)
                 }
             }
-            
-            
-//            if (showLoginView) {
-//                LoginView(showLoginView: self.$showLoginView)
-//                    .transition(.move(edge: .bottom))
-//                    .animation(.default)
-//            }
-            
-            if (isShowingMailView) {
-                mailView()
-                    .transition(.move(edge: .bottom))
-                    .animation(.default)
-            }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        
+        
     }
     
     private func mailView() -> some View {
@@ -112,13 +116,13 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            SettingsView(isSettingsOpen: Binding.constant(true))
-        }
-    }
-}
+//struct SettingsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            SettingsView(isSettingsOpen: Binding.constant(true))
+//        }
+//    }
+//}
 
 struct SectionButton: View {
     let image: String
