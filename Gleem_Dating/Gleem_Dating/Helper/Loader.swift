@@ -13,9 +13,11 @@ struct Loader : View {
     @State var animate = false
     var body: some View{
         VStack{
-            Circle().trim(from: 0, to: 0.8).stroke(AngularGradient(gradient: .init(colors: [Color("Color1-2"), Color(
-                "Color2")]), center: .center), style: StrokeStyle(lineWidth: 8, lineCap: .round)).frame(width: 40, height: 40).rotationEffect(.init(degrees: self.animate ? 360 : 0)).animation(Animation.linear(duration: 0.7 ).repeatForever(autoreverses: false)).padding(.top, 10)
-            Text("Please Wait.....").padding(.all, 10).foregroundColor(Color("Color2"))
+//            Circle().trim(from: 0, to: 0.8).stroke(AngularGradient(gradient: .init(colors: [Color("Color2-1"), Color(
+//                "Color2")]), center: .center), style: StrokeStyle(lineWidth: 8, lineCap: .round)).frame(width: 40, height: 40)
+            Image("50").resizable().frame(width: 50, height: 50).cornerRadius(25).foregroundColor(Color("Color"))
+                .rotationEffect(.init(degrees: self.animate ? 360 : 0)).animation(Animation.linear(duration: 1.1 ).repeatForever(autoreverses: false)).padding(.top, 20)
+            Text("사잔을 로딩중입니다...").padding(.all, 10).foregroundColor(Color("Color2"))
         }.background(Color.white).cornerRadius(20).onAppear(){
             self.animate.toggle()
         }

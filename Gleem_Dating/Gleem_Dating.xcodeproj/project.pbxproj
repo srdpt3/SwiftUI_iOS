@@ -42,6 +42,7 @@
 		112B5B9C24AAB7BF008B2887 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B9B24AAB7BF008B2887 /* UserViewModel.swift */; };
 		112B5B9F24AAB81C008B2887 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B9E24AAB81C008B2887 /* SessionStore.swift */; };
 		112B5BA124AACAA3008B2887 /* ExpandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BA024AACAA2008B2887 /* ExpandView.swift */; };
+		112B5BA324AC2DB3008B2887 /* AttrButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BA224AC2DB2008B2887 /* AttrButtonView.swift */; };
 		753728A39276C3D4F2C7EE4B /* Pods_Gleem_DatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF75DF834D22EEB7FA97ED /* Pods_Gleem_DatingTests.framework */; };
 		DB0AF84CA582DE46872F91D7 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC525681C6A07521620DB07 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework */; };
 		ECD827094910EF9092B1E9DC /* Pods_Gleem_Dating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8F3E4B4629E9A75FE42665 /* Pods_Gleem_Dating.framework */; };
@@ -106,6 +107,7 @@
 		112B5B9B24AAB7BF008B2887 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		112B5B9E24AAB81C008B2887 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		112B5BA024AACAA2008B2887 /* ExpandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandView.swift; sourceTree = "<group>"; };
+		112B5BA224AC2DB2008B2887 /* AttrButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttrButtonView.swift; sourceTree = "<group>"; };
 		148F8E47BB0FB24D89F287C2 /* Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating-Gleem_DatingUITests/Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		18EC2BD23B165D06CCF2EDBF /* Pods-Gleem_Dating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating.debug.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating.debug.xcconfig"; sourceTree = "<group>"; };
 		1A523AB4C67D5F55CDC394E4 /* Pods-Gleem_Dating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating.release.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating.release.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				112B5B8C24AAB644008B2887 /* SafariView.swift */,
 				112B5B8E24AAB667008B2887 /* SettingView.swift */,
 				112B5BA024AACAA2008B2887 /* ExpandView.swift */,
+				112B5BA224AC2DB2008B2887 /* AttrButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				112B5B8B24AAB613008B2887 /* Loader.swift in Sources */,
 				112B5B6B24A90CE3008B2887 /* BottomView.swift in Sources */,
 				112B5B7924AAB2F1008B2887 /* Users.swift in Sources */,
+				112B5BA324AC2DB3008B2887 /* AttrButtonView.swift in Sources */,
 				112B5B9424AAB6AB008B2887 /* UserApi.swift in Sources */,
 				112B5B7F24AAB56A008B2887 /* Utils.swift in Sources */,
 				112B5B3424A90C05008B2887 /* SceneDelegate.swift in Sources */,

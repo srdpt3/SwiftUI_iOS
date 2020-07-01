@@ -60,7 +60,7 @@ struct ChartView: UIViewRepresentable {
             .polar(true)
             .yAxisGridLineWidth(0)
             
-            .categories(["순수","차도녀","청순","섹시", "싸가지"])
+            .categories(["잘생김","머리스타일 어울림","머리스타일 어울림","섹시", "족같음"])
             
             .series([
                 AASeriesElement()
@@ -70,7 +70,6 @@ struct ChartView: UIViewRepresentable {
                 //                            AASeriesElement()
                 //                                .data([3.0,3.0,10.0,3.0,3.0,3.0,]),
             ])
-            
             .yAxisMax(100)
             .yAxisVisible(false)
         aaChartView.aa_drawChartWithChartModel(aaChartModel)

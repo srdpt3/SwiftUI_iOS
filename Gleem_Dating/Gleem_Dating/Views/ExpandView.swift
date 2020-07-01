@@ -13,28 +13,29 @@ struct ExpandView: View {
     
     var data : datatype
     @Binding var show : Bool
-    
+    @Binding var isVoted: Bool
+    @State var voted: Bool = false
+
+//    @State var buttonSelected: Bool = false
+
     var body: some View{
         
         VStack{
             
             // dismiss Button...
-            
             ZStack(alignment: .topTrailing) {
                 
-//                Image(self.data.image)
-//                    .resizable()
-//                    .cornerRadius(25)
-                AnimatedImage(url: URL(string: self.data.image)).resizable().frame(width: (UIScreen.main.bounds.width ), height: (UIScreen.main.bounds.height )/1.8).cornerRadius(20)
-
-                           
+                //                Image(self.data.image)
+                //                    .resizable()
+                //                    .cornerRadius(25)
+                AnimatedImage(url: URL(string: self.data.image)).resizable().frame(width: (UIScreen.main.bounds.width ), height: (UIScreen.main.bounds.height )/1.9).aspectRatio(contentMode: ContentMode.fit)
+                
+                
                 Button(action: {
                     
-                    // dismissing the expand view...
-                    print("asdfasd")
-
                     withAnimation{
                         self.show.toggle()
+                        self.isVoted.toggle()
                     }
                     
                 }) {
@@ -45,23 +46,17 @@ struct ExpandView: View {
                         .background(Color.black.opacity(0.7))
                         .clipShape(Circle())
                 }
-                .padding(.trailing)
-                .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top)! + 10)
+                .padding(.trailing).padding(.top, 50)
+                //                .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top)! + 10)
             }
-            Spacer(minLength: 0)
-            VStack(alignment: .leading, spacing: 12){
+            .clipShape(CustomShape(corner: .bottomLeft, radii: 30))
+            
+            VStack(alignment: .leading, spacing: 5){
                 
-                Text(self.data.name)
-                    .font(.title)
-                    .fontWeight(.bold)
-                
-                HStack(spacing: 12){
-                    
-                    Image(systemName: "mappin.circle.fill")
-                        .font(.system(size: 25, weight: .bold))
-                    
-                    Text(self.data.age)
-                        .foregroundColor(.gray)
+                HStack(spacing: 5){
+                    Text(self.data.name)
+                        .font(.callout)
+                        .fontWeight(.bold)
                     
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
@@ -71,42 +66,84 @@ struct ExpandView: View {
                         .foregroundColor(.gray)
                 }
                 
-                                Text("sadfasdfasfasfasfasfdasfdasfasfdasdfasdfasdfasdfasdfasdfasdfasdfsafdasdfasd")
+                
             }
             .padding(.horizontal,25)
-            .padding(.bottom,20)
             .foregroundColor(.black)
-            .padding(.top)
+            //            .padding(.top)
+            Divider()
             
-            HStack{
-                
-                HStack(spacing: 15){
+            VStack{
+                ScrollView(.vertical, showsIndicators: false){
                     
-                    Text("$ 1 (3Days)")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    //
-                    //                    Text("(3Days)")
-                    //                        .font(.title)
+                    
+                    if(self.voted == false){
+                                            VStack(spacing: 15){
+                                                HStack(spacing : 25){
+                                                    AttrButtonView(title:"개족같이 생김")
+                                                    //                        Spacer()
+                                                    AttrButtonView(title:"존잘러")
+                                                    
+                                                }.padding(.horizontal, 10)
+                                                //                    ChartView().frame(width: UIScreen.main.bounds.width, height: 300)
+                                                HStack(spacing : 20){
+                                                    AttrButtonView(title:"차도남")
+                                                    //                        Spacer()
+                                                    AttrButtonView(title:"머리스타일 잘어울림")
+                                                    
+                                                }.padding(.horizontal, 10)
+                                                
+                                                HStack(spacing : 30){
+                                                    AttrButtonView(title:"섹시함")
+                                                    
+                                                    
+                                                }.padding(.horizontal, 30)
+                                                
+                                                Button(action: {
+                                                          // ACTION
+                                                    self.voted.toggle()
+                        //                                  self.show.toggle()
+                        //                      self.
+                        //                                  self.selectedCard = self.obs.users[0]
+                        //
+                                                      }) {
+                                                          Text("첫인상반영하고 결과보기".uppercased())
+                                                              .font(.system(.subheadline, design: .rounded))
+                                                              .fontWeight(.heavy)
+                                                              .padding(.horizontal, 50)
+                                                              .padding(.vertical, 10).foregroundColor(Color("Color2"))
+                                                              .background(
+                                                                  Capsule().stroke(Color("Color2"), lineWidth: 2)
+                                                          )
+//                                                            .animation(
+//                                                              Animation.easeInOut(duration: 1)
+//                                                                  .delay(1)
+//                                                          )
+                                                }
+                                                Spacer()
+                                            }
+
+                    }else{
+                        ChartView().frame(width: UIScreen.main.bounds.width , height: 280)  .padding(.top, -20)
+                    }
+                    
+                    
                 }
-                .padding(.leading, 15)
+                //
                 
-                Spacer()
-                
-                //                    Button(action: {
-                ////
-                ////                    }) {
-                ////
-                ////                        Text("Book Now")
-                ////                            .foregroundColor(.white)
-                ////                            .font(.system(size: 22))
-                ////                            .padding(.vertical, 25)
-                ////                            .frame(width: UIScreen.main.bounds.width / 2.5)
-                ////                            .background(Color("Color"))
-                ////                            .clipShape(CShape())
-                ////                    }
-                //                }
             }
+            
+            
+            Spacer(minLength: 0)
+            
         }
+        .background(Color.clear)
     }
 }
+
+
+//struct ButtonView : View{
+//    var body: some View{
+//
+//    }
+//}

@@ -28,33 +28,9 @@ struct Home : View {
     @State var expand = false
     
     var body: some View {
-        NavigationView{
+
             VStack(spacing: 0){
-                
-                HStack(spacing: 20){
-                    Button(action: {
-
-                    }){
-                        Image("gleem_resized").resizable().frame(width: 120, height: 50)
-
-                    }.buttonStyle(PlainButtonStyle())
-
-                    Spacer()
-                    Button(action: {
-
-                    }){
-                        Image(systemName: "magnifyingglass").resizable().frame(width: 20, height: 22).foregroundColor(.white)
-                    }
-
-                    Button(action: {
-
-                    }){
-                        Image(systemName: "flag").resizable().frame(width: 20, height: 22).foregroundColor(.white)
-                    }
-                }
-                .padding().padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top).background(Color("Color-5"))
-                
-                
+  
                 
                 ZStack(alignment: .bottom){
                     GeometryReader{_ in
@@ -112,7 +88,7 @@ struct Home : View {
                 
                 TabBar(index: self.$index, expand : self.$expand)
             }.edgesIgnoringSafeArea(.top)
-        }
+       
         
     }
 }
@@ -196,7 +172,6 @@ struct MainView : View {
     
     @State var showLiked = false
     var body: some View{
-        NavigationView{
 
             ZStack{
                 
@@ -205,21 +180,22 @@ struct MainView : View {
                 if obs.users.isEmpty{
                     
                     Loader()
+                    
                 }
                 
                 VStack{
                     
-                    //                TopView(show: $showLiked)
+                    TopView(show: $showLiked).padding(.bottom, -10)
                     
-                    SwipeView(users: self.obs.users)
+                    SwipeView(users: self.obs.users).padding(.bottom, 10).padding(.top, 20)
                     
-                   BottomView()
+                    BottomView()
                 }
                 
-            }.padding(.bottom, 20)
+            }.padding(.bottom, 5)
         }
         
-    }
+    
 }
 
 struct Home2 : View {

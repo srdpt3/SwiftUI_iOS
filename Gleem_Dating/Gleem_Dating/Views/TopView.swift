@@ -14,39 +14,30 @@ struct TopView : View {
     
     var body : some View{
         
-        HStack{
-            
-            Button(action: {
-                
-            }) {
-                
-                Image("person").resizable().frame(width: 35, height: 35)
-                
-            }.foregroundColor(.gray)
-            
-//            Spacer()
-            
-//            Button(action: {
-//
-//            }) {
-//
-//                Image(systemName: "flame.fill").resizable().frame(width: 30, height: 35)
-//
-//            }.foregroundColor(.red)
-//
-            
-            Spacer()
-            
-            Button(action: {
-                
-                self.show.toggle()
-                
-            }) {
-                
-                Image("chat").resizable().frame(width: 35, height: 35)
-                
-            }.foregroundColor(.gray)
-            
-        }.padding()
+        
+          HStack(spacing: 20){
+              Button(action: {
+
+              }){
+                  Image("gleem_resized").resizable().frame(width: 110, height: 45)
+
+              }.buttonStyle(PlainButtonStyle())
+
+              Spacer()
+              Button(action: {
+
+              }){
+                  Image(systemName: "magnifyingglass").resizable().frame(width: 20, height: 22).foregroundColor(.white)
+              }
+
+              Button(action: {
+
+              }){
+                  Image(systemName: "flag").resizable().frame(width: 20, height: 22).foregroundColor(.white)
+              }
+          }
+          .padding()
+         .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top).background(Color("Color-5"))
+          
     }
 }
