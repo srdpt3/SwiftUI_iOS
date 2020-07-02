@@ -16,7 +16,6 @@
 		112B5B4124A90C06008B2887 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112B5B3F24A90C06008B2887 /* LaunchScreen.storyboard */; };
 		112B5B4C24A90C06008B2887 /* Gleem_DatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B4B24A90C06008B2887 /* Gleem_DatingTests.swift */; };
 		112B5B5724A90C06008B2887 /* Gleem_DatingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B5624A90C06008B2887 /* Gleem_DatingUITests.swift */; };
-		112B5B6524A90CB2008B2887 /* BottomTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B6424A90CB2008B2887 /* BottomTray.swift */; };
 		112B5B6724A90CC6008B2887 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B6624A90CC6008B2887 /* ChartView.swift */; };
 		112B5B6924A90CD5008B2887 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B6824A90CD5008B2887 /* TopView.swift */; };
 		112B5B6B24A90CE3008B2887 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B6A24A90CE3008B2887 /* BottomView.swift */; };
@@ -29,7 +28,6 @@
 		112B5B7C24AAB52A008B2887 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B7B24AAB52A008B2887 /* SearchBarView.swift */; };
 		112B5B7F24AAB56A008B2887 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B7E24AAB56A008B2887 /* Utils.swift */; };
 		112B5B8124AAB598008B2887 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B8024AAB598008B2887 /* Constants.swift */; };
-		112B5B8324AAB5B2008B2887 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B8224AAB5B2008B2887 /* TextFieldModifier.swift */; };
 		112B5B8524AAB5CB008B2887 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B8424AAB5CB008B2887 /* Extensions.swift */; };
 		112B5B8724AAB5DF008B2887 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B8624AAB5DF008B2887 /* ImagePicker.swift */; };
 		112B5B8924AAB5FA008B2887 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B8824AAB5FA008B2887 /* SearchBar.swift */; };
@@ -43,6 +41,10 @@
 		112B5B9F24AAB81C008B2887 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B9E24AAB81C008B2887 /* SessionStore.swift */; };
 		112B5BA124AACAA3008B2887 /* ExpandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BA024AACAA2008B2887 /* ExpandView.swift */; };
 		112B5BA324AC2DB3008B2887 /* AttrButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BA224AC2DB2008B2887 /* AttrButtonView.swift */; };
+		112B5BA524AD4481008B2887 /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BA424AD4480008B2887 /* UploadViewModel.swift */; };
+		112B5BA724AD4702008B2887 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BA624AD4702008B2887 /* UploadView.swift */; };
+		112B5BA924AD5CEE008B2887 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BA824AD5CEE008B2887 /* Keyboard.swift */; };
+		112B5BAB24AD8120008B2887 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BAA24AD8120008B2887 /* Modifier.swift */; };
 		753728A39276C3D4F2C7EE4B /* Pods_Gleem_DatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF75DF834D22EEB7FA97ED /* Pods_Gleem_DatingTests.framework */; };
 		DB0AF84CA582DE46872F91D7 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC525681C6A07521620DB07 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework */; };
 		ECD827094910EF9092B1E9DC /* Pods_Gleem_Dating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8F3E4B4629E9A75FE42665 /* Pods_Gleem_Dating.framework */; };
@@ -81,7 +83,6 @@
 		112B5B5224A90C06008B2887 /* Gleem_DatingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gleem_DatingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		112B5B5624A90C06008B2887 /* Gleem_DatingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gleem_DatingUITests.swift; sourceTree = "<group>"; };
 		112B5B5824A90C06008B2887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		112B5B6424A90CB2008B2887 /* BottomTray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTray.swift; sourceTree = "<group>"; };
 		112B5B6624A90CC6008B2887 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		112B5B6824A90CD5008B2887 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		112B5B6A24A90CE3008B2887 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		112B5B7B24AAB52A008B2887 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		112B5B7E24AAB56A008B2887 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		112B5B8024AAB598008B2887 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		112B5B8224AAB5B2008B2887 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 		112B5B8424AAB5CB008B2887 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		112B5B8624AAB5DF008B2887 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		112B5B8824AAB5FA008B2887 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -108,6 +108,10 @@
 		112B5B9E24AAB81C008B2887 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		112B5BA024AACAA2008B2887 /* ExpandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandView.swift; sourceTree = "<group>"; };
 		112B5BA224AC2DB2008B2887 /* AttrButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttrButtonView.swift; sourceTree = "<group>"; };
+		112B5BA424AD4480008B2887 /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
+		112B5BA624AD4702008B2887 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
+		112B5BA824AD5CEE008B2887 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		112B5BAA24AD8120008B2887 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 		148F8E47BB0FB24D89F287C2 /* Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating-Gleem_DatingUITests/Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		18EC2BD23B165D06CCF2EDBF /* Pods-Gleem_Dating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating.debug.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating.debug.xcconfig"; sourceTree = "<group>"; };
 		1A523AB4C67D5F55CDC394E4 /* Pods-Gleem_Dating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating.release.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating.release.xcconfig"; sourceTree = "<group>"; };
@@ -234,11 +238,12 @@
 				112B5B7B24AAB52A008B2887 /* SearchBarView.swift */,
 				112B5B7E24AAB56A008B2887 /* Utils.swift */,
 				112B5B8024AAB598008B2887 /* Constants.swift */,
-				112B5B8224AAB5B2008B2887 /* TextFieldModifier.swift */,
 				112B5B8424AAB5CB008B2887 /* Extensions.swift */,
 				112B5B8624AAB5DF008B2887 /* ImagePicker.swift */,
 				112B5B8824AAB5FA008B2887 /* SearchBar.swift */,
 				112B5B8A24AAB613008B2887 /* Loader.swift */,
+				112B5BA824AD5CEE008B2887 /* Keyboard.swift */,
+				112B5BAA24AD8120008B2887 /* Modifier.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -246,7 +251,6 @@
 		112B5B9024AAB68A008B2887 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				112B5B6424A90CB2008B2887 /* BottomTray.swift */,
 				112B5B6A24A90CE3008B2887 /* BottomView.swift */,
 				112B5B6624A90CC6008B2887 /* ChartView.swift */,
 				112B5B6824A90CD5008B2887 /* TopView.swift */,
@@ -256,6 +260,7 @@
 				112B5B8E24AAB667008B2887 /* SettingView.swift */,
 				112B5BA024AACAA2008B2887 /* ExpandView.swift */,
 				112B5BA224AC2DB2008B2887 /* AttrButtonView.swift */,
+				112B5BA624AD4702008B2887 /* UploadView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 		112B5B9D24AAB7EC008B2887 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				112B5BA424AD4480008B2887 /* UploadViewModel.swift */,
 				112B5B9B24AAB7BF008B2887 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
@@ -553,12 +559,11 @@
 				112B5B6924A90CD5008B2887 /* TopView.swift in Sources */,
 				112B5B7324A9255C008B2887 /* SwipeView.swift in Sources */,
 				112B5B3224A90C05008B2887 /* AppDelegate.swift in Sources */,
-				112B5B6524A90CB2008B2887 /* BottomTray.swift in Sources */,
-				112B5B8324AAB5B2008B2887 /* TextFieldModifier.swift in Sources */,
 				112B5B9924AAB70B008B2887 /* StorageService.swift in Sources */,
 				112B5BA124AACAA3008B2887 /* ExpandView.swift in Sources */,
 				112B5B8524AAB5CB008B2887 /* Extensions.swift in Sources */,
 				112B5B8B24AAB613008B2887 /* Loader.swift in Sources */,
+				112B5BA724AD4702008B2887 /* UploadView.swift in Sources */,
 				112B5B6B24A90CE3008B2887 /* BottomView.swift in Sources */,
 				112B5B7924AAB2F1008B2887 /* Users.swift in Sources */,
 				112B5BA324AC2DB3008B2887 /* AttrButtonView.swift in Sources */,
@@ -572,11 +577,14 @@
 				112B5B7C24AAB52A008B2887 /* SearchBarView.swift in Sources */,
 				112B5B9724AAB6F1008B2887 /* AuthService.swift in Sources */,
 				112B5B6724A90CC6008B2887 /* ChartView.swift in Sources */,
+				112B5BA924AD5CEE008B2887 /* Keyboard.swift in Sources */,
 				112B5B9F24AAB81C008B2887 /* SessionStore.swift in Sources */,
 				112B5B8724AAB5DF008B2887 /* ImagePicker.swift in Sources */,
 				112B5B8F24AAB667008B2887 /* SettingView.swift in Sources */,
 				112B5B7524A9258F008B2887 /* SwipeDetailsView.swift in Sources */,
+				112B5BAB24AD8120008B2887 /* Modifier.swift in Sources */,
 				112B5B9C24AAB7BF008B2887 /* UserViewModel.swift in Sources */,
+				112B5BA524AD4481008B2887 /* UploadViewModel.swift in Sources */,
 				112B5B6F24A90D11008B2887 /* datatype.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

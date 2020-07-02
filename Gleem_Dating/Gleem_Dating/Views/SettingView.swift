@@ -19,92 +19,90 @@ struct SettingsView: View {
     
     var body: some View {
         
-        NavigationView{
-            ZStack {
-                
-                Form {
-                    Section(header: Text("피드백").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
-                        SectionButton(image: "star.circle.fill", label: "앱평가하기", isShowingMailView: $isShowingMailView)
-                        
-                        SectionButton(image: "envelope.circle.fill", label: "피드백보내기", isShowingMailView: $isShowingMailView)
-                    }
-                    
-                    Section(header: Text("어플리케이션 소개 ").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
-                        Text("2000억짜리앱").font(.caption)
-                        Text("You can also follow users to share your favorite list").font(.caption)
-                        
-                    }
-                    
-                    Section(header: Text("크레딧").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
-                        VStack(alignment: .leading, spacing: 10){
-                            Text("").font(.footnote)
-                        }
-                        
-                        
-                    }
-                    
-                    
-                    Section(header: Text("인증").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
-                        //                    SectionButton(image: "emoji", label: "LogIn", showLoginView: $showLoginView)
-                        
-                        
-                        Button(action: {
-                            if(Auth.auth().currentUser != nil){
-                                self.session.unbind()
-                                self.session.logout()
-                                
-                            }else{
-                                
-                            }
-                            self.showLoginView.toggle()
-                            //                        print(Auth.auth().currentUser!.email)
-                        }) {
-                            HStack{
-                                Image("로그인").resizable().frame(width: 30, height: 30)   .font(.title)
-                                Text(Auth.auth().currentUser != nil ? "로그아웃" : "로그인").foregroundColor(Color("Color2")).font(.subheadline).bold()
-                                
-                            }
-                            
-                        }
-                        
-                        
-                    }
-                    
-                    Section(header: Text("개발자").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
-                        VStack(alignment: .leading, spacing: 10){
-                            
-                            Button("Dustin Yang  - Github page") {UIApplication.shared.open(URL(string: "https://github.com/srdpt3")!)}
-                            
-                        }
-                        
-                        
-                    }
-                    
-                    
-                    //                if UIDevice.current.userInterfaceIdiom == .pad {
-                    //                    Button(action: {
-                    //                        self.isSettingsOpen.toggle()
-                    //                    }) {
-                    //                        Text("Dismiss")
-                    //                    }
-                    //                }
-                }
-                
-                
-                //            if (showLoginView) {
-                //                LoginView(showLoginView: self.$showLoginView)
-                //                    .transition(.move(edge: .bottom))
-                //                    .animation(.default)
-                //            }
-                
-                if (isShowingMailView) {
-                    mailView()
-                        .transition(.move(edge: .bottom))
-                        .animation(.default)
-                }
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-        }
+         ZStack {
+                     
+                     Form {
+                         Section(header: Text("피드백").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
+                             SectionButton(image: "star.circle.fill", label: "앱평가하기", isShowingMailView: $isShowingMailView)
+                             
+                             SectionButton(image: "envelope.circle.fill", label: "피드백보내기", isShowingMailView: $isShowingMailView)
+                         }
+                         
+                         Section(header: Text("어플리케이션 소개 ").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
+                             Text("2000억짜리앱").font(.caption)
+                             Text("평가 받은 데이터기반으로 내가 원하는타입 매칭해주는앱").font(.caption)
+                             
+                         }
+                         
+                         Section(header: Text("크레딧").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
+                             VStack(alignment: .leading, spacing: 10){
+                                 Text("없").font(.footnote)
+                             }
+                             
+                             
+                         }
+                         
+                         
+                         Section(header: Text("인증").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
+                             //                    SectionButton(image: "emoji", label: "LogIn", showLoginView: $showLoginView)
+                             
+                             
+                             Button(action: {
+                                 if(Auth.auth().currentUser != nil){
+                                     self.session.unbind()
+                                     self.session.logout()
+                                     
+                                 }else{
+                                     
+                                 }
+                                 self.showLoginView.toggle()
+                                 //                        print(Auth.auth().currentUser!.email)
+                             }) {
+                                 HStack{
+                                     Image("로그인").resizable().frame(width: 30, height: 30)   .font(.title)
+                                     Text(Auth.auth().currentUser != nil ? "로그아웃" : "로그인").foregroundColor(Color("Color2")).font(.subheadline).bold()
+                                     
+                                 }
+                                 
+                             }
+                             
+                             
+                         }
+                         
+                         Section(header: Text("개발자").foregroundColor(Color("Color2")).font(.subheadline).bold()) {
+                             VStack(alignment: .leading, spacing: 10){
+                                 
+                                 Button("Dustin Yang  - Github page") {UIApplication.shared.open(URL(string: "https://github.com/srdpt3")!)}
+                                 
+                             }
+                             
+                             
+                         }
+                         
+                         
+                         //                if UIDevice.current.userInterfaceIdiom == .pad {
+                         //                    Button(action: {
+                         //                        self.isSettingsOpen.toggle()
+                         //                    }) {
+                         //                        Text("Dismiss")
+                         //                    }
+                         //                }
+                     }
+                     
+                     
+                     //            if (showLoginView) {
+                     //                LoginView(showLoginView: self.$showLoginView)
+                     //                    .transition(.move(edge: .bottom))
+                     //                    .animation(.default)
+                     //            }
+                     
+                     if (isShowingMailView) {
+                         mailView()
+                             .transition(.move(edge: .bottom))
+                             .animation(.default)
+                     }
+                 }
+
         
         
     }
@@ -190,7 +188,7 @@ struct MailView: UIViewControllerRepresentable {
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
         
-        let emailSubjectText = "FrontYard Feedback"
+        let emailSubjectText = "Gleem Feedback"
         let emailText = "Please write your feedback here."
         let alertTitle = "Sign in to mail"
         let alertMessage = "You are currently not signed into the email application on your iOS device. Please sign in if you wish to send us feedback."

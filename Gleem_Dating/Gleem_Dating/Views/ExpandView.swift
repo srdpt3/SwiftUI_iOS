@@ -15,8 +15,32 @@ struct ExpandView: View {
     @Binding var show : Bool
     @Binding var isVoted: Bool
     @State var voted: Bool = false
+    @State  var data1 = Int.random(in: 0 ..< 100)
+    @State  var data2 = Int.random(in: 0 ..< 100)
+    @State  var data3 = Int.random(in: 0 ..< 100)
+    @State   var data4 = Int.random(in: 0 ..< 100)
+    @State   var data5 = Int.random(in: 0 ..< 100)
     
+    
+    @State var buttonPressed = [false,false,false,false,false]
+    let  buttonTitle = ["개족같이 생김","잘생김","섹시함","차도남","머리스타일 잘어울림","머리스타일 잘어울림","지적임","착해보임"]
+    var selectedButton = [String]()
+    
+    @ObservedObject var uploadViewModel = UploadViewModel()
+
     //    @State var buttonSelected: Bool = false
+    
+    
+    func persist() {
+        uploadViewModel.persist(buttonPressed: buttonPressed, buttonTitle:buttonTitle)
+    }
+    
+    func clean() {
+        self.buttonPressed = [false]
+        
+        
+    }
+    
     
     var body: some View{
         
@@ -79,28 +103,30 @@ struct ExpandView: View {
                     if(self.voted == false){
                         VStack(spacing: 8){
                             HStack(spacing : 12){
-                                AttrButtonView(title:"개족같이 생김")
+                                AttrButtonView(isPressed: self.$buttonPressed[0],  title:buttonTitle[0])
                                 //                        Spacer()
-                                AttrButtonView(title:"존잘러")
-                                AttrButtonView(title:"섹시함")
-
+                                AttrButtonView(isPressed: self.$buttonPressed[1], title:buttonTitle[1])
+                                AttrButtonView(isPressed: self.$buttonPressed[2], title:buttonTitle[2])
+                                
                                 
                             }.padding(.horizontal, 5)
                             //                    ChartView().frame(width: UIScreen.main.bounds.width, height: 300)
                             HStack(spacing : 12){
-                                AttrButtonView(title:"차도남")
+                                AttrButtonView(isPressed: self.$buttonPressed[3], title:buttonTitle[3])
                                 //                        Spacer()
-                                AttrButtonView(title:"머리스타일 잘어울림")
+                                AttrButtonView(isPressed: self.$buttonPressed[4], title:buttonTitle[4])
                                 
                             }.padding(.horizontal, 5)
                             
-                           
+                            
                             Spacer()
-                            Button(action: {
+                            Button(action:  {
                                 // ACTION
                                 self.voted.toggle()
                                 self.isVoted.toggle()
-
+                              
+                                self.persist()
+                                
                                 //
                             }) {
                                 Text("첫인상반영하고 결과보기".uppercased())
@@ -120,7 +146,10 @@ struct ExpandView: View {
                         }.background(Color.clear)
                         
                     }else{
-                        ChartView().frame(width: UIScreen.main.bounds.width / 1.2 , height: 280)  .padding(.top, -20)
+                        
+                        
+                        
+                        ChartView(data1: self.$data1, data2: self.$data2, data3: self.$data3, data4: self.$data4, data5: self.$data5).frame(width: UIScreen.main.bounds.width / 1.2 , height: 280)  .padding(.top, -20)
                     }
                     
                     

@@ -71,7 +71,7 @@ struct BottomView : View {
 
 
                     }) {
-                        Image(systemName: "arrow.right").resizable().frame(width: 25, height: 25).padding(.all, 8)
+                        Image(systemName: "arrow.right").resizable().frame(width: 20, height: 20).padding(.all, 8)
                     }.foregroundColor(.black)
                         .background(Color.white)
                         .shadow(radius: 45)
@@ -83,7 +83,7 @@ struct BottomView : View {
                 
                 
             }
-            .padding(.bottom, 20)
+            .padding(.bottom, 45)
             .sheet(isPresented: $show) {
                 ExpandView(data: self.obs.users[self.obs.last == -1 ? self.obs.users.count - 1 : self.obs.last - 1], show: self.$show, isVoted:self.$isVoted)
                     //shrinking the view in background...

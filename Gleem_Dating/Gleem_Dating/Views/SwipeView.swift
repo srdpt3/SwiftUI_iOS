@@ -46,7 +46,9 @@ struct SwipeView : View {
                                 
                             })
                     ).offset(x: i.swipe)
-                        .rotationEffect(.init(degrees: i.degree))
+//                        .rotationEffect(.init(degrees: i.degree))
+                        .rotationEffect(.init(degrees: i.swipe == 0 ? 0 : (i.swipe > 0 ? 8 : -8)))
+
                      .animation(
                         Animation.easeInOut(duration: 0.5)
                                 .delay(0)

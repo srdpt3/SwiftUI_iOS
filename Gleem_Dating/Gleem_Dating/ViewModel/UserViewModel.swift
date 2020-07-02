@@ -13,7 +13,8 @@ class UserViewModel: ObservableObject {
        @Published var users: [User] = []
        @Published var isLoading = false
        @Published var error: NSError?
-       
+       var buttonPressed = [Bool]()
+        let  buttonTitle = [String]()
        
        
        func searchFollowerUsers(userId: String) {

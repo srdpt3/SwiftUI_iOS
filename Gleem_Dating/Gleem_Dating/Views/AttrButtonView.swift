@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AttrButtonView: View {
-    @State private var isPressed: Bool = false
+    @Binding  var isPressed: Bool
 //    @Binding var buttonSelected:Bool
     var title : String
     var body: some View {
@@ -20,12 +20,12 @@ struct AttrButtonView: View {
     }
 }
 
-struct AttrButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        AttrButtonView(title :
-        "TEST")
-    }
-}
+//struct AttrButtonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AttrButtonView(title :
+//        "TEST")
+//    }
+//}
 
 
 struct NeumorphicButtonStyle: ButtonStyle {

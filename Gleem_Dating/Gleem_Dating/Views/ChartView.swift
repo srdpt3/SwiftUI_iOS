@@ -10,17 +10,29 @@ import SwiftUI
 import AAInfographics
 
 struct ChartView: UIViewRepresentable {
+    
+    @Binding var data1 : Int
+    @Binding var data2 : Int
+    @Binding var data3 : Int
+    @Binding var data4 : Int
+    @Binding var data5 : Int
+//
+//      let data2 = Int.random(in: 0 ..< 100)
+//      let data3 = Int.random(in: 0 ..< 100)
+//      let data4 = Int.random(in: 0 ..< 100)
+//      let data5 = Int.random(in: 0 ..< 100)
+    
     func updateUIView(_ uiView: AAChartView, context: Context) {
         
     }
     
     func makeUIView(context: Context) -> AAChartView {
         let aaChartView = AAChartView()
-        let data1 = Int.random(in: 0 ..< 100)
-        let data2 = Int.random(in: 0 ..< 100)
-        let data3 = Int.random(in: 0 ..< 100)
-        let data4 = Int.random(in: 0 ..< 100)
-        let data5 = Int.random(in: 0 ..< 100)
+//        let data1 = Int.random(in: 0 ..< 100)
+//        let data2 = Int.random(in: 0 ..< 100)
+//        let data3 = Int.random(in: 0 ..< 100)
+//        let data4 = Int.random(in: 0 ..< 100)
+//        let data5 = Int.random(in: 0 ..< 100)
 
         //        let aaChartModel = AAChartModel()
         //            .chartType(.column)//Can be any of the chart types listed under `AAChartType`.
@@ -77,8 +89,8 @@ struct ChartView: UIViewRepresentable {
     }
 }
 
-struct ChartView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChartView()
-    }
-}
+//struct ChartView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChartView()
+//    }
+//}
