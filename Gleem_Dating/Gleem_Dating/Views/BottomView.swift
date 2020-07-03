@@ -19,7 +19,7 @@ struct BottomView : View {
     @State var count : CGFloat = 0
     @State var screen = UIScreen.main.bounds.width - 30
     @State var op : CGFloat = 0
-    @State var selectedCard: datatype?
+    @State var selectedCard: User?
     @State var bottomDragState: CGSize = .zero
     var heightBanner = (UIScreen.main.bounds.height * 0.65)
     @State var showFull = false
@@ -51,25 +51,25 @@ struct BottomView : View {
                     )
                     
                 }.opacity((self.obs.last > 0 || self.obs.last == -1 ) ? 1 : 0)
-
+                
                 if(self.isVoted ) {
                     Button(action: {
                         self.isVoted.toggle()
                         if self.obs.last == -1{
                             //intial user...
                             self.obs.update(id: self.obs.users[self.obs.users.count - 1], value: 500, degree: 0)
-                            self.obs.updateDB(id: self.obs.users[self.obs.users.count - 1], status: "liked")
+                            //                            self.obs.updateDB(id: self.obs.users[self.obs.users.count - 1], status: "liked")
                         }
                         else{
                             if(self.obs.last  > 0){
                                 // if last user index is 4 means current user index will be 4-1 = 3
-                                self.obs.updateDB(id: self.obs.users[self.obs.last - 1], status: "voted")
+                                //                                self.obs.updateDB(id: self.obs.users[self.obs.last - 1], status: "voted")
                                 self.obs.update(id: self.obs.users[self.obs.last - 1], value: 500, degree: 0)
-
+                                
                             }
                         }
-
-
+                        
+                        
                     }) {
                         Image(systemName: "arrow.right").resizable().frame(width: 20, height: 20).padding(.all, 8)
                     }.foregroundColor(.black)
@@ -78,14 +78,14 @@ struct BottomView : View {
                         .clipShape(Circle()).animation(
                             Animation.easeInOut(duration: 2)
                                 .delay(1)
-                        )
+                    )
                 }
                 
                 
             }
             .padding(.bottom, 45)
             .sheet(isPresented: $show) {
-                ExpandView(data: self.obs.users[self.obs.last == -1 ? self.obs.users.count - 1 : self.obs.last - 1], show: self.$show, isVoted:self.$isVoted)
+                ExpandView(user: self.obs.users[self.obs.last == -1 ? self.obs.users.count - 1 : self.obs.last - 1], show: self.$show, isVoted:self.$isVoted)
                     //shrinking the view in background...
                     .scaleEffect(self.show ? 1 : 0)
                     .frame(width: self.show ? nil : 0, height: self.show ? nil : 0)

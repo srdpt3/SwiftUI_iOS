@@ -11,7 +11,7 @@ import Firebase
 
 class observer : ObservableObject{
     
-    @Published var users = [datatype]()
+    @Published var users = [User]()
     @Published var last = -1
     var index = -1;
     
@@ -32,21 +32,19 @@ class observer : ObservableObject{
             }
             
             for i in snap!.documents{
-                
-                let name = i.get("name") as! String
-                let age = i.get("age") as! String
-                let image = i.get("image") as! String
                 let id = i.documentID
-                //                let status = i.get("status") as! String
-                
+                let email = i.get("email") as! String
+                let username = i.get("username") as! String
+                let age = i.get("age") as! String
+                let profileImageUrl = i.get("profileImageUrl") as! String
+//                let swipe = i.get("swipe") as! CGFloat
+//                let degree = i.get("degree") as! CGFloat
+
                 
                 //                if status == "liked"{
-//                print(image)
-//                print(name)
-                self.users.append(datatype(id: id, name: name, image: image, age: age, swipe: 0, degree: 0))
                 
-                //                }
-                
+                self.users.append(User(id: id, email: email, profileImageUrl: profileImageUrl, username: username, age: age, swipe: 0, degree: 0))
+                    
             }
             print("self.users.count \(self.users.count)")
             self.index = self.users.count
@@ -56,13 +54,13 @@ class observer : ObservableObject{
     }
     
     
-    func update(id : datatype,value : CGFloat,degree : Double){
+    func update(id : User,value : CGFloat,degree : CGFloat){
         
         for i in 0..<self.users.count{
             
             if self.users[i].id == id.id{
                 print("sssss t")
-
+                
                 self.users[i].swipe = value
                 self.users[i].degree = degree
                 self.last = i
@@ -70,7 +68,7 @@ class observer : ObservableObject{
                 break
             }
             
-      
+            
         }
 //        self.users.remove(at: self.last )
 
@@ -81,7 +79,7 @@ class observer : ObservableObject{
             self.reload()
          }
     }
-    func update2(id : datatype,value : CGFloat,degree : Double){
+    func update2(id : User,value : CGFloat,degree : CGFloat){
         
         for i in 0..<self.users.count{
             if self.users[i].id == id.id{
@@ -91,67 +89,56 @@ class observer : ObservableObject{
     }
     
     
-    func updateDB(id : datatype,status : String){
-        
-        let db = Firestore.firestore()
-        
-        db.collection("users").document(id.id).updateData(["status":status]) { (err) in
-            
-            if err != nil{
-                
-                print(err!.localizedDescription)
-                return
-            }
-            
-            print("success")
-            
-//            for i in 0..<self.users.count{
-//
-//                if self.users[i].id == id.id{
-//                    self.users[i].swipe = 500
-//                    //                    if status == "liked"{
-//                    //                        print("liked")
-//                    //
-//                    //                        self.users[i].swipe = 500
-//                    //                    }
-//                    //                    else if status == "reject"{
-//                    //
-//                    //                        self.users[i].swipe = -500
-//                    //                    }
-//                    //                    else{
-//                    //                        print("ㅁㄴㅇㄹㅁㄴㅇ")
-//                    //
-//                    //                        self.users[i].swipe = 0
-//                    //                    }
-//                }
+//    func updateDB(id : User,status : String){
+//        
+//        let db = Firestore.firestore()
+//        
+//        db.collection("users").document(id.u).updateData(["status":status]) { (err) in
+//            
+//            if err != nil{
+//                
+//                print(err!.localizedDescription)
+//                return
 //            }
-            
-            if status == "voted"{
-                
-                db.collection("voted").document(id.id).setData(["name":id.name,"age":id.age,"image":id.image]) { (err) in
-                    
-                    if err != nil{
-                        
-                        print((err?.localizedDescription)!)
-                        return
-                    }
-                }
-            }
-            
-//            if status == ""{
-//
-//                db.collection("liked").document(id.id).delete { (err) in
-//
+//            
+//            print("success")
+//            
+////            for i in 0..<self.users.count{
+////
+////                if self.users[i].id == id.id{
+////                    self.users[i].swipe = 500
+////                    //                    if status == "liked"{
+////                    //                        print("liked")
+////                    //
+////                    //                        self.users[i].swipe = 500
+////                    //                    }
+////                    //                    else if status == "reject"{
+////                    //
+////                    //                        self.users[i].swipe = -500
+////                    //                    }
+////                    //                    else{
+////                    //                        print("ㅁㄴㅇㄹㅁㄴㅇ")
+////                    //
+////                    //                        self.users[i].swipe = 0
+////                    //                    }
+////                }
+////            }
+//            
+//            if status == "voted"{
+//                
+//                db.collection("voted").document(id.id).setData(["name":id.name,"age":id.age,"image":id.image]) { (err) in
+//                    
 //                    if err != nil{
-//
+//                        
 //                        print((err?.localizedDescription)!)
 //                        return
 //                    }
 //                }
 //            }
-            
-        }
-    }
+//            
+//            
+//        }
+//    }
     
 }
 

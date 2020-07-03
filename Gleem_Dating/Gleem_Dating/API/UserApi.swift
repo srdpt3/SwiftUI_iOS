@@ -22,7 +22,7 @@ class UserApi {
                 let dict = document.data()
                 guard let decoderUser = try? User.init(fromDictionary: dict) else {return}
                 
-                if decoderUser.uid != Auth.auth().currentUser!.uid {
+                if decoderUser.id != Auth.auth().currentUser!.uid {
                     users.append(decoderUser)
                 }
             }
@@ -43,7 +43,7 @@ class UserApi {
                 let dict = document.data()
                 guard let decoderUser = try? User.init(fromDictionary: dict) else {return}
                 
-                if decoderUser.uid != Auth.auth().currentUser!.uid {
+                if decoderUser.id != Auth.auth().currentUser!.uid {
                     users.append(decoderUser)
                 }
             }
@@ -66,7 +66,7 @@ class UserApi {
             for document in snap.documents {
                 let dict = document.data()
                 guard let decoderUser = try? User.init(fromDictionary: dict) else {return}
-                if decoderUser.uid != Auth.auth().currentUser!.uid {
+                if decoderUser.id != Auth.auth().currentUser!.uid {
                     users.append(decoderUser)
                 }
                 

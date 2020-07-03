@@ -28,119 +28,117 @@ struct UploadView: View {
     var body: some View {
         
         ZStack{
-            
-            ScrollView(.vertical, showsIndicators: false){
-                VStack(spacing: 35){
+            VStack(spacing: 35){
+                
+                HStack{
+                    Spacer(minLength: 0)
+                    Text("원하는 사진을 올려주세요")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
                     
-                    HStack{
-                        Spacer(minLength: 0)
-                        Text("원하는 사진을 올려주세요")
-                            .font(.title)
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                        
-                        Spacer(minLength: 0)
-                    }
-                    .padding(.top, 25)
-                    
-                    HStack(spacing: 15){
-                        
-                        Button(action: {
-                            
-                            self.index = 0
-                            self.imagePicker.toggle()
-                            
-                        }) {
-                            
-                            ZStack{
-                                
-                                if self.images[0].count == 0{
-                                    
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(Color("Color-3"))
-                                    
-                                    Image(systemName: "plus")
-                                        .font(.system(size: 24, weight: .bold))
-                                }
-                                else{
-                                    
-                                    Image(uiImage: UIImage(data: self.images[0])!)
-                                        .resizable()
-                                        .renderingMode(.original)
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 200, height: 200)
-                                        .cornerRadius(10)
-                                }
-                            }
-                                // Fixed Height...
-                                .frame(width: 200, height: 200)
-                        }
-                        
-                    }
-                    
-                    VStack(spacing: 8){
-                        HStack(spacing : 12){
-                            
-                            AttrButtonView(isPressed: self.$buttonPressed[0],title:buttonTitle[0])
-                            AttrButtonView(isPressed: self.$buttonPressed[1],title:buttonTitle[1])
-                            AttrButtonView(isPressed: self.$buttonPressed[2],title:buttonTitle[2])
-                            
-                            
-                        }.padding(.horizontal, 2)
-                        //                    ChartView().frame(width: UIScreen.main.bounds.width, height: 300)
-                        HStack(spacing : 2){
-                            AttrButtonView(isPressed: self.$buttonPressed[3],title:buttonTitle[3])
-                            //                        Spacer()
-                            AttrButtonView(isPressed: self.$buttonPressed[4],title:buttonTitle[4])
-                            AttrButtonView(isPressed: self.$buttonPressed[5],title:buttonTitle[5])
-                            
-                        }.padding(.horizontal, 2)
-                        HStack(spacing : 12){
-                            AttrButtonView(isPressed: self.$buttonPressed[6],title:buttonTitle[6])
-                            //                        Spacer()
-                            AttrButtonView(isPressed: self.$buttonPressed[7],title:buttonTitle[7])
-//                            AttrButtonView(isPressed: self.$buttonPressed[8],title:buttonTitle[8])
-                            
-                        }.padding(.horizontal, 2)
-                        
-                        
-                        
-                        HStack(alignment: .center) {
-                            //                        Text("직접입력:")
-                            //                            .font(.callout)
-                            //                            .bold()
-                            TextField("10자 내외 직접입력 ..", text: $customAttr)
-                                .textFieldStyle(CustomStyle()).disabled(entry.count > (characterLimit - 1))
-                            
-                        }.padding(.horizontal)
-                    }.background(Color.clear)
+                    Spacer(minLength: 0)
+                }
+                .padding(.top, 25)
+                
+                HStack(spacing: 15){
                     
                     Button(action: {
                         
-                        self.showProfile.toggle()
+                        self.index = 0
+                        self.imagePicker.toggle()
                         
                     }) {
                         
-                        Text("Proceed")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 45)
-                            .background(Color("Color2-1"))
-                            .clipShape(Capsule())
+                        ZStack{
+                            
+                            if self.images[0].count == 0{
+                                
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color("Color-3"))
+                                
+                                Image(systemName: "plus")
+                                    .font(.system(size: 24, weight: .bold))
+                            }
+                            else{
+                                
+                                Image(uiImage: UIImage(data: self.images[0])!)
+                                    .resizable()
+                                    .renderingMode(.original)
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 200, height: 200)
+                                    .cornerRadius(10)
+                            }
+                        }
+                            // Fixed Height...
+                            .frame(width: 200, height: 200)
                     }
-                    .padding(.top, 10)
-                        // Disabling button by verifying all images...
-                        .opacity(self.verifyImages() ? 1 : 0.35)
-                        .disabled(self.verifyImages() ? false : true)
                     
-                    
-                    Spacer()
                 }
-                .padding(.horizontal)
+                
+                VStack(spacing: 8){
+                    HStack(spacing : 12){
+                        
+                        AttrButtonView(isPressed: self.$buttonPressed[0],title:buttonTitle[0])
+                        AttrButtonView(isPressed: self.$buttonPressed[1],title:buttonTitle[1])
+                        AttrButtonView(isPressed: self.$buttonPressed[2],title:buttonTitle[2])
+                        
+                        
+                    }.padding(.horizontal, 2)
+                    //                    ChartView().frame(width: UIScreen.main.bounds.width, height: 300)
+                    HStack(spacing : 2){
+                        AttrButtonView(isPressed: self.$buttonPressed[3],title:buttonTitle[3])
+                        //                        Spacer()
+                        AttrButtonView(isPressed: self.$buttonPressed[4],title:buttonTitle[4])
+                        AttrButtonView(isPressed: self.$buttonPressed[5],title:buttonTitle[5])
+                        
+                    }.padding(.horizontal, 2)
+                    HStack(spacing : 12){
+                        AttrButtonView(isPressed: self.$buttonPressed[6],title:buttonTitle[6])
+                        //                        Spacer()
+                        AttrButtonView(isPressed: self.$buttonPressed[7],title:buttonTitle[7])
+                        //                            AttrButtonView(isPressed: self.$buttonPressed[8],title:buttonTitle[8])
+                        
+                    }.padding(.horizontal, 2)
+                    
+                    
+                    
+                    HStack(alignment: .center) {
+                        //                        Text("직접입력:")
+                        //                            .font(.callout)
+                        //                            .bold()
+                        TextField("10자 내외 직접입력 ..", text: $customAttr)
+                            .textFieldStyle(CustomStyle()).disabled(entry.count > (characterLimit - 1))
+                        
+                    }.padding(.horizontal)
+                }.background(Color.clear)
+                
+                Button(action: {
+                    
+                    self.showProfile.toggle()
+                    
+                }) {
+                    
+                    Text("Proceed")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 45)
+                        .background(Color("Color2-1"))
+                        .clipShape(Capsule())
+                }
+                .padding(.top, 10)
+                    // Disabling button by verifying all images...
+                    .opacity(self.verifyImages() ? 1 : 0.35)
+                    .disabled(self.verifyImages() ? false : true)
+                
+                
+                Spacer()
             }
+            .padding(.horizontal).KeyboardResponsive()
+            
             // <--- the view modifier
-        }.KeyboardResponsive()
+        }
             .background(Color.clear.edgesIgnoringSafeArea(.all))
             .navigationBarTitle("")
             .navigationBarHidden(true)

@@ -125,3 +125,10 @@ extension Color {
         Color(red: 64 / 255, green: 93 / 255, blue: 230 / 255)
     ]
 }
+extension Dictionary {
+    subscript(i:Int) -> (key: Key, value: Value) {
+        get {
+            return self[index(startIndex, offsetBy : i)];
+        }
+    }
+}

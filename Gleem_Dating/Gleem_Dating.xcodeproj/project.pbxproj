@@ -24,7 +24,7 @@
 		112B5B7124A90D2F008B2887 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 112B5B7024A90D2F008B2887 /* GoogleService-Info.plist */; };
 		112B5B7324A9255C008B2887 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B7224A9255C008B2887 /* SwipeView.swift */; };
 		112B5B7524A9258F008B2887 /* SwipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B7424A9258F008B2887 /* SwipeDetailsView.swift */; };
-		112B5B7924AAB2F1008B2887 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B7824AAB2F0008B2887 /* Users.swift */; };
+		112B5B7924AAB2F1008B2887 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B7824AAB2F0008B2887 /* User.swift */; };
 		112B5B7C24AAB52A008B2887 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B7B24AAB52A008B2887 /* SearchBarView.swift */; };
 		112B5B7F24AAB56A008B2887 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B7E24AAB56A008B2887 /* Utils.swift */; };
 		112B5B8124AAB598008B2887 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5B8024AAB598008B2887 /* Constants.swift */; };
@@ -45,6 +45,9 @@
 		112B5BA724AD4702008B2887 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BA624AD4702008B2887 /* UploadView.swift */; };
 		112B5BA924AD5CEE008B2887 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BA824AD5CEE008B2887 /* Keyboard.swift */; };
 		112B5BAB24AD8120008B2887 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BAA24AD8120008B2887 /* Modifier.swift */; };
+		112B5BAD24AE87E9008B2887 /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BAC24AE87E9008B2887 /* Vote.swift */; };
+		112B5BAF24AE960B008B2887 /* VoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BAE24AE960B008B2887 /* VoteViewModel.swift */; };
+		112B5BB124AE97D4008B2887 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BB024AE97D4008B2887 /* LoadingView.swift */; };
 		753728A39276C3D4F2C7EE4B /* Pods_Gleem_DatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF75DF834D22EEB7FA97ED /* Pods_Gleem_DatingTests.framework */; };
 		DB0AF84CA582DE46872F91D7 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC525681C6A07521620DB07 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework */; };
 		ECD827094910EF9092B1E9DC /* Pods_Gleem_Dating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8F3E4B4629E9A75FE42665 /* Pods_Gleem_Dating.framework */; };
@@ -91,7 +94,7 @@
 		112B5B7024A90D2F008B2887 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		112B5B7224A9255C008B2887 /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		112B5B7424A9258F008B2887 /* SwipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDetailsView.swift; sourceTree = "<group>"; };
-		112B5B7824AAB2F0008B2887 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		112B5B7824AAB2F0008B2887 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		112B5B7B24AAB52A008B2887 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		112B5B7E24AAB56A008B2887 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		112B5B8024AAB598008B2887 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -112,6 +115,9 @@
 		112B5BA624AD4702008B2887 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		112B5BA824AD5CEE008B2887 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		112B5BAA24AD8120008B2887 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
+		112B5BAC24AE87E9008B2887 /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
+		112B5BAE24AE960B008B2887 /* VoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewModel.swift; sourceTree = "<group>"; };
+		112B5BB024AE97D4008B2887 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		148F8E47BB0FB24D89F287C2 /* Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating-Gleem_DatingUITests/Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		18EC2BD23B165D06CCF2EDBF /* Pods-Gleem_Dating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating.debug.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating.debug.xcconfig"; sourceTree = "<group>"; };
 		1A523AB4C67D5F55CDC394E4 /* Pods-Gleem_Dating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating.release.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,7 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				112B5B6E24A90D11008B2887 /* datatype.swift */,
-				112B5B7824AAB2F0008B2887 /* Users.swift */,
+				112B5B7824AAB2F0008B2887 /* User.swift */,
+				112B5BAC24AE87E9008B2887 /* Vote.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +251,7 @@
 				112B5B8A24AAB613008B2887 /* Loader.swift */,
 				112B5BA824AD5CEE008B2887 /* Keyboard.swift */,
 				112B5BAA24AD8120008B2887 /* Modifier.swift */,
+				112B5BB024AE97D4008B2887 /* LoadingView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 			children = (
 				112B5BA424AD4480008B2887 /* UploadViewModel.swift */,
 				112B5B9B24AAB7BF008B2887 /* UserViewModel.swift */,
+				112B5BAE24AE960B008B2887 /* VoteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -564,8 +573,9 @@
 				112B5B8524AAB5CB008B2887 /* Extensions.swift in Sources */,
 				112B5B8B24AAB613008B2887 /* Loader.swift in Sources */,
 				112B5BA724AD4702008B2887 /* UploadView.swift in Sources */,
+				112B5BAD24AE87E9008B2887 /* Vote.swift in Sources */,
 				112B5B6B24A90CE3008B2887 /* BottomView.swift in Sources */,
-				112B5B7924AAB2F1008B2887 /* Users.swift in Sources */,
+				112B5B7924AAB2F1008B2887 /* User.swift in Sources */,
 				112B5BA324AC2DB3008B2887 /* AttrButtonView.swift in Sources */,
 				112B5B9424AAB6AB008B2887 /* UserApi.swift in Sources */,
 				112B5B7F24AAB56A008B2887 /* Utils.swift in Sources */,
@@ -575,6 +585,7 @@
 				112B5B3724A90C05008B2887 /* Gleem_Dating.xcdatamodeld in Sources */,
 				112B5B8924AAB5FA008B2887 /* SearchBar.swift in Sources */,
 				112B5B7C24AAB52A008B2887 /* SearchBarView.swift in Sources */,
+				112B5BAF24AE960B008B2887 /* VoteViewModel.swift in Sources */,
 				112B5B9724AAB6F1008B2887 /* AuthService.swift in Sources */,
 				112B5B6724A90CC6008B2887 /* ChartView.swift in Sources */,
 				112B5BA924AD5CEE008B2887 /* Keyboard.swift in Sources */,
@@ -585,6 +596,7 @@
 				112B5BAB24AD8120008B2887 /* Modifier.swift in Sources */,
 				112B5B9C24AAB7BF008B2887 /* UserViewModel.swift in Sources */,
 				112B5BA524AD4481008B2887 /* UploadViewModel.swift in Sources */,
+				112B5BB124AE97D4008B2887 /* LoadingView.swift in Sources */,
 				112B5B6F24A90D11008B2887 /* datatype.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

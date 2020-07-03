@@ -11,11 +11,13 @@ import AAInfographics
 
 struct ChartView: UIViewRepresentable {
     
-    @Binding var data1 : Int
-    @Binding var data2 : Int
-    @Binding var data3 : Int
-    @Binding var data4 : Int
-    @Binding var data5 : Int
+    @Binding var data : [Int]
+    var categories : [String]
+
+//    @Binding var data2 : Int
+//    @Binding var data3 : Int
+//    @Binding var data4 : Int
+//    @Binding var data5 : Int
 //
 //      let data2 = Int.random(in: 0 ..< 100)
 //      let data3 = Int.random(in: 0 ..< 100)
@@ -71,12 +73,11 @@ struct ChartView: UIViewRepresentable {
             .markerRadius(0)
             .polar(true)
             .yAxisGridLineWidth(0)
-            
-            .categories(["잘생김","머리스타일 어울림","머리스타일 어울림","섹시", "족같음"])
+            .categories(categories)
             
             .series([
                 AASeriesElement()
-                    .data([data1,data2,data3,data4,data5]),
+                    .data([data[0],data[1],data[2],data[3],data[4]]),
                 //                                .data([9.0,9.0,9.0,9.0,9.0,9.0,]),
                 //                                .data([6.0,6.0,6.0,6.0,6.0,6.0,]),
                 //                            AASeriesElement()

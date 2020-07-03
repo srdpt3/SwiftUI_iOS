@@ -13,7 +13,7 @@ struct SwipeView : View {
     
     @EnvironmentObject var obser : observer
     @State var vote  = false
-    var users : [datatype]
+    var users : [User]
     var body : some View{
         
         GeometryReader{ geo in
@@ -24,7 +24,7 @@ struct SwipeView : View {
                 ForEach(self.users) {i in
                     
                     
-                    SwipeDetailsView(name: i.name, age: i.age, image: i.image, height: geo.size.height - 100)
+                    SwipeDetailsView(name: i.username, age: i.age, image: i.profileImageUrl, height: geo.size.height - 100)
                         
                         .gesture(DragGesture()
                             

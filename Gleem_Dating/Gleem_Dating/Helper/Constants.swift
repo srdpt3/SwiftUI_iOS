@@ -122,7 +122,11 @@ class Ref {
         }
     
     
-    
+    static var FIRESTORE_COLLECTION_MYVOTE = FIRESTORE_ROOT.collection("vote")
+    static func FIRESTORE_COLLECTION_MYVOTE_USERID(userId: String, movieId: Int) -> DocumentReference {
+         return FIRESTORE_COLLECTION_MYLIST.document(Auth.auth().currentUser!.uid).collection("movies").document(String(movieId))
+     }
+        
     
     
     static var FIRESTORE_COLLECTION_MYLIST = FIRESTORE_ROOT.collection("myfavoritelist")

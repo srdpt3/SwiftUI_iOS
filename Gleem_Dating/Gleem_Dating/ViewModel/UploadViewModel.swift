@@ -9,24 +9,34 @@
 import SwiftUI
 
 class UploadViewModel: ObservableObject {
+    @Published var isSucess = false
+
     @Published var isLoading = false
-//     var buttonPressed = [Bool]()
+    //     var buttonPressed = [Bool]()
     var selectedButton = [String]()
     func persist(buttonPressed : [Bool], buttonTitle : [String]) {
         
         for (index, button) in buttonPressed.enumerated() {
             if (button){
                 print("\(index + 1). \(buttonTitle[index])")
-
+                
+                
             }
         }
-
-//        if selectedButton.count > 4 {
-//
-//            print("asdfasdf")
-//        }
+        let myVote = Vote(attr1: 0, attr2 : 0 , attr3 : 1 , attr4: 0, attr5: 0,attrNames:buttonTitle)
+        guard let dict = try? myVote.toDictionary() else {return}
         
-      }
+        
+        Ref.FIRESTORE_COLLECTION_MYVOTE.document("test").setData(dict) { (error) in
+            if error == nil {
+                print("persist sucessfully to my vote")
+                self.isSucess = true
+            }
+        }
+        
+        
+        
+    }
 }
 
 

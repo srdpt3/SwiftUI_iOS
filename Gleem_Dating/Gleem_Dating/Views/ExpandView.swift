@@ -11,28 +11,27 @@ import SDWebImageSwiftUI
 
 struct ExpandView: View {
     
-    var data : datatype
+    var user : User
     @Binding var show : Bool
     @Binding var isVoted: Bool
     @State var voted: Bool = false
-    @State  var data1 = Int.random(in: 0 ..< 100)
-    @State  var data2 = Int.random(in: 0 ..< 100)
-    @State  var data3 = Int.random(in: 0 ..< 100)
-    @State   var data4 = Int.random(in: 0 ..< 100)
-    @State   var data5 = Int.random(in: 0 ..< 100)
     
+    @State var voteData = [Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100)]
     
     @State var buttonPressed = [false,false,false,false,false]
-    let  buttonTitle = ["개족같이 생김","잘생김","섹시함","차도남","머리스타일 잘어울림","머리스타일 잘어울림","지적임","착해보임"]
+    let  buttonTitle = ["개족같이 생김","잘생김","섹시함","스마트함","머리스타일 잘어울림"]
     var selectedButton = [String]()
     
-    @ObservedObject var uploadViewModel = UploadViewModel()
-
+    @ObservedObject var voteViewModel = VoteViewModel()
+    
     //    @State var buttonSelected: Bool = false
     
     
     func persist() {
-        uploadViewModel.persist(buttonPressed: buttonPressed, buttonTitle:buttonTitle)
+        //                                     self.topRatedState.loadMovies(with: .topRated)
+        self.voteViewModel.persist(id: user.id, buttonPressed: self.buttonPressed, buttonTitle:self.buttonTitle)
+        
+        
     }
     
     func clean() {
@@ -49,10 +48,7 @@ struct ExpandView: View {
             // dismiss Button...
             ZStack(alignment: .topTrailing) {
                 
-                //                Image(self.data.image)
-                //                    .resizable()
-                //                    .cornerRadius(25)
-                AnimatedImage(url: URL(string: self.data.image)).resizable().frame(width: (UIScreen.main.bounds.width ), height: (UIScreen.main.bounds.height )/1.9).aspectRatio(contentMode: ContentMode.fit)
+                AnimatedImage(url: URL(string: self.user.profileImageUrl)).resizable().frame(width: (UIScreen.main.bounds.width ), height: (UIScreen.main.bounds.height )/1.9).aspectRatio(contentMode: ContentMode.fit)
                 
                 
                 Button(action: {
@@ -77,7 +73,7 @@ struct ExpandView: View {
             VStack(alignment: .leading, spacing: 5){
                 
                 HStack(spacing: 5){
-                    Text(self.data.name)
+                    Text(self.user.username)
                         .font(.callout)
                         .fontWeight(.bold)
                     
@@ -124,7 +120,7 @@ struct ExpandView: View {
                                 // ACTION
                                 self.voted.toggle()
                                 self.isVoted.toggle()
-                              
+                                
                                 self.persist()
                                 
                                 //
@@ -149,7 +145,7 @@ struct ExpandView: View {
                         
                         
                         
-                        ChartView(data1: self.$data1, data2: self.$data2, data3: self.$data3, data4: self.$data4, data5: self.$data5).frame(width: UIScreen.main.bounds.width / 1.2 , height: 280)  .padding(.top, -20)
+                        ChartView(data: self.$voteData, categories: self.buttonTitle).frame(width: UIScreen.main.bounds.width / 1.2 , height: 280)  .padding(.top, -20)
                     }
                     
                     
