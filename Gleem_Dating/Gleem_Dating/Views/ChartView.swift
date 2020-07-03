@@ -11,31 +11,76 @@ import AAInfographics
 
 struct ChartView: UIViewRepresentable {
     
-    @Binding var data : [Int]
+    @Binding var data : [Double]
+    @Binding var totalNum : Int
     var categories : [String]
-
-//    @Binding var data2 : Int
-//    @Binding var data3 : Int
-//    @Binding var data4 : Int
-//    @Binding var data5 : Int
-//
-//      let data2 = Int.random(in: 0 ..< 100)
-//      let data3 = Int.random(in: 0 ..< 100)
-//      let data4 = Int.random(in: 0 ..< 100)
-//      let data5 = Int.random(in: 0 ..< 100)
-    
-    func updateUIView(_ uiView: AAChartView, context: Context) {
-        
+    let aaChartView = AAChartView()
+    let animationType : AAChartAnimationType = AAChartAnimationType.bouncePast
+//Animation type
+//    case linear
+//    case easeInQuad
+//    case easeOutQuad
+//    case easeInOutQuad
+//    case easeInCubic
+//    case easeOutCubic
+//    case easeInOutCubic
+//    case easeInQuart
+//    case easeOutQuart
+//    case easeInOutQuart
+//    case easeInQuint
+//    case easeOutQuint
+//    case easeInOutQuint
+//    case easeInSine
+//    case easeOutSine
+//    case easeInOutSine
+//    case easeInExpo
+//    case easeOutExpo
+//    case easeInOutExpo
+//    case easeInCirc
+//    case easeOutCirc
+//    case easeInOutCirc
+//    case easeOutBounce
+//    case easeInBack
+//    case easeOutBack
+//    case easeInOutBack
+//    case elastic
+//    case swingFromTo
+//    case swingFrom
+//    case swingTo
+//    case bounce
+//    case bouncePast
+//    case easeFromTo
+//    case easeFrom
+//    case easeTo
+    func updateUIView(_ uiView: AAChartView, context:  UIViewRepresentableContext<Self>) {
+        let aaChartModel = AAChartModel()
+            .chartType(.area)
+            .legendEnabled(false)
+            .dataLabelsEnabled(true)
+            .animationType(animationType)
+      
+            .colorsTheme(["#F78320", "#FDC20A", "#F78320", "#068E81", "#EA007B"])
+            
+            .markerRadius(0)
+            .polar(true)
+            .yAxisGridLineWidth(0)
+            .categories(categories)
+            
+            .series([
+                AASeriesElement().name(SERIES_TITLE)
+                    .data([data[0],data[1],data[2],data[3],data[4]]),
+                //                                .data([9.0,9.0,9.0,9.0,9.0,9.0,]),
+                //                                .data([6.0,6.0,6.0,6.0,6.0,6.0,]),
+                //                            AASeriesElement()
+                //                                .data([3.0,3.0,10.0,3.0,3.0,3.0,]),
+            ])
+            .yAxisMax(Float(totalNum))
+            .yAxisVisible(false)
+        uiView.aa_drawChartWithChartModel(aaChartModel)
     }
     
     func makeUIView(context: Context) -> AAChartView {
-        let aaChartView = AAChartView()
-//        let data1 = Int.random(in: 0 ..< 100)
-//        let data2 = Int.random(in: 0 ..< 100)
-//        let data3 = Int.random(in: 0 ..< 100)
-//        let data4 = Int.random(in: 0 ..< 100)
-//        let data5 = Int.random(in: 0 ..< 100)
-
+        
         //        let aaChartModel = AAChartModel()
         //            .chartType(.column)//Can be any of the chart types listed under `AAChartType`.
         //            .animationType(.bounce)
@@ -63,27 +108,24 @@ struct ChartView: UIViewRepresentable {
         //
         let aaChartModel = AAChartModel()
             .chartType(.area)
-            .title("")//The chart title
             .legendEnabled(false)
             .dataLabelsEnabled(true)
             //            .xAxisVisible(true)
-            .animationType(.easeInBack)//图形渲染动画类型为"bounce"
+            .animationType(animationType)
             .colorsTheme(["#F78320", "#FDC20A", "#F78320", "#068E81", "#EA007B"])
+            .title(SERIES_TITLE)
+            .subtitle("subtitleubtitleSubtitle")
             
             .markerRadius(0)
             .polar(true)
             .yAxisGridLineWidth(0)
             .categories(categories)
-            
             .series([
-                AASeriesElement()
+                AASeriesElement().name(SERIES_TITLE)
                     .data([data[0],data[1],data[2],data[3],data[4]]),
-                //                                .data([9.0,9.0,9.0,9.0,9.0,9.0,]),
-                //                                .data([6.0,6.0,6.0,6.0,6.0,6.0,]),
-                //                            AASeriesElement()
-                //                                .data([3.0,3.0,10.0,3.0,3.0,3.0,]),
+                
             ])
-            .yAxisMax(100)
+            .yAxisMax(Float(totalNum))
             .yAxisVisible(false)
         aaChartView.aa_drawChartWithChartModel(aaChartModel)
         return aaChartView

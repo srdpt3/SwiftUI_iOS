@@ -32,10 +32,13 @@ let IMAGE_USER_PLACEHOLDER = "user-placeholder"
 let IMAGE_PHOTO = "plus.circle"
 
 
+//Vote
+public let VOTE_NUMBER = "numVote"
 
 
 
-
+//Chart
+public let SERIES_TITLE = "내매력지수(%)"
 
 
 class Ref {
@@ -122,11 +125,15 @@ class Ref {
         }
     
     
-    static var FIRESTORE_COLLECTION_MYVOTE = FIRESTORE_ROOT.collection("vote")
-    static func FIRESTORE_COLLECTION_MYVOTE_USERID(userId: String, movieId: Int) -> DocumentReference {
-         return FIRESTORE_COLLECTION_MYLIST.document(Auth.auth().currentUser!.uid).collection("movies").document(String(movieId))
+    static var FIRESTORE_COLLECTION_VOTE = FIRESTORE_ROOT.collection("vote")
+    static func FIRESTORE_COLLECTION_VOTE_USERID(userId: String) -> DocumentReference {
+         return FIRESTORE_COLLECTION_VOTE.document(userId)
      }
         
+    static var FIRESTORE_COLLECTION_MYVOTE = FIRESTORE_ROOT.collection("myvote")
+    static func FIRESTORE_COLLECTION_MYVOTE_USERID(userId: String) -> DocumentReference {
+         return FIRESTORE_COLLECTION_MYVOTE.document("dustin").collection("voted").document(userId)
+     }
     
     
     static var FIRESTORE_COLLECTION_MYLIST = FIRESTORE_ROOT.collection("myfavoritelist")
@@ -139,4 +146,8 @@ class Ref {
     static func FIRESTORE_GET_MYLIST_USERID(userId: String) -> CollectionReference {
         return FIRESTORE_COLLECTION_MYLIST.document(userId).collection("movies")
      }
+    
+//    static func FIRESTORE_GET_VOTE() -> DocumentReference {
+//       return FIRESTORE_COLLECTION_VOTE.document(userId)
+//    }
 }

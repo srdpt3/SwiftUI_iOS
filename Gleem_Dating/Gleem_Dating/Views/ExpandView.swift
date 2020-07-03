@@ -15,14 +15,16 @@ struct ExpandView: View {
     @Binding var show : Bool
     @Binding var isVoted: Bool
     @State var voted: Bool = false
-    
-    @State var voteData = [Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100)]
+    @State var totalNum : Int = 0
+    @State var voteData:[Double] = []
+    //    @State var voteData = [Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100)]
     
     @State var buttonPressed = [false,false,false,false,false]
-    let  buttonTitle = ["개족같이 생김","잘생김","섹시함","스마트함","머리스타일 잘어울림"]
+    let  buttonTitle = ["개같이 생김","잘생김","섹시함","스마트함","머리스타일 잘어울림"]
     var selectedButton = [String]()
     
     @ObservedObject var voteViewModel = VoteViewModel()
+    @ObservedObject var chartViewModel = ChartViewModel()
     
     //    @State var buttonSelected: Bool = false
     
@@ -30,14 +32,38 @@ struct ExpandView: View {
     func persist() {
         //                                     self.topRatedState.loadMovies(with: .topRated)
         self.voteViewModel.persist(id: user.id, buttonPressed: self.buttonPressed, buttonTitle:self.buttonTitle)
-        
-        
+        self.loadChartData()
     }
     
+    func loadChartData(){
+        self.chartViewModel.loadChartData(userId: user.id) { (vote) in
+            
+            self.voteData.removeAll()
+            
+            
+            self.voteData.append((Double(vote.attr1) / Double(vote.numVote) * 100).roundToDecimal(1))
+            self.voteData.append((Double(vote.attr2) / Double(vote.numVote) * 100).roundToDecimal(1))
+            self.voteData.append((Double(vote.attr3) / Double(vote.numVote) * 100).roundToDecimal(1))
+            self.voteData.append((Double(vote.attr4) / Double(vote.numVote) * 100).roundToDecimal(1))
+            self.voteData.append((Double(vote.attr5) / Double(vote.numVote) * 100).roundToDecimal(1))
+            self.totalNum = vote.numVote
+                 
+                  print(self.voteData)
+
+              }
+    }
     func clean() {
         self.buttonPressed = [false]
-        
-        
+    }
+    
+    func checkAttrSelected() -> Bool{
+        // Check any button is presssed
+        for (index, button) in buttonPressed.enumerated() {
+            if (button){
+                return true;
+            }
+        }
+        return false
     }
     
     
@@ -48,7 +74,7 @@ struct ExpandView: View {
             // dismiss Button...
             ZStack(alignment: .topTrailing) {
                 
-                AnimatedImage(url: URL(string: self.user.profileImageUrl)).resizable().frame(width: (UIScreen.main.bounds.width ), height: (UIScreen.main.bounds.height )/1.9).aspectRatio(contentMode: ContentMode.fit)
+                AnimatedImage(url: URL(string: self.user.profileImageUrl)).resizable().frame(width: (UIScreen.main.bounds.width ), height: (UIScreen.main.bounds.height )/1.9).aspectRatio(contentMode: ContentMode.fill)
                 
                 
                 Button(action: {
@@ -96,7 +122,7 @@ struct ExpandView: View {
                 ScrollView(.vertical, showsIndicators: false){
                     
                     
-                    if(self.voted == false){
+                    if(!self.voted){
                         VStack(spacing: 8){
                             HStack(spacing : 12){
                                 AttrButtonView(isPressed: self.$buttonPressed[0],  title:buttonTitle[0])
@@ -106,24 +132,25 @@ struct ExpandView: View {
                                 
                                 
                             }.padding(.horizontal, 5)
-                            //                    ChartView().frame(width: UIScreen.main.bounds.width, height: 300)
                             HStack(spacing : 12){
                                 AttrButtonView(isPressed: self.$buttonPressed[3], title:buttonTitle[3])
                                 //                        Spacer()
                                 AttrButtonView(isPressed: self.$buttonPressed[4], title:buttonTitle[4])
+                                Spacer()
                                 
-                            }.padding(.horizontal, 5)
+                            }.padding(.horizontal, 20)
                             
                             
                             Spacer()
                             Button(action:  {
                                 // ACTION
-                                self.voted.toggle()
-                                self.isVoted.toggle()
-                                
                                 self.persist()
+                                withAnimation{
+                                    self.voted.toggle()
+                                    self.isVoted.toggle()
+                                    
+                                }
                                 
-                                //
                             }) {
                                 Text("첫인상반영하고 결과보기".uppercased())
                                     .font(.system(.subheadline, design: .rounded))
@@ -137,15 +164,31 @@ struct ExpandView: View {
                                 //                                                              Animation.easeInOut(duration: 1)
                                 //                                                                  .delay(1)
                                 //                                                          )
-                            }
+                            }                    // Disabling button by verifying all images...
+                                .opacity(self.checkAttrSelected() ? 1 : 0.35)
+                                .disabled(self.checkAttrSelected() ? false : true)
                             Spacer()
                         }.background(Color.clear)
                         
                     }else{
                         
+                        if !self.voteData.isEmpty {
+                            ChartView(data: self.$voteData, totalNum: self.$totalNum, categories: self.buttonTitle).frame(width: UIScreen.main.bounds.width / 1.2 , height: 280)  .padding(.top, -20)
+                            
+                            
+                            
+                        } else {
+                            LoadingView(isLoading: self.chartViewModel.isLoading, error: self.chartViewModel.error) {
+                                self.loadChartData()
+                            }
+                        }
                         
                         
-                        ChartView(data: self.$voteData, categories: self.buttonTitle).frame(width: UIScreen.main.bounds.width / 1.2 , height: 280)  .padding(.top, -20)
+                        
+                        
+                        
+                        
+                        
                     }
                     
                     
@@ -159,6 +202,9 @@ struct ExpandView: View {
             
         }
         .background(Color.clear)
+        .onAppear{
+//            self.loadChartData()
+        }
     }
 }
 

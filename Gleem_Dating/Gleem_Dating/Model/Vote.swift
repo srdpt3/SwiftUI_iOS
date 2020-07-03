@@ -17,10 +17,12 @@ struct Vote: Encodable, Decodable {
     var attr4: Int
     var attr5: Int
     var attrNames: [String]
+    var numVote: Int
+
     
     
     
-    init(attr1: Int, attr2: Int, attr3: Int, attr4: Int, attr5: Int,attrNames: [String]) {
+    init(attr1: Int, attr2: Int, attr3: Int, attr4: Int, attr5: Int,attrNames: [String], numVote: Int) {
         self.attr1 = attr1
         self.attr2 = attr2
         self.attr3 = attr3
@@ -29,6 +31,7 @@ struct Vote: Encodable, Decodable {
         
         
         self.attrNames = attrNames
+        self.numVote = numVote
         
         
     }
@@ -39,5 +42,7 @@ struct Vote: Encodable, Decodable {
         attr4 = _dictionary["attr4"] as! Int
         attr5 = _dictionary["attr5"] as! Int
         attrNames = _dictionary["attrNames"] as! [String]
+        numVote = _dictionary["numVote"] as! Int
+
     }
 }

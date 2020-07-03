@@ -24,7 +24,6 @@ struct UploadView: View {
     @State var buttonPressed = [false,false,false,false,false,false,false,false]
     var  buttonTitle = ["개족같이 생김","잘생김","섹시함","차도남","머리스타일 잘어울림","머리스타일 잘어울림","지적임","착해보임"]
     
-    let selectedAttr : [Int] = []
     var body: some View {
         
         ZStack{
