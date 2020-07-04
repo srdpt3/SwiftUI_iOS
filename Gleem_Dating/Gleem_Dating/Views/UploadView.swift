@@ -24,22 +24,29 @@ struct UploadView: View {
     let characterLimit = 10
     @State private var entry = ""
     @State var buttonPressed = [false,false,false,false,false,false,false,false]
-    var  buttonTitle = ["개족같이 생김","잘생김","섹시함","차도남","머리스타일 잘어울림","머리스타일 잘어울림","지적임","착해보임"]
+    @State  var buttonTitle = [String]()
     
     @ObservedObject var attributeViewModel = AttributeViewModel()
+    @ObservedObject var uploadViewModel = UploadViewModel()
+
     func clean() {
         self.buttonPressed = [false,false,false,false,false,false,false,false]
     }
     
-    func checkAttrSelected() -> Bool{
+     func checkAttrSelected() -> Bool{
         // Check any button is presssed
+        self.buttonTitle.removeAll()
         var count = 0
         for (index, button) in buttonPressed.enumerated() {
             if (button){
                 count = count + 1
+                if(!attributeViewModel.buttonAttributes.isEmpty){
+                    self.buttonTitle.append(attributeViewModel.buttonAttributes[index])
+
+                }
             }
         }
-        if(count > 5){
+        if(count != 5){
             return true
         }
         return false
@@ -175,7 +182,7 @@ struct UploadView: View {
         }.padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top).onAppear{
             self.attributeViewModel.loadAttributes(sex: "male")
         } .alert(isPresented: self.$showAlert) {
-            Alert(title: Text("Error"), message: Text("test"),  dismissButton: .default(Text("OK"), action: {
+            Alert(title: Text("Error"), message: Text("5개의 항목을 선택해주세요"),  dismissButton: .default(Text("OK"), action: {
 //                self.showLoader.toggle()
 //                self.showAlert.toggle()
                 
@@ -186,6 +193,12 @@ struct UploadView: View {
     
     
     func uploadPicture(){
+        uploadViewModel.uploadVote(buttonPressed: buttonPressed, buttonTitle: self.buttonTitle, imageData: self.images[0])
+        
+//
+//        StorageService.saveAvatar(myVuserId: UUID().uuidString, username: username, email: email, imageData: imageData, metadata: metadata, storageAvatarRef: storageAvatarUserId, onSuccess: onSuccess, onError: onError)
+//
+        
        self.clean()
         print("ok")
         self.presentationMode.wrappedValue.dismiss()

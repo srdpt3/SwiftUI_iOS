@@ -34,7 +34,7 @@ let IMAGE_PHOTO = "plus.circle"
 
 //Vote
 public let VOTE_NUMBER = "numVote"
-
+public let CHART_Y_AXIS = 100
 
 
 //Chart
@@ -50,6 +50,11 @@ class Ref {
     static func STORAGE_AVATAR_USERID(userId: String) -> StorageReference {
         return STORAGE_AVATAR.child(userId)
     }
+    
+    static var STORAGE_VOTE_PIC = STORAGE_ROOT.child("votepictures")
+     static func STORAGE_VOTE_PIC_USERID(userId: String) -> StorageReference {
+         return STORAGE_VOTE_PIC.child(userId)
+     }
     
     // Storage - Posts
     static var STORAGE_POSTS = STORAGE_ROOT.child("posts")

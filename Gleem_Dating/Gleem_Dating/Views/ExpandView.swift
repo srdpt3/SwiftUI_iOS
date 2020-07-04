@@ -15,7 +15,6 @@ struct ExpandView: View {
     @Binding var show : Bool
     @Binding var isVoted: Bool
     @State var voted: Bool = false
-    @State var totalNum : Int = 0
     @State var voteData:[Double] = []
     //    @State var voteData = [Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100)]
     
@@ -46,7 +45,7 @@ struct ExpandView: View {
             self.voteData.append((Double(vote.attr3) / Double(vote.numVote) * 100).roundToDecimal(1))
             self.voteData.append((Double(vote.attr4) / Double(vote.numVote) * 100).roundToDecimal(1))
             self.voteData.append((Double(vote.attr5) / Double(vote.numVote) * 100).roundToDecimal(1))
-            self.totalNum = vote.numVote
+//            self.totalNum = vote.numVote
                  
                   print(self.voteData)
 
@@ -173,7 +172,7 @@ struct ExpandView: View {
                     }else{
                         
                         if !self.voteData.isEmpty {
-                            ChartView(data: self.$voteData, totalNum: self.$totalNum, categories: self.buttonTitle).frame(height: (UIScreen.main.bounds.height )/2.7)  .padding(.top, -20)
+                            ChartView(data: self.$voteData, totalNum: CHART_Y_AXIS, categories: self.buttonTitle).frame(height: (UIScreen.main.bounds.height )/2.7)  .padding(.top, -20)
                             
                             
                             

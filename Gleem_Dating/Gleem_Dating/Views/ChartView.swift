@@ -12,7 +12,7 @@ import AAInfographics
 struct ChartView: UIViewRepresentable {
     
     @Binding var data : [Double]
-    @Binding var totalNum : Int
+    var totalNum : Int
     var categories : [String]
     let hexColor = "#627AFA"
     let aaChartView = AAChartView()

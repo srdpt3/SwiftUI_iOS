@@ -46,7 +46,7 @@ struct MyStaticView: View {
             self.voteNum.append(vote.attr5)
             
             
-            self.totalNum = 100
+            self.totalNum = vote.numVote
             print(self.voteData)
                print( self.totalNum)
             
@@ -141,7 +141,7 @@ struct MyStaticView: View {
                         .padding()
                         VStack{
                             if !self.voteData.isEmpty {
-                                ChartView(data: self.$voteData, totalNum: self.$totalNum, categories: self.buttonTitle).frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/3.2)  .padding(.top, -20).background(Color.clear).padding(.bottom, 20)
+                                ChartView(data: self.$voteData, totalNum: CHART_Y_AXIS, categories: self.buttonTitle).frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/3.2)  .padding(.top, -20).background(Color.clear).padding(.bottom, 20)
                                 
                                 
                                 

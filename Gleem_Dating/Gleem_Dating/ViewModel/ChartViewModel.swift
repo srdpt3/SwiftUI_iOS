@@ -47,14 +47,14 @@ class ChartViewModel: ObservableObject {
     
     func loadChartData(userId: String, onSuccess: @escaping(_ data: Vote) -> Void) {
         
-        Ref.FIRESTORE_COLLECTION_VOTE.addSnapshotListener { (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else {
+        Ref.FIRESTORE_COLLECTION_VOTE_USERID(userId: userId).addSnapshotListener { (querySnapshot, error) in
+            guard let document = querySnapshot else {
                 print("No documents")
                 return
             }
             
             var data : Vote?
-            for document in documents {
+//            for document in documents {
                 
                 if(document.documentID == userId){
                     let dict = document.data()
@@ -65,7 +65,7 @@ class ChartViewModel: ObservableObject {
                     
                 }
                 
-            }
+//            }
             onSuccess(data!)
             
             

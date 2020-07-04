@@ -78,8 +78,8 @@
             filePath = "Gleem_Dating/Views/UploadView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "Gleem_Dating/Views/UploadView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -104,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D4D2C68D-1342-4DA2-BEC8-E06EDA7F50E7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Gleem_Dating/ViewModel/AttributeViewModel.swift"
@@ -113,6 +113,134 @@
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "loadAttributes(sex:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDAE78F6-8FB0-48EC-B6C8-5B0C4F218FD0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gleem_Dating/ViewModel/UploadViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "uploadVote(buttonPressed:buttonTitle:imageData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "224B5D24-16D6-403B-894E-E2470E6C3A46"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gleem_Dating/Service/StorageService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "saveVotePicture(myVote:userId:imageData:metadata:storageAvatarRef:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "224B5D24-16D6-403B-894E-E2470E6C3A46 - 48298d5b653f19cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Gleem_Dating.StorageService.saveVotePicture(myVote: Gleem_Dating.Vote, userId: Swift.String, imageData: Foundation.Data, metadata: __C.FIRStorageMetadata, storageAvatarRef: __C.FIRStorageReference) -&gt; ()"
+                  moduleName = "Gleem_Dating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dustinyang/project/iOs/Swift_UI_ios/Gleem_Dating/Gleem_Dating/Service/StorageService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "224B5D24-16D6-403B-894E-E2470E6C3A46 - 2046f77ddf867011"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRStorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Gleem_Dating.StorageService.saveVotePicture(myVote: Gleem_Dating.Vote, userId: Swift.String, imageData: Foundation.Data, metadata: __C.FIRStorageMetadata, storageAvatarRef: __C.FIRStorageReference) -&gt; ()"
+                  moduleName = "Gleem_Dating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dustinyang/project/iOs/Swift_UI_ios/Gleem_Dating/Gleem_Dating/Service/StorageService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "257">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93F9151F-0C4D-4F8E-BAAD-801B760FE1EE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gleem_Dating/Service/StorageService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "saveVotePicture(myVote:userId:imageData:metadata:storageAvatarRef:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "93F9151F-0C4D-4F8E-BAAD-801B760FE1EE - 2046f77ddf867011"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRStorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Gleem_Dating.StorageService.saveVotePicture(myVote: Gleem_Dating.Vote, userId: Swift.String, imageData: Foundation.Data, metadata: __C.FIRStorageMetadata, storageAvatarRef: __C.FIRStorageReference) -&gt; ()"
+                  moduleName = "Gleem_Dating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dustinyang/project/iOs/Swift_UI_ios/Gleem_Dating/Gleem_Dating/Service/StorageService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "1068">
+               </Location>
+               <Location
+                  uuid = "93F9151F-0C4D-4F8E-BAAD-801B760FE1EE - f9fbd654219441fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.URL&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRStorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static Gleem_Dating.StorageService.saveVotePicture(myVote: Gleem_Dating.Vote, userId: Swift.String, imageData: Foundation.Data, metadata: __C.FIRStorageMetadata, storageAvatarRef: __C.FIRStorageReference) -&gt; ()"
+                  moduleName = "Gleem_Dating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dustinyang/project/iOs/Swift_UI_ios/Gleem_Dating/Gleem_Dating/Service/StorageService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "279">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DEA8DE1D-AD43-44EF-906D-0E9235FD9400"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gleem_Dating/Service/StorageService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "saveVotePicture(myVote:userId:imageData:metadata:storageAvatarRef:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
