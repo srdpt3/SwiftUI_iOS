@@ -20,7 +20,7 @@ struct SwipeDetailsView : View {
         
         ZStack{
             
-            AnimatedImage(url: URL(string: image)!).resizable().frame(width: (UIScreen.main.bounds.width )/1.1, height: (UIScreen.main.bounds.height ) / 1.75).cornerRadius(20).padding(.horizontal, 15).aspectRatio(contentMode: .fit)
+            AnimatedImage(url: URL(string: image)!).resizable().frame(width: (UIScreen.main.bounds.width )/1.1, height: (UIScreen.main.bounds.height ) / 1.9).cornerRadius(20).padding(.horizontal, 15).aspectRatio(contentMode: .fit)
             
             VStack{
                 

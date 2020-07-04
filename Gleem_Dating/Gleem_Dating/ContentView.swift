@@ -14,6 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         Home()
+
     }
 }
 
@@ -28,72 +29,77 @@ struct Home : View {
     @State var expand = false
     
     var body: some View {
-         NavigationView{
+        NavigationView{
             VStack(spacing: 0){
-                     
-                     
-                     ZStack(alignment: .bottom){
-                         GeometryReader{_ in
-                             VStack{
-                                 
-                                 if self.index == 0{
-                                     MainView()
-                                     
-                                 }else if self.index == 1{
-                                     UploadView()
-                                     
-                                 }else if self.index == 3{
-                                     SettingsView()
-                                 }
-                                 
-                             }
-                         }.background(Color.black.opacity(0.06))
-                         
-                         
-                         ZStack(alignment: .top){
-                             Circle().trim(from: 0.5, to: self.expand ? 1:0.5).fill(Color("Color-5")).frame(width: screen2.bounds.width, height: screen2.bounds.width)
-                             
-                             ZStack{
-                                 Button(action: {
-                                     
-                                 }){
-                                     VStack(spacing: 10){
-                                         Image(systemName: "star").font(.title).foregroundColor(.white)
-                                        Text("관심대상").foregroundColor(.white)
-                                     }
-                                 }.offset(x: -100, y:75)
-                                 
-                                 Button(action: {
-                                     
-                                 }){
-                                     VStack(spacing: 10){
-                                         Image(systemName: "paperplane").font(.title).foregroundColor(.white)
-                                        Text("채팅").foregroundColor(.white)
-                                     }
-                                 }.offset(y: 30)
-                                 
-                                 
-                                 Button(action: {
-                                     
-                                 }){
-                                     VStack(spacing: 10){
-                                         Image(systemName: "square.and.arrow.up").font(.title).foregroundColor(.white)
-                                         Text("공유").foregroundColor(.white)
-                                     }
-                                 }.offset(x: 100, y:75)
-                             }.opacity(self.expand ? 1 : 0)
-                         }.offset(y: screen2.bounds.width /  1.6)
-                         
-                         
-                         
-                         
-                     }.clipped()
-                     
-                     TabBar(index: self.$index, expand : self.$expand)
-                 }
-           .edgesIgnoringSafeArea(.top)
+                
+                
+                ZStack(alignment: .bottom){
+                    GeometryReader{_ in
+                        VStack{
+                            
+                            if self.index == 0{
+                                MainView()
+                                
+                            }else if self.index == 1{
+                                UploadView()
+                                
+                            }else if self.index == 2{
+                                MyStaticView()
+                                
+                                
+                            }else if self.index == 3{
+                                SettingsView()
+                            }
+                            
+                        }
+                    }
+//                    .background(Color.black.opacity(0.06))
+                    
+                    
+                    ZStack(alignment: .top){
+                        Circle().trim(from: 0.5, to: self.expand ? 1:0.5).fill(Color("Color-5")).frame(width: screen2.bounds.width, height: screen2.bounds.width)
+                        
+                        ZStack{
+                            Button(action: {
+                                
+                            }){
+                                VStack(spacing: 10){
+                                    Image(systemName: "star").font(.title).foregroundColor(.white)
+                                    Text("관심대상").foregroundColor(.white)
+                                }
+                            }.offset(x: -100, y:75)
+                            
+                            Button(action: {
+                                
+                            }){
+                                VStack(spacing: 10){
+                                    Image(systemName: "paperplane").font(.title).foregroundColor(.white)
+                                    Text("채팅").foregroundColor(.white)
+                                }
+                            }.offset(y: 30)
+                            
+                            
+                            Button(action: {
+                                
+                            }){
+                                VStack(spacing: 10){
+                                    Image(systemName: "square.and.arrow.up").font(.title).foregroundColor(.white)
+                                    Text("공유").foregroundColor(.white)
+                                }
+                            }.offset(x: 100, y:75)
+                        }.opacity(self.expand ? 1 : 0)
+                    }.offset(y: screen2.bounds.width /  1.6)
+                    
+                    
+                    
+                    
+                }.clipped()
+                
+                TabBar(index: self.$index, expand : self.$expand)
+            }
+            .edgesIgnoringSafeArea(.top)
         }
-     
+        
         
         
     }
@@ -167,6 +173,7 @@ struct TabBar : View {
         .padding(.top , 10)
         .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 0)
         .padding(.top, -10)
+        .background(Color.black.opacity(0.06).edgesIgnoringSafeArea(.bottom))
     }
 }
 

@@ -31,9 +31,9 @@ struct UploadView: View {
                 
                 HStack{
                     Spacer(minLength: 0)
-                    Text("원하는 사진을 올려주세요")
+                    Text("사진 올리기")
                         .font(.title)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .fontWeight(.bold)
                     
                     Spacer(minLength: 0)
@@ -57,7 +57,7 @@ struct UploadView: View {
                                     .fill(Color("Color-3"))
                                 
                                 Image(systemName: "plus")
-                                    .font(.system(size: 24, weight: .bold))
+                                    .font(.system(size: 24, weight: .bold)).foregroundColor(.white)
                             }
                             else{
                                 

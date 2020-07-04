@@ -14,6 +14,7 @@ struct ChartView: UIViewRepresentable {
     @Binding var data : [Double]
     @Binding var totalNum : Int
     var categories : [String]
+    let hexColor = "#627AFA"
     let aaChartView = AAChartView()
     let animationType : AAChartAnimationType = AAChartAnimationType.bouncePast
 //Animation type
@@ -59,8 +60,10 @@ struct ChartView: UIViewRepresentable {
             .dataLabelsEnabled(true)
             .animationType(animationType)
       
-            .colorsTheme(["#F78320", "#FDC20A", "#F78320", "#068E81", "#EA007B"])
-            
+                       .colorsTheme([hexColor])
+
+            .title(SERIES_TITLE)
+
             .markerRadius(0)
             .polar(true)
             .yAxisGridLineWidth(0)
@@ -112,9 +115,8 @@ struct ChartView: UIViewRepresentable {
             .dataLabelsEnabled(true)
             //            .xAxisVisible(true)
             .animationType(animationType)
-            .colorsTheme(["#F78320", "#FDC20A", "#F78320", "#068E81", "#EA007B"])
+            .colorsTheme([hexColor])
             .title(SERIES_TITLE)
-            .subtitle("subtitleubtitleSubtitle")
             
             .markerRadius(0)
             .polar(true)
