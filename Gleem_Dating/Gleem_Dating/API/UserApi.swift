@@ -93,29 +93,29 @@ class UserApi {
 //        }
 //    }
 //    
-    func isUserLiked(id: Int, onSuccess: @escaping(_ posts: Bool) -> Void) {
-        var result: Bool = false
-        Ref.FIRESTORE_COLLECTION_MYLIST_USERID(userId: Auth.auth().currentUser!.uid, movieId: id).getDocument { (document, error) in
-            if let doc = document, doc.exists {
-                result = true
-            } else {
-                result = false
-            }
-            onSuccess(result)
-
-        }
-        
-//        Ref.FIRESTORE_COLLECTION_MYLIST.whereField("movies", arrayContains: id).getDocuments { (snapshot, error) in
-//            guard let snap = snapshot else {
-//                print("Error fetching data")
-//                return
-//            }
-//
-//
-//            if(snapshot != nil){
+//    func isUserLiked(id: Int, onSuccess: @escaping(_ posts: Bool) -> Void) {
+//        var result: Bool = false
+//        Ref.FIRESTORE_COLLECTION_MYLIST_USERID(userId: Auth.auth().currentUser!.uid, movieId: id).getDocument { (document, error) in
+//            if let doc = document, doc.exists {
 //                result = true
+//            } else {
+//                result = false
 //            }
+//            onSuccess(result)
 //
 //        }
-    }
+//        
+////        Ref.FIRESTORE_COLLECTION_MYLIST.whereField("movies", arrayContains: id).getDocuments { (snapshot, error) in
+////            guard let snap = snapshot else {
+////                print("Error fetching data")
+////                return
+////            }
+////
+////
+////            if(snapshot != nil){
+////                result = true
+////            }
+////
+////        }
+//    }
 }

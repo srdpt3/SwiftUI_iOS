@@ -62,8 +62,7 @@ struct ChartView: UIViewRepresentable {
       
                        .colorsTheme([hexColor])
 
-            .title(SERIES_TITLE)
-
+            
             .markerRadius(0)
             .polar(true)
             .yAxisGridLineWidth(0)

@@ -38,116 +38,111 @@ public let VOTE_NUMBER = "numVote"
 
 
 //Chart
-public let SERIES_TITLE = "내매력지수(%)"
+public let SERIES_TITLE = "매력지수(%)"
 
 
 class Ref {
     // Storage
-       static var STORAGE_ROOT = Storage.storage().reference(forURL: "gs://gleem-dating.appspot.com")
-       
-       // Storage - Avatar
-       static var STORAGE_AVATAR = STORAGE_ROOT.child("avatar")
-       static func STORAGE_AVATAR_USERID(userId: String) -> StorageReference {
-           return STORAGE_AVATAR.child(userId)
-       }
-       
-       // Storage - Posts
-       static var STORAGE_POSTS = STORAGE_ROOT.child("posts")
-       static func STORAGE_POST_ID(postId: String) -> StorageReference {
-             return STORAGE_POSTS.child(postId)
-       }
+    static var STORAGE_ROOT = Storage.storage().reference(forURL: "gs://gleem-dating.appspot.com")
     
-        // Storage - Chat
-        static var STORAGE_CHAT = STORAGE_ROOT.child("chat")
-        static func STORAGE_CHAT_ID(chatId: String) -> StorageReference {
-              return STORAGE_CHAT.child(chatId)
-        }
-       
-       
-       // Firestore
-       static var FIRESTORE_ROOT = Firestore.firestore()
-       
-       // Firestore - Users
-       static var FIRESTORE_COLLECTION_USERS = FIRESTORE_ROOT.collection("users")
-       static func FIRESTORE_DOCUMENT_USERID(userId: String) -> DocumentReference {
-           return FIRESTORE_COLLECTION_USERS.document(userId)
-       }
-       
-       // Firestore - Posts
-       static var FIRESTORE_COLLECTION_MY_POSTS = FIRESTORE_ROOT.collection("myPosts")
-       static func FIRESTORE_MY_POSTS_DOCUMENT_USERID(userId: String) -> DocumentReference {
-           return FIRESTORE_COLLECTION_MY_POSTS.document(userId)
-       }
-       
-       static var FIRESTORE_COLLECTION_TIMELINE = FIRESTORE_ROOT.collection("timeline")
-       static func FIRESTORE_TIMELINE_DOCUMENT_USERID(userId: String) -> DocumentReference {
-          return FIRESTORE_COLLECTION_TIMELINE.document(userId)
-       }
-       
-       static var FIRESTORE_COLLECTION_ALL_POSTS = FIRESTORE_ROOT.collection("all_posts")
-
-       static var FIRESTORE_COLLECTION_COMMENTS = FIRESTORE_ROOT.collection("comments")
-       static func FIRESTORE_COMMENTS_DOCUMENT_POSTID(postId: String) -> DocumentReference {
-              return FIRESTORE_COLLECTION_COMMENTS.document(postId)
-        }
+    // Storage - Avatar
+    static var STORAGE_AVATAR = STORAGE_ROOT.child("avatar")
+    static func STORAGE_AVATAR_USERID(userId: String) -> StorageReference {
+        return STORAGE_AVATAR.child(userId)
+    }
     
-        static var FIRESTORE_COLLECTION_CHAT = FIRESTORE_ROOT.collection("chat")
-        static func FIRESTORE_COLLECTION_CHATROOM(senderId: String, recipientId: String) -> CollectionReference {
-            return FIRESTORE_COLLECTION_CHAT.document(senderId).collection("chatRoom").document(recipientId).collection("chatItems")
-        }
-        static var FIRESTORE_COLLECTION_INBOX_MESSAGES = FIRESTORE_ROOT.collection("messages")
-        static func FIRESTORE_COLLECTION_INBOX_MESSAGES(userId: String) -> CollectionReference {
-                  return FIRESTORE_COLLECTION_INBOX_MESSAGES.document(userId).collection("inboxMessages")
-        }
+    // Storage - Posts
+    static var STORAGE_POSTS = STORAGE_ROOT.child("posts")
+    static func STORAGE_POST_ID(postId: String) -> StorageReference {
+        return STORAGE_POSTS.child(postId)
+    }
+    
+    // Storage - Chat
+    static var STORAGE_CHAT = STORAGE_ROOT.child("chat")
+    static func STORAGE_CHAT_ID(chatId: String) -> StorageReference {
+        return STORAGE_CHAT.child(chatId)
+    }
     
     
-        static func FIRESTORE_COLLECTION_INBOX_MESSAGES_DOCUMENT_USERID(senderId: String, recipientId: String) -> DocumentReference {
-           return FIRESTORE_COLLECTION_INBOX_MESSAGES.document(senderId).collection("inboxMessages").document(recipientId)
-        }
+    // Firestore
+    static var FIRESTORE_ROOT = Firestore.firestore()
     
-       static var FIRESTORE_COLLECTION_FOLLOWING = FIRESTORE_ROOT.collection("following")
-        static func FIRESTORE_COLLECTION_FOLLOWING_USERID(userId: String) -> DocumentReference {
-            return FIRESTORE_COLLECTION_FOLLOWING.document(Auth.auth().currentUser!.uid).collection("userFollowing").document(userId)
-        }
-        static func FIRESTORE_COLLECTION_FOLLOWING(userId: String) -> CollectionReference {
-               return FIRESTORE_COLLECTION_FOLLOWING.document(userId).collection("userFollowing")
-        }
-
+    // Firestore - Users
+    static var FIRESTORE_COLLECTION_USERS = FIRESTORE_ROOT.collection("users")
+    static func FIRESTORE_DOCUMENT_USERID(userId: String) -> DocumentReference {
+        return FIRESTORE_COLLECTION_USERS.document(userId)
+    }
+    
+    
+    static var FIRESTORE_COLLECTION_TIMELINE = FIRESTORE_ROOT.collection("timeline")
+    static func FIRESTORE_TIMELINE_DOCUMENT_USERID(userId: String) -> DocumentReference {
+        return FIRESTORE_COLLECTION_TIMELINE.document(userId)
+    }
+    
+    static var FIRESTORE_COLLECTION_ALL_POSTS = FIRESTORE_ROOT.collection("all_posts")
+    
+    static var FIRESTORE_COLLECTION_COMMENTS = FIRESTORE_ROOT.collection("comments")
+    static func FIRESTORE_COMMENTS_DOCUMENT_POSTID(postId: String) -> DocumentReference {
+        return FIRESTORE_COLLECTION_COMMENTS.document(postId)
+    }
+    
+    static var FIRESTORE_COLLECTION_CHAT = FIRESTORE_ROOT.collection("chat")
+    static func FIRESTORE_COLLECTION_CHATROOM(senderId: String, recipientId: String) -> CollectionReference {
+        return FIRESTORE_COLLECTION_CHAT.document(senderId).collection("chatRoom").document(recipientId).collection("chatItems")
+    }
+    static var FIRESTORE_COLLECTION_INBOX_MESSAGES = FIRESTORE_ROOT.collection("messages")
+    static func FIRESTORE_COLLECTION_INBOX_MESSAGES(userId: String) -> CollectionReference {
+        return FIRESTORE_COLLECTION_INBOX_MESSAGES.document(userId).collection("inboxMessages")
+    }
+    
+    
+    static func FIRESTORE_COLLECTION_INBOX_MESSAGES_DOCUMENT_USERID(senderId: String, recipientId: String) -> DocumentReference {
+        return FIRESTORE_COLLECTION_INBOX_MESSAGES.document(senderId).collection("inboxMessages").document(recipientId)
+    }
+    
+    static var FIRESTORE_COLLECTION_FOLLOWING = FIRESTORE_ROOT.collection("following")
+    static func FIRESTORE_COLLECTION_FOLLOWING_USERID(userId: String) -> DocumentReference {
+        return FIRESTORE_COLLECTION_FOLLOWING.document(Auth.auth().currentUser!.uid).collection("userFollowing").document(userId)
+    }
+    static func FIRESTORE_COLLECTION_FOLLOWING(userId: String) -> CollectionReference {
+        return FIRESTORE_COLLECTION_FOLLOWING.document(userId).collection("userFollowing")
+    }
     
     
     
-        static var FIRESTORE_COLLECTION_FOLLOWERS = FIRESTORE_ROOT.collection("followers")
-        static func FIRESTORE_COLLECTION_FOLLOWERS_USERID(userId: String) -> DocumentReference {
-            return FIRESTORE_COLLECTION_FOLLOWERS.document(userId).collection("userFollowers").document(Auth.auth().currentUser!.uid)
-        }
-        static func FIRESTORE_COLLECTION_FOLLOWERS(userId: String) -> CollectionReference {
-                  return FIRESTORE_COLLECTION_FOLLOWERS.document(userId).collection("userFollowers")
-        }
+    
+    static var FIRESTORE_COLLECTION_FOLLOWERS = FIRESTORE_ROOT.collection("followers")
+    static func FIRESTORE_COLLECTION_FOLLOWERS_USERID(userId: String) -> DocumentReference {
+        return FIRESTORE_COLLECTION_FOLLOWERS.document(userId).collection("userFollowers").document(Auth.auth().currentUser!.uid)
+    }
+    static func FIRESTORE_COLLECTION_FOLLOWERS(userId: String) -> CollectionReference {
+        return FIRESTORE_COLLECTION_FOLLOWERS.document(userId).collection("userFollowers")
+    }
     
     
     static var FIRESTORE_COLLECTION_VOTE = FIRESTORE_ROOT.collection("vote")
     static func FIRESTORE_COLLECTION_VOTE_USERID(userId: String) -> DocumentReference {
-         return FIRESTORE_COLLECTION_VOTE.document(userId)
-     }
-        
+        return FIRESTORE_COLLECTION_VOTE.document(userId)
+    }
+    
     static var FIRESTORE_COLLECTION_MYVOTE = FIRESTORE_ROOT.collection("myvote")
     static func FIRESTORE_COLLECTION_MYVOTE_USERID(userId: String) -> DocumentReference {
-         return FIRESTORE_COLLECTION_MYVOTE.document("dustin").collection("voted").document(userId)
-     }
+        return FIRESTORE_COLLECTION_MYVOTE.document("dustin").collection("voted").document(userId)
+    }
     
     
-    static var FIRESTORE_COLLECTION_MYLIST = FIRESTORE_ROOT.collection("myfavoritelist")
-    static func FIRESTORE_COLLECTION_MYLIST_USERID(userId: String, movieId: Int) -> DocumentReference {
-         return FIRESTORE_COLLECTION_MYLIST.document(Auth.auth().currentUser!.uid).collection("movies").document(String(movieId))
-     }
-        
+    static var FIRESTORE_COLLECTION_ATTRIBUTE = FIRESTORE_ROOT.collection("Attributes")
+    static func FIRESTORE_COLLECTION_ATTRIBUTE_MALE() -> DocumentReference {
+        return FIRESTORE_COLLECTION_VOTE.document("male")
+    }
+    
+    static func FIRESTORE_COLLECTION_ATTRIBUTE_FEMALE() -> DocumentReference {
+        return FIRESTORE_COLLECTION_ATTRIBUTE.document("female")
+    }
     
     
-    static func FIRESTORE_GET_MYLIST_USERID(userId: String) -> CollectionReference {
-        return FIRESTORE_COLLECTION_MYLIST.document(userId).collection("movies")
-     }
     
-//    static func FIRESTORE_GET_VOTE() -> DocumentReference {
-//       return FIRESTORE_COLLECTION_VOTE.document(userId)
-//    }
+    //    static func FIRESTORE_GET_VOTE() -> DocumentReference {
+    //       return FIRESTORE_COLLECTION_VOTE.document(userId)
+    //    }
 }

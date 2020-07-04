@@ -53,7 +53,7 @@ struct ExpandView: View {
               }
     }
     func clean() {
-        self.buttonPressed = [false]
+//        self.buttonPressed = [false]
     }
     
     func checkAttrSelected() -> Bool{
@@ -74,7 +74,7 @@ struct ExpandView: View {
             // dismiss Button...
             ZStack(alignment: .topTrailing) {
                 
-                AnimatedImage(url: URL(string: self.user.profileImageUrl)).resizable().frame(width: (UIScreen.main.bounds.width ), height: (UIScreen.main.bounds.height )/1.9).aspectRatio(contentMode: ContentMode.fill)
+                AnimatedImage(url: URL(string: self.user.profileImageUrl)).resizable().frame(width: (UIScreen.main.bounds.width ), height: (UIScreen.main.bounds.height )/2.1).aspectRatio(contentMode: ContentMode.fill)
                 
                 
                 Button(action: {
@@ -166,14 +166,14 @@ struct ExpandView: View {
                                 //                                                          )
                             }                    // Disabling button by verifying all images...
                                 .opacity(self.checkAttrSelected() ? 1 : 0.35)
-                                .disabled(self.checkAttrSelected() ? false : true)
+                                .disabled(self.checkAttrSelected() ? false : true).padding(.top, 10)
                             Spacer()
                         }.background(Color.clear)
                         
                     }else{
                         
                         if !self.voteData.isEmpty {
-                            ChartView(data: self.$voteData, totalNum: self.$totalNum, categories: self.buttonTitle).frame(width: UIScreen.main.bounds.width / 1.2 , height: 280)  .padding(.top, -20)
+                            ChartView(data: self.$voteData, totalNum: self.$totalNum, categories: self.buttonTitle).frame(height: (UIScreen.main.bounds.height )/2.7)  .padding(.top, -20)
                             
                             
                             

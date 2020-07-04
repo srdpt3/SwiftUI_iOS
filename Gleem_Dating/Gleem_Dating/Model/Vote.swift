@@ -18,11 +18,14 @@ struct Vote: Encodable, Decodable {
     var attr5: Int
     var attrNames: [String]
     var numVote: Int
+    var createdDate: Double
+    var lastModifiedDate: Double
+
 
     
     
     
-    init(attr1: Int, attr2: Int, attr3: Int, attr4: Int, attr5: Int,attrNames: [String], numVote: Int) {
+    init(attr1: Int, attr2: Int, attr3: Int, attr4: Int, attr5: Int,attrNames: [String], numVote: Int, createdDate: Double, lastModifiedDate: Double) {
         self.attr1 = attr1
         self.attr2 = attr2
         self.attr3 = attr3
@@ -32,7 +35,9 @@ struct Vote: Encodable, Decodable {
         
         self.attrNames = attrNames
         self.numVote = numVote
-        
+        self.createdDate = createdDate
+        self.lastModifiedDate = lastModifiedDate
+
         
     }
     init(_dictionary: NSDictionary) {
@@ -43,6 +48,10 @@ struct Vote: Encodable, Decodable {
         attr5 = _dictionary["attr5"] as! Int
         attrNames = _dictionary["attrNames"] as! [String]
         numVote = _dictionary["numVote"] as! Int
+
+        createdDate = _dictionary["createdDate"] as! Double
+        lastModifiedDate = _dictionary["lastModifiedDate"] as! Double
+
 
     }
 }

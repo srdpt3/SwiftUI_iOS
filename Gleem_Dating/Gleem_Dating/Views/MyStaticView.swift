@@ -19,13 +19,11 @@ struct MyStaticView: View {
     //    @State var voteData = [Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100),Int.random(in: 0 ..< 100)]
     @State var selected = 0
     var colors = [Color("Color1"),Color("Color")]
-    
+    @State var showUploadView = false
     @State var buttonPressed = [false,false,false,false,false]
     let  buttonTitle = ["개같이 생김","잘생김","섹시함","스마트함","머리스타일 잘어울림"]
     var selectedButton = [String]()
-    init(){
-        self.loadChartData()
-    }
+
     @ObservedObject var chartViewModel = ChartViewModel()
     func loadChartData(){
         self.chartViewModel.loadChartData(userId: "63gIkD569ywBbqfuqEx4") { (vote) in
@@ -48,8 +46,9 @@ struct MyStaticView: View {
             self.voteNum.append(vote.attr5)
             
             
-            self.totalNum = vote.numVote
-            
+            self.totalNum = 100
+            print(self.voteData)
+               print( self.totalNum)
             
         }
     }
@@ -66,7 +65,7 @@ struct MyStaticView: View {
                             HStack{
                                 
                                 AnimatedImage(url: URL(string: "https://www.thesprucepets.com/thmb/mERLXPcXz4U9G702HlsORXJqZrU=/4231x2380/smart/filters:no_upscale()/adorable-white-pomeranian-puppy-spitz-921029690-5c8be25d46e0fb000172effe.jpg")!).resizable().frame(width: 70, height: 70).cornerRadius(35).padding(.trailing, 10).onTapGesture {
-                                    print("tab")
+                                    self.showUploadView.toggle()
                                 }
                                 
                                 Text("2020/07/02 4:14AM 에 참여하였습니다.")
@@ -76,10 +75,10 @@ struct MyStaticView: View {
                                 
                             }
                             .padding(.horizontal)
-                            .padding(.top, 20)
+                            .padding(.top, 25)
                             HStack{
                                 
-                                Text("내 첫인상 평가")
+                                Text("테스트")
                                     .font(.system(size: 20))
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
@@ -239,27 +238,35 @@ struct MyStaticView: View {
             .background(Color.white.edgesIgnoringSafeArea(.top))
             .navigationBarTitle("")
             .navigationBarHidden(true)
-            .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 0)
-                //            .padding(.top, 50)
-                .onAppear{
-                    self.loadChartData()
+            .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 0).onAppear{
+                self.loadChartData()
             }
+                
+            .sheet(isPresented: self.$showUploadView) {
+                UploadView()
+
+
+
+            }
+            
+            
+            
         }
         
         
     }
-//    func getType(val: String)->String{
-//        
-//        switch val {
-//        case "Water": return "L"
-//        case "Sleep": return "Hrs"
-//        case "Running": return "Km"
-//        case "Cycling": return "Km"
-//        case "Steps": return "stp"
-//        default: return "Kcal"
-//        }
-//    }
-//    
+    //    func getType(val: String)->String{
+    //
+    //        switch val {
+    //        case "Water": return "L"
+    //        case "Sleep": return "Hrs"
+    //        case "Running": return "Km"
+    //        case "Cycling": return "Km"
+    //        case "Steps": return "stp"
+    //        default: return "Kcal"
+    //        }
+    //    }
+    //
     // converting Number to decimal...
     
     func getDec(val: CGFloat)->String{

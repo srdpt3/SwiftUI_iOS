@@ -41,7 +41,7 @@ struct Home : View {
                                 MainView()
                                 
                             }else if self.index == 1{
-                                UploadView()
+                                Color.blue
                                 
                             }else if self.index == 2{
                                 MyStaticView()
