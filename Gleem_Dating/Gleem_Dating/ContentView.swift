@@ -11,10 +11,14 @@ let screen2 = UIScreen.main
 
 struct ContentView: View {
     
-    
-    var body: some View {
-        Home()
+    @EnvironmentObject var obs : observer
 
+    var body: some View {
+        Home().onAppear{
+            
+            self.obs.reload()
+        }
+        
     }
 }
 
@@ -27,7 +31,8 @@ struct ContentView_Previews: PreviewProvider {
 struct Home : View {
     @State var index = 0
     @State var expand = false
-    
+    @EnvironmentObject var obs : observer
+
     var body: some View {
         NavigationView{
             VStack(spacing: 0){
@@ -41,23 +46,23 @@ struct Home : View {
                                 MainView()
                                 
                             }else if self.index == 1{
-                                Color.blue
-                                
+                                FavoriteView()
                             }else if self.index == 2{
-                                MyStaticView()
-                                
+                                Color.blue
+
                                 
                             }else if self.index == 3{
-                                SettingsView()
+                                MyStaticView()
+
                             }
                             
                         }
                     }
-//                    .background(Color.black.opacity(0.06))
+                    //                    .background(Color.black.opacity(0.06))
                     
                     
                     ZStack(alignment: .top){
-                        Circle().trim(from: 0.5, to: self.expand ? 1:0.5).fill(Color("Color-5")).frame(width: screen2.bounds.width, height: screen2.bounds.width)
+                        Circle().trim(from: 0.5, to: self.expand ? 1:0.5).fill(Color("Color2")).frame(width: screen2.bounds.width, height: screen2.bounds.width)
                         
                         ZStack{
                             Button(action: {
@@ -97,7 +102,7 @@ struct Home : View {
                 
                 TabBar(index: self.$index, expand : self.$expand)
             }
-            .edgesIgnoringSafeArea(.top)
+            .edgesIgnoringSafeArea(.top).navigationBarHidden(true).navigationBarTitle("")
         }
         
         
@@ -122,7 +127,73 @@ struct TabBar : View {
                 
             }){
                 Image(systemName:"rectangle.stack.person.crop").resizable().frame(width: 25, height: 25)
-                    .foregroundColor(self.index == 0 ? Color("Color-5"):Color.black.opacity(0.3))
+                    .foregroundColor(self.index == 0 ? Color("Color2"):Color.black.opacity(0.3))
+            }
+            
+            
+            Spacer(minLength:  0 )
+            
+            Button(action: {
+                self.index = 1
+                
+            }){
+                Image("heart").resizable().frame(width: 25, height: 25)
+                    .foregroundColor(self.index == 1 ? Color("Color2"):Color.black.opacity(0.3))
+            }
+            Spacer(minLength:  0 )
+            
+            
+//            Button(action: {
+//                
+//                withAnimation(Animation.default.speed(0.6)){
+//                    self.expand.toggle()
+//                }
+//                //                  self.index = 1
+//                
+//            }){
+//                //                Image(self.expand ? "xmark" : "29"   ).resizable().frame(width: 25, height: 25)
+//                Image(self.expand ? "cancel" : "50"   ).resizable().frame(width: 50, height: 50).cornerRadius(25).foregroundColor(Color("Color"))
+//                    .font(.title)
+//            }.offset(x: 0, y: -20).buttonStyle(PlainButtonStyle())
+//            Spacer(minLength:  0 )
+            
+            
+            Button(action: {
+                self.index = 2
+                
+            }){
+                Image(systemName: "chat").resizable().frame(width: 25, height: 25)
+                    .foregroundColor(self.index == 2 ? Color("Color2"):Color.black.opacity(0.3))
+            }
+            Spacer(minLength:  0 )
+            
+            Button(action: {
+                self.index = 3
+            }){
+                Image("Home").resizable().frame(width: 25, height: 25)
+                    .foregroundColor(self.index == 3 ? Color("Color2"):Color.black.opacity(0.3))
+            }
+        }
+        .padding(.horizontal, 35)
+        .padding(.top , 10)
+        .padding(.bottom, UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 5 : 0)
+        .padding(.top, -10)
+        .background(Color.black.opacity(0.06).edgesIgnoringSafeArea(.bottom))
+    }
+}
+
+
+struct TabBar2 : View {
+    @Binding var index : Int
+    @Binding var expand : Bool
+    var body: some View {
+        HStack{
+            Button(action: {
+                self.index = 0
+                
+            }){
+                Image(systemName:"rectangle.stack.person.crop").resizable().frame(width: 25, height: 25)
+                    .foregroundColor(self.index == 0 ? Color("Color2"):Color.black.opacity(0.3))
             }
             
             
@@ -133,24 +204,24 @@ struct TabBar : View {
                 
             }){
                 Image("add_pic").resizable().frame(width: 25, height: 25)
-                    .foregroundColor(self.index == 1 ? Color("Color-5"):Color.black.opacity(0.3))
+                    .foregroundColor(self.index == 1 ? Color("Color2"):Color.black.opacity(0.3))
             }
             Spacer(minLength:  0 )
             
             
-            Button(action: {
-                
-                withAnimation(Animation.default.speed(0.6)){
-                    self.expand.toggle()
-                }
-                //                  self.index = 1
-                
-            }){
-                //                Image(self.expand ? "xmark" : "29"   ).resizable().frame(width: 25, height: 25)
-                Image(self.expand ? "cancel" : "50"   ).resizable().frame(width: 50, height: 50).cornerRadius(25).foregroundColor(Color("Color"))
-                    .font(.title)
-            }.offset(x: 0, y: -20).buttonStyle(PlainButtonStyle())
-            Spacer(minLength:  0 )
+//            Button(action: {
+//
+//                withAnimation(Animation.default.speed(0.6)){
+//                    self.expand.toggle()
+//                }
+//                //                  self.index = 1
+//
+//            }){
+//                //                Image(self.expand ? "xmark" : "29"   ).resizable().frame(width: 25, height: 25)
+//                Image(self.expand ? "cancel" : "50"   ).resizable().frame(width: 50, height: 50).cornerRadius(25).foregroundColor(Color("Color"))
+//                    .font(.title)
+//            }.offset(x: 0, y: -20).buttonStyle(PlainButtonStyle())
+//            Spacer(minLength:  0 )
             
             
             Button(action: {
@@ -158,7 +229,7 @@ struct TabBar : View {
                 
             }){
                 Image(systemName: "heart").resizable().frame(width: 25, height: 25)
-                    .foregroundColor(self.index == 2 ? Color("Color-5"):Color.black.opacity(0.3))
+                    .foregroundColor(self.index == 2 ? Color("Color2"):Color.black.opacity(0.3))
             }
             Spacer(minLength:  0 )
             
@@ -166,7 +237,7 @@ struct TabBar : View {
                 self.index = 3
             }){
                 Image("settings").resizable().frame(width: 25, height: 25)
-                    .foregroundColor(self.index == 3 ? Color("Color-5"):Color.black.opacity(0.3))
+                    .foregroundColor(self.index == 3 ? Color("Color2"):Color.black.opacity(0.3))
             }
         }
         .padding(.horizontal, 35)
@@ -179,30 +250,47 @@ struct TabBar : View {
 
 
 
-
 struct MainView : View {
-    @EnvironmentObject var obs : observer
     
     @State var showLiked = false
+    @State var showBlockAlert = false
+    @EnvironmentObject var obs : observer
+
     var body: some View{
         
         ZStack{
             
             
             
-            if obs.users.isEmpty{
-                
-                Loader()
-                
-            }
-            
             VStack{
                 
-                TopView(show: $showLiked).padding(.bottom, -10)
+         
+                    
+                    Group {
+                        TopView(show: $showLiked).padding(.bottom, -15)
+                        
+                        SwipeView().padding(.bottom, 10).padding(.top, 10)
+                        
+                        
+                        
+                        BottomView().listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
+                        
+                        
+                    }
+                    //                    TopView(show: $showLiked).padding(.bottom, -15)
+                    //
+                    //                        SwipeView(users: self.obs.users).padding(.bottom, 10).padding(.top, 10)
+                    //
+                    //
+                    //
+                    //                    BottomView().listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
+                    
                 
-                SwipeView(users: self.obs.users).padding(.bottom, 10).padding(.top, 20)
                 
-                BottomView().listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
+                
+                
+                
+                
             }
             
         }.padding(.bottom, 5)
@@ -210,9 +298,6 @@ struct MainView : View {
     
     
 }
-
-
-
 
 struct CardView : View {
     

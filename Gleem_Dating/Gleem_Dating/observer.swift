@@ -13,21 +13,30 @@ class observer : ObservableObject{
     
     @Published var users = [User]()
     @Published var last = -1
+    @Published var isLoading = false
+    @Published var error: NSError?
+    
     var index = -1;
     
     
-    init() {
-        self.reload()
-    }
+//    init() {
+//        DispatchQueue.main.async {
+//            self.reload()
+//        }
+//    }
     
     func reload(){
-        let db = Firestore.firestore()
+        self.isLoading = true
         self.users.removeAll()
+        
+        let db = Firestore.firestore()
         db.collection("users").getDocuments { (snap, err) in
             
             if err != nil{
                 
                 print((err?.localizedDescription)!)
+                self.error = (err?.localizedDescription as! NSError)
+                
                 return
             }
             
@@ -39,16 +48,11 @@ class observer : ObservableObject{
                 let sex = i.get("sex") as! String
                 
                 let profileImageUrl = i.get("profileImageUrl") as! String
-                //                let swipe = i.get("swipe") as! CGFloat
-                //                let degree = i.get("degree") as! CGFloat
-                
-                
-                //                if status == "liked"{
-                
                 self.users.append(User(id: id, email: email, profileImageUrl: profileImageUrl, username: username, age: age, sex: sex, swipe: 0, degree: 0))
                 
             }
             print("self.users.count \(self.users.count)")
+            self.isLoading = false
             self.index = self.users.count
             self.last = -1
         }
@@ -61,7 +65,6 @@ class observer : ObservableObject{
         for i in 0..<self.users.count{
             
             if self.users[i].id == id.id{
-                print("sssss t")
                 
                 self.users[i].swipe = value
                 self.users[i].degree = degree

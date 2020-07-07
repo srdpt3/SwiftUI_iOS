@@ -52,7 +52,7 @@ struct BottomView : View {
                     
                 }.opacity((self.obs.last > 0 || self.obs.last == -1 ) ? 1 : 0)
                 
-                if(self.isVoted ) {
+//                if(self.isVoted ) {
                     Button(action: {
                         self.isVoted.toggle()
                         if self.obs.last == -1{
@@ -73,13 +73,13 @@ struct BottomView : View {
                     }) {
                         Image(systemName: "arrow.right").resizable().frame(width: 20, height: 20).padding(.all, 8)
                     }.foregroundColor(.black)
-                        .background(Color.white)
+                        .background(Color.clear)
                         .shadow(radius: 45)
                         .clipShape(Circle()).animation(
                             Animation.easeInOut(duration: 2)
                                 .delay(1)
                     )
-                }
+//                }
                 
                 
             }

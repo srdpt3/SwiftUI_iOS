@@ -3,10 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in closure #1 in MainSubViewFavorite.body.getter:FavoriteView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in FavoriteViewModel.loadFavoriteUsers():FavoriteViewModel.swift">
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in closure #1 in SwipeView.body.getter:SwipeView.swift">
          <PersistentStrings>
             <PersistentString
                value = "self.obser.users">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #3 in closure #1 in ExpandView.body.getter:ExpandView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "chartViewModel.isLoading">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -17,6 +31,17 @@
                value = "Vote.init(fromDictionary: dict)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #1 in FavoriteView.body.getter:FavoriteView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.favoriteViewModel.favoriteUsers.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FavoriteViewModel.loadFavoriteUsers():FavoriteViewModel.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

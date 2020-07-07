@@ -16,7 +16,7 @@ struct AttrButtonView: View {
         Button(title, action: {
             self.isPressed.toggle()
 //            self.buttonSelected.toggle()
-        }).buttonStyle(NeumorphicButtonStyle(bgColor: Color("Color-2"), isPressed:  $isPressed))
+        }).buttonStyle(NeumorphicButtonStyle(bgColor: Color("Color-3"), isPressed:  $isPressed))
     }
 }
 
@@ -37,12 +37,12 @@ struct NeumorphicButtonStyle: ButtonStyle {
             .padding(15).padding(.horizontal, 5)
             .background(
                 ZStack {
+//                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+//                        .shadow(color: .white, radius: configuration.isPressed ? 8: 15, x: configuration.isPressed ? -5: -15, y: configuration.isPressed ? -5: -15)
+//                        .shadow(color: .clear, radius: configuration.isPressed ? 8: 15, x: configuration.isPressed ? 5: 15, y: configuration.isPressed ? 5: 15)
+//                        .blendMode(.overlay)
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .shadow(color: .white, radius: configuration.isPressed ? 8: 15, x: configuration.isPressed ? -5: -15, y: configuration.isPressed ? -5: -15)
-                        .shadow(color: .clear, radius: configuration.isPressed ? 8: 15, x: configuration.isPressed ? 5: 15, y: configuration.isPressed ? 5: 15)
-                        .blendMode(.overlay)
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .fill(self.isPressed ? Color("Color2-1") : bgColor)
+                        .fill(self.isPressed ? Color("Color2") : bgColor)
                 }
         )
              .scaleEffect(self.isPressed ? 0.9: 1)

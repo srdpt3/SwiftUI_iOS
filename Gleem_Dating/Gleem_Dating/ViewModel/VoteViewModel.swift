@@ -13,7 +13,8 @@ class VoteViewModel: ObservableObject {
     @Published var isSucess = false
     @Published var error: NSError?
     @Published var voted : Bool = false
-    
+    @Published var liked : Bool = false
+
     @Published var isLoading = false
     var updatedValueDict = ["attr1":0 , "attr2":0, "attr3":0, "attr4":0, "attr5":0]
     
@@ -68,6 +69,7 @@ class VoteViewModel: ObservableObject {
         
     }
     
+ 
     
 }
 

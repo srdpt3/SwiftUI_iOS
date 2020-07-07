@@ -31,7 +31,8 @@ let IMAGE_LOGO = "logo"
 let IMAGE_USER_PLACEHOLDER = "user-placeholder"
 let IMAGE_PHOTO = "plus.circle"
 
-
+//FLAG
+public let BLOCKUSER = "신고해주셔서 감사합니다"
 //Vote
 public let VOTE_NUMBER = "numVote"
 public let CHART_Y_AXIS = 100
@@ -45,16 +46,7 @@ class Ref {
     // Storage
     static var STORAGE_ROOT = Storage.storage().reference(forURL: "gs://gleem-dating.appspot.com")
     
-    // Storage - Avatar
-    static var STORAGE_AVATAR = STORAGE_ROOT.child("avatar")
-    static func STORAGE_AVATAR_USERID(userId: String) -> StorageReference {
-        return STORAGE_AVATAR.child(userId)
-    }
-    
-    static var STORAGE_VOTE_PIC = STORAGE_ROOT.child("votepictures")
-     static func STORAGE_VOTE_PIC_USERID(userId: String) -> StorageReference {
-         return STORAGE_VOTE_PIC.child(userId)
-     }
+
     
     // Storage - Posts
     static var STORAGE_POSTS = STORAGE_ROOT.child("posts")
@@ -86,10 +78,6 @@ class Ref {
     
     static var FIRESTORE_COLLECTION_ALL_POSTS = FIRESTORE_ROOT.collection("all_posts")
     
-    static var FIRESTORE_COLLECTION_COMMENTS = FIRESTORE_ROOT.collection("comments")
-    static func FIRESTORE_COMMENTS_DOCUMENT_POSTID(postId: String) -> DocumentReference {
-        return FIRESTORE_COLLECTION_COMMENTS.document(postId)
-    }
     
     static var FIRESTORE_COLLECTION_CHAT = FIRESTORE_ROOT.collection("chat")
     static func FIRESTORE_COLLECTION_CHATROOM(senderId: String, recipientId: String) -> CollectionReference {
@@ -125,6 +113,18 @@ class Ref {
     }
     
     
+    // Storage - Avatar
+    static var STORAGE_AVATAR = STORAGE_ROOT.child("avatar")
+    static func STORAGE_AVATAR_USERID(userId: String) -> StorageReference {
+        return STORAGE_AVATAR.child(userId)
+    }
+    
+    static var STORAGE_VOTE_PIC = STORAGE_ROOT.child("votepictures")
+    static func STORAGE_VOTE_PIC_USERID(userId: String) -> StorageReference {
+        return STORAGE_VOTE_PIC.child(userId)
+    }
+    
+    
     static var FIRESTORE_COLLECTION_VOTE = FIRESTORE_ROOT.collection("vote")
     static func FIRESTORE_COLLECTION_VOTE_USERID(userId: String) -> DocumentReference {
         return FIRESTORE_COLLECTION_VOTE.document(userId)
@@ -145,7 +145,22 @@ class Ref {
         return FIRESTORE_COLLECTION_ATTRIBUTE.document("female")
     }
     
+    static var FIRESTORE_COLLECTION_SOMEOME_LIKED = FIRESTORE_ROOT.collection("someone_liked")
+    static func FIRESTORE_COLLECTION_SOMEOME_LIKED_USERID(userId: String) -> DocumentReference {
+        return FIRESTORE_COLLECTION_SOMEOME_LIKED.document(userId).collection("liked").document(User.currentUser()!.id)
+    }
     
+    static var FIRESTORE_COLLECTION_LIKED = FIRESTORE_ROOT.collection("liked")
+    static func FIRESTORE_COLLECTION_LIKED_USERID(userId: String) -> DocumentReference {
+        return FIRESTORE_COLLECTION_LIKED.document(User.currentUser()!.id).collection("liked").document(userId)
+
+
+    }
+    
+    
+  static func FIRESTORE_GET_LIKED_USERID_COLLECTION(userId: String) -> CollectionReference {
+     return FIRESTORE_COLLECTION_LIKED.document(userId).collection("liked")
+  }
     
     //    static func FIRESTORE_GET_VOTE() -> DocumentReference {
     //       return FIRESTORE_COLLECTION_VOTE.document(userId)
