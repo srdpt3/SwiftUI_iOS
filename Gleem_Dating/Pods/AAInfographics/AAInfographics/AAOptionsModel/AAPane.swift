@@ -30,7 +30,7 @@
  
  */
 
-import UIKit
+import Foundation
 
 public class AAPane: AAObject {
     public var background: [AABackgroundElement]?
@@ -41,16 +41,16 @@ public class AAPane: AAObject {
     
     
     @discardableResult
-      public func background(_ prop: [AABackgroundElement]) -> AAPane {
-          background = prop
-          return self
-      }
+    public func background(_ prop: [AABackgroundElement]) -> AAPane {
+        background = prop
+        return self
+    }
     
     @discardableResult
-     public func center(_ prop: [String]) -> AAPane {
-         center = prop
-         return self
-     }
+    public func center(_ prop: [String]) -> AAPane {
+        center = prop
+        return self
+    }
     
     @discardableResult
     public func endAngle(_ prop: Float) -> AAPane {
@@ -69,7 +69,10 @@ public class AAPane: AAObject {
         startAngle = prop
         return self
     }
-
+    
+    public override init() {
+        
+    }
 }
 
 public class AABackgroundElement: AAObject {
@@ -80,4 +83,50 @@ public class AABackgroundElement: AAObject {
     public var innerRadius: AnyObject?//内半径
     public var outerRadius: AnyObject?//外半径
     public var shape: String?
+    
+    @discardableResult
+    public func backgroundColor(_ prop: AnyObject) -> AABackgroundElement {
+        backgroundColor = prop
+        return self
+    }
+    
+    @discardableResult
+    public func borderColor(_ prop: String) -> AABackgroundElement {
+        borderColor = prop
+        return self
+    }
+    
+    @discardableResult
+    public func borderWidth(_ prop: Float) -> AABackgroundElement {
+        borderWidth = prop
+        return self
+    }
+    
+    @discardableResult
+    public func className(_ prop: String) -> AABackgroundElement {
+        className = prop
+        return self
+    }
+    
+    @discardableResult
+    public func innerRadius(_ prop: AnyObject) -> AABackgroundElement {
+        innerRadius = prop
+        return self
+    }
+    
+    @discardableResult
+    public func outerRadius(_ prop: AnyObject) -> AABackgroundElement {
+        outerRadius = prop
+        return self
+    }
+    
+    @discardableResult
+    public func shape(_ prop: String) -> AABackgroundElement {
+        shape = prop
+        return self
+    }
+    
+    public override init() {
+        
+    }
 }

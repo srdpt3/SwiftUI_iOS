@@ -30,7 +30,7 @@
  
  */
 
-import UIKit
+import Foundation
 
 public class AASubtitle: AAObject {
     public var text: String?
@@ -54,8 +54,8 @@ public class AASubtitle: AAObject {
     }
     
     @discardableResult
-    public func align(_ prop: String?) -> AASubtitle {
-        align = prop
+    public func align(_ prop: AAChartAlignType?) -> AASubtitle {
+        align = prop?.rawValue
         return self
     }
     

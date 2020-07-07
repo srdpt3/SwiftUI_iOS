@@ -106,27 +106,24 @@ struct ExpandView: View {
                 if(self.isVoted){
                     ZStack{
                         Button(action:addToMyList) {
-                              
-                              Image(self.favoriteViewModel.liked == true ? "heartred" : "heartwhite").resizable().frame(width: 50, height: 50).aspectRatio(contentMode: .fit)
-                              //                        .renderingMode(.original)
-                              //                        .padding()
-                              
-                              
-                          }.buttonStyle(PlainButtonStyle())
-                              .background(Color.clear).foregroundColor(.black)
-                              .padding(.trailing).offset(y: (UIScreen.main.bounds.height )/2.7)
-                              .animation( Animation.easeInOut(duration: 1) .delay(1))
+                            
+                            Image(self.favoriteViewModel.liked == true ? "heartred" : "heartwhite").resizable().frame(width: 50, height: 50).aspectRatio(contentMode: .fit)
+                            //                        .renderingMode(.original)
+                            //                        .padding()
+                            
+                            
+                        }.buttonStyle(PlainButtonStyle())
+                            .background(Color.clear).foregroundColor(.black)
+                            .padding(.trailing).offset(y: (UIScreen.main.bounds.height )/2.7)
+                            .animation( Animation.easeInOut(duration: 1) .delay(1))
                     }
-  
+                    
                     
                 }
-                
-                
-                
                 //                .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top)! + 10)
             }
             .clipShape(CustomShape(corner: .bottomLeft, radii: 30))
-            //            .background(Color.black.opacity(0.06).edgesIgnoringSafeArea(.top))
+            .background(Color.black.opacity(0.5).edgesIgnoringSafeArea(.top))
             
             VStack(alignment: .leading, spacing: 5){
                 
@@ -142,12 +139,10 @@ struct ExpandView: View {
                     Text("5")
                         .foregroundColor(.gray)
                 }
-                
-                
+    
             }
             .padding(.horizontal,25)
             .foregroundColor(.black)
-            //            .padding(.top)
             Divider()
             
             VStack{
@@ -155,8 +150,8 @@ struct ExpandView: View {
                     
                     
                     if(!self.isVoted){
-                        VStack(spacing: 8){
-                            HStack(spacing : 12){
+                        VStack(spacing: 6){
+                            HStack(spacing : 6){
                                 AttrButtonView(isPressed: self.$buttonPressed[0],  title:buttonTitle[0])
                                 //                        Spacer()
                                 AttrButtonView(isPressed: self.$buttonPressed[1], title:buttonTitle[1])
@@ -164,7 +159,7 @@ struct ExpandView: View {
                                 
                                 
                             }.padding(.horizontal, 5)
-                            HStack(spacing : 12){
+                            HStack(spacing : 6){
                                 AttrButtonView(isPressed: self.$buttonPressed[3], title:buttonTitle[3])
                                 //                        Spacer()
                                 AttrButtonView(isPressed: self.$buttonPressed[4], title:buttonTitle[4])
@@ -175,7 +170,6 @@ struct ExpandView: View {
                             
                             Spacer()
                             Button(action:  {
-                                // ACTION
                                 self.persist()
                                 withAnimation{
                                     //                                    self.voted.toggle()
@@ -196,7 +190,7 @@ struct ExpandView: View {
                                 //                                                              Animation.easeInOut(duration: 1)
                                 //                                                                  .delay(1)
                                 //                                                          )
-                            }                    // Disabling button by verifying all images...
+                            }   // Disabling button by verifying all images...
                                 .opacity(self.checkAttrSelected() ? 1 : 0.35)
                                 .disabled(self.checkAttrSelected() ? false : true).padding(.top, 10)
                             Spacer()
@@ -227,11 +221,13 @@ struct ExpandView: View {
             }
             .background(Color.clear)
             .onAppear{
-                         self.loadChartData()
+                self.loadChartData()
                 self.favoriteViewModel.checkLiked(id: self.user.id)
-
+                
             }
         }
+//        .navigationBarHidden(true)
+//            .navigationBarTitle("")
     }
     
     

@@ -30,7 +30,7 @@
  
  */
 
-import UIKit
+import Foundation
 
 public class AAJSStringPurer {
      public static func pureJavaScriptFunctionString(_ jsFunctionStr: String) -> String {
@@ -40,7 +40,6 @@ public class AAJSStringPurer {
         pureJSFunctionStr = pureJSFunctionStr.replacingOccurrences(of: "\n", with: "")
         pureJSFunctionStr = pureJSFunctionStr.replacingOccurrences(of: "\\", with: "\\\\")
         pureJSFunctionStr = pureJSFunctionStr.replacingOccurrences(of: "\"", with: "\\\"")
-//        pureJSFunctionStr = pureJSFunctionStr.replacingOccurrences(of: "\'", with: "\\\'")
         pureJSFunctionStr = pureJSFunctionStr.replacingOccurrences(of: "\n", with: "\\n")
         pureJSFunctionStr = pureJSFunctionStr.replacingOccurrences(of: "\r", with: "\\r")
         pureJSFunctionStr = pureJSFunctionStr.replacingOccurrences(of: "\u{000C}", with: "\\f")

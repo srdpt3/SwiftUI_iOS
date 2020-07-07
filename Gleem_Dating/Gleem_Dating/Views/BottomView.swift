@@ -52,7 +52,7 @@ struct BottomView : View {
                     
                 }.opacity((self.obs.last > 0 || self.obs.last == -1 ) ? 1 : 0)
                 
-//                if(self.isVoted ) {
+                if(self.isVoted ) {
                     Button(action: {
                         self.isVoted.toggle()
                         if self.obs.last == -1{
@@ -79,7 +79,7 @@ struct BottomView : View {
                             Animation.easeInOut(duration: 2)
                                 .delay(1)
                     )
-//                }
+              }
                 
                 
             }

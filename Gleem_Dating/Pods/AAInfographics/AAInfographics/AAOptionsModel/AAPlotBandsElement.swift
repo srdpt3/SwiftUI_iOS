@@ -30,7 +30,7 @@
  
  */
 
-import UIKit
+import Foundation
 
 public class AAPlotBandsElement: AAObject {
     public var from: Float?
@@ -106,6 +106,7 @@ public class AAPlotBandsElement: AAObject {
     }
     
     public override init() {
+        
     }   
 
 }

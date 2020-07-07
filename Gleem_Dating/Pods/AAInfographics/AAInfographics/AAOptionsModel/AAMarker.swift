@@ -30,17 +30,18 @@
  
  */
 
-import UIKit
+import Foundation
 
 public class AAMarker: AAObject {
-    public var radius: Int?
+    public var radius: Float?
     public var symbol: String?
     public var fillColor: String?
     public var lineWidth: Float?
     public var lineColor: Any?
+    public var states: AAMarkerStates?
     
     @discardableResult
-    public func radius(_ prop: Int?) -> AAMarker {
+    public func radius(_ prop: Float?) -> AAMarker {
         radius = prop
         return self
     }
@@ -66,6 +67,68 @@ public class AAMarker: AAObject {
     @discardableResult
     public func lineColor(_ prop: Any?) -> AAMarker {
         lineColor = prop
+        return self
+    }
+    
+    @discardableResult
+    public func states(_ prop: AAMarkerStates?) -> AAMarker {
+        states = prop
+        return self
+    }
+    
+    public override init() {
+        
+    }
+}
+
+public class AAMarkerStates: AAObject {
+    public var hover: AAMarkerHover?
+    
+    @discardableResult
+    public func hover(_ prop: AAMarkerHover) -> AAMarkerStates {
+        hover = prop
+        return self
+    }
+    
+    public override init() {
+        
+    }
+}
+
+public class AAMarkerHover: AAObject {
+    public var enabled: Bool?
+    public var fillColor: String?
+    public var lineColor: String?
+    public var lineWidth: Float?
+    public var radius: Float?
+    
+    @discardableResult
+    public func enabled(_ prop: Bool) -> AAMarkerHover {
+        enabled = prop
+        return self
+    }
+    
+    @discardableResult
+    public func fillColor(_ prop: String) -> AAMarkerHover {
+        fillColor = prop
+        return self
+    }
+    
+    @discardableResult
+    public func lineColor(_ prop: String) -> AAMarkerHover {
+        lineColor = prop
+        return self
+    }
+    
+    @discardableResult
+    public func lineWidth(_ prop: Float) -> AAMarkerHover {
+        lineWidth = prop
+        return self
+    }
+    
+    @discardableResult
+    public func radius(_ prop: Float) -> AAMarkerHover {
+        radius = prop
         return self
     }
     

@@ -14,19 +14,206 @@ struct ContentView: View {
     @EnvironmentObject var obs : observer
 
     var body: some View {
-        Home().onAppear{
-            
-            self.obs.reload()
+        subMainView()
+    }
+}
+
+
+struct subMainView : View {
+    @State var index = 0
+    
+    
+    var body: some View {
+        NavigationView{
+            VStack(spacing: 0){
+                
+                
+                
+                if self.index == 0{
+                    
+                    
+                    CardView()
+//                    TempView()
+                    
+                }
+                else if self.index == 1{
+                    
+                    
+                    
+                    FavoriteView()
+                    
+                }
+                else if self.index == 2{
+                    
+                    MyStaticView()
+                }
+                else{
+                    
+                    Color.blue
+                }
+                
+                
+                CircleTab(index: self.$index)
+                //                    .opacity(self.detail ? 0 : 1)
+                
+            }
         }
+    }
+    
+}
+
+
+struct CircleTab : View {
+    
+    @Binding var index : Int
+    //    @Binding var detail : Bool
+    var body : some View{
+        
+        
+        HStack{
+            
+            Button(action: {
+                
+                self.index = 0
+                
+            }) {
+                
+                VStack{
+                    
+                    if self.index != 0{
+                        
+                        Image(systemName:"rectangle.stack.person.crop").foregroundColor(Color.black.opacity(0.2))
+                        
+                    }
+                    else{
+                        
+                        Image(systemName:"rectangle.stack.person.crop")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color("Color2"))
+                            .clipShape(Circle())
+                            .offset(y: -15)
+                            .padding(.bottom, -20)
+                        
+                        Text("카드").foregroundColor(Color.black.opacity(0.7))
+                    }
+                }
+                
+                
+            }
+            
+            Spacer(minLength: 15)
+            
+            Button(action: {
+                
+                self.index = 1
+                
+            }) {
+                
+                VStack{
+                    
+                    if self.index != 1{
+                        
+                        Image("Home").resizable().frame(width: 19, height: 19).foregroundColor(Color.black.opacity(0.2))
+                    }
+                    else{
+                        
+                        Image("Home")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color("Color2"))
+                            .clipShape(Circle())
+                            .offset(y: -15)
+                            .padding(.bottom, -20)
+                        
+                        Text("나의매력").foregroundColor(Color.black.opacity(0.7))
+                    }
+                }
+            }
+            
+            Spacer(minLength: 15)
+            
+            
+            Button(action: {
+                
+                self.index = 2
+                
+            }) {
+                
+                VStack{
+                    
+                    if self.index != 2{
+                        
+                        Image("heart").resizable().frame(width: 19, height: 19).foregroundColor(Color.black.opacity(0.2))
+                    }
+                    else{
+                        
+                        Image("heart")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color("Color2"))
+                            .clipShape(Circle())
+                            .offset(y: -15)
+                            .padding(.bottom, -20)
+                        
+                        Text("호감").foregroundColor(Color.black.opacity(0.7))
+                    }
+                }
+            }
+            
+            Spacer(minLength: 15)
+            
+            Button(action: {
+                
+                self.index = 3
+                
+            }) {
+                
+                VStack{
+                    
+                    if self.index != 3{
+                        
+                        Image(systemName: "paperplane").foregroundColor(Color.black.opacity(0.2))
+                    }
+                    else{
+                        
+                        Image(systemName: "paperplane")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color("Color2"))
+                            .clipShape(Circle())
+                            .offset(y: -15)
+                            .padding(.bottom, -20)
+                        
+                        Text("체팅").foregroundColor(Color.black.opacity(0.7))
+                    }
+                }
+            }
+            
+            
+            
+        }.padding(.vertical,-10)
+            .padding(.horizontal, 25)
+            .background(Color.white)
+            .animation(.spring())
         
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//class Host: UIHostingController<ContentView> {
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
+//}
+
 
 struct Home : View {
     @State var index = 0
@@ -36,56 +223,56 @@ struct Home : View {
     var body: some View {
         NavigationView{
             VStack(spacing: 0){
-                
-                
+
+
                 ZStack(alignment: .bottom){
                     GeometryReader{_ in
                         VStack{
-                            
-                            if self.index == 0{
-                                MainView()
-                                
-                            }else if self.index == 1{
-                                FavoriteView()
-                            }else if self.index == 2{
-                                Color.blue
 
-                                
-                            }else if self.index == 3{
+                            if self.index == 0{
+                                CardView()
+
+                            }else if self.index == 1{
+                                LikedView()
+
+                            }else if self.index == 2{
                                 MyStaticView()
 
+
+                            }else if self.index == 3{
+                                Color.blue
                             }
-                            
+
                         }
                     }
                     //                    .background(Color.black.opacity(0.06))
-                    
-                    
+
+
                     ZStack(alignment: .top){
                         Circle().trim(from: 0.5, to: self.expand ? 1:0.5).fill(Color("Color2")).frame(width: screen2.bounds.width, height: screen2.bounds.width)
-                        
+
                         ZStack{
                             Button(action: {
-                                
+
                             }){
                                 VStack(spacing: 10){
                                     Image(systemName: "star").font(.title).foregroundColor(.white)
                                     Text("관심대상").foregroundColor(.white)
                                 }
                             }.offset(x: -100, y:75)
-                            
+
                             Button(action: {
-                                
+
                             }){
                                 VStack(spacing: 10){
                                     Image(systemName: "paperplane").font(.title).foregroundColor(.white)
                                     Text("채팅").foregroundColor(.white)
                                 }
                             }.offset(y: 30)
-                            
-                            
+
+
                             Button(action: {
-                                
+
                             }){
                                 VStack(spacing: 10){
                                     Image(systemName: "square.and.arrow.up").font(.title).foregroundColor(.white)
@@ -94,27 +281,22 @@ struct Home : View {
                             }.offset(x: 100, y:75)
                         }.opacity(self.expand ? 1 : 0)
                     }.offset(y: screen2.bounds.width /  1.6)
-                    
-                    
-                    
-                    
+
+
+
+
                 }.clipped()
-                
+
                 TabBar(index: self.$index, expand : self.$expand)
             }
             .edgesIgnoringSafeArea(.top).navigationBarHidden(true).navigationBarTitle("")
         }
-        
-        
-        
+
+
+
     }
 }
 
-class Host: UIHostingController<ContentView> {
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-}
 
 
 struct TabBar : View {
@@ -248,105 +430,3 @@ struct TabBar2 : View {
     }
 }
 
-
-
-struct MainView : View {
-    
-    @State var showLiked = false
-    @State var showBlockAlert = false
-    @EnvironmentObject var obs : observer
-
-    var body: some View{
-        
-        ZStack{
-            
-            
-            
-            VStack{
-                
-         
-                    
-                    Group {
-                        TopView(show: $showLiked).padding(.bottom, -15)
-                        
-                        SwipeView().padding(.bottom, 10).padding(.top, 10)
-                        
-                        
-                        
-                        BottomView().listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
-                        
-                        
-                    }
-                    //                    TopView(show: $showLiked).padding(.bottom, -15)
-                    //
-                    //                        SwipeView(users: self.obs.users).padding(.bottom, 10).padding(.top, 10)
-                    //
-                    //
-                    //
-                    //                    BottomView().listRowInsets(EdgeInsets(top: 16, leading: 0, bottom: 16, trailing: 0))
-                    
-                
-                
-                
-                
-                
-                
-            }
-            
-        }.padding(.bottom, 5)
-    }
-    
-    
-}
-
-struct CardView : View {
-    
-    var data : Card
-    
-    var body : some View{
-        
-        VStack(alignment: .leading, spacing: 0){
-            
-            Image(data.img)
-                .resizable()
-            
-            Text(data.name)
-                .fontWeight(.bold)
-                .padding(.vertical, 13)
-                .padding(.leading)
-            
-        }
-        .frame(width: UIScreen.main.bounds.width - 30, height: data.show ? 500 : 440)
-        .background(Color.white)
-        .cornerRadius(25)
-    }
-}
-
-struct Card : Identifiable , Hashable{
-    
-    var id : Int
-    var img : String
-    var name : String
-    var show : Bool
-}
-
-class ShuffleViewModel : ObservableObject {
-    //    @Published var listData = ["one", "two", "three", "four"]
-    
-    @Published var listData = [
-        
-        Card(id: 0, img: "p1", name: "Jill", show: false),
-        Card(id: 1, img: "p2", name: "Emma", show: false),
-        Card(id: 2, img: "p3", name: "Catherine", show: false),
-        Card(id: 3, img: "p4", name: "iJustine", show: false),
-        Card(id: 4, img: "p5", name: "Juliana", show: false),
-        Card(id: 5, img: "p6", name: "Lilly", show: false),
-        Card(id: 6, img: "p7", name: "Emily", show: false)
-        
-    ]
-    
-    func shuffle() {
-        listData.shuffle()
-        //or listData = dictionary.shuffled().prefix(upTo: 10)
-    }
-}

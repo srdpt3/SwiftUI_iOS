@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -52,10 +52,12 @@
 		112B5BB524AED764008B2887 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BB424AED764008B2887 /* ChartViewModel.swift */; };
 		112B5BB724AF8BE3008B2887 /* MyStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BB624AF8BE3008B2887 /* MyStaticView.swift */; };
 		112B5BB924B02C9B008B2887 /* AttributeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BB824B02C9B008B2887 /* AttributeViewModel.swift */; };
-		112B5BBB24B21B6F008B2887 /* ChartView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5BBA24B21B6B008B2887 /* ChartView2.swift */; };
 		1161383D24B3BF38003F87DC /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1161383C24B3BF38003F87DC /* FavoriteViewModel.swift */; };
 		1161383F24B3C6A1003F87DC /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1161383E24B3C6A1003F87DC /* FavoriteView.swift */; };
 		1161384124B3CC3C003F87DC /* FavoriteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1161384024B3CC3C003F87DC /* FavoriteUser.swift */; };
+		1161384524B42424003F87DC /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1161384424B42424003F87DC /* ImageLoader.swift */; };
+		119EB0EF24B4CA6000844302 /* LikedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119EB0EE24B4CA6000844302 /* LikedView.swift */; };
+		119EB0F124B4D78000844302 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119EB0F024B4D78000844302 /* CardView.swift */; };
 		753728A39276C3D4F2C7EE4B /* Pods_Gleem_DatingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF75DF834D22EEB7FA97ED /* Pods_Gleem_DatingTests.framework */; };
 		DB0AF84CA582DE46872F91D7 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC525681C6A07521620DB07 /* Pods_Gleem_Dating_Gleem_DatingUITests.framework */; };
 		ECD827094910EF9092B1E9DC /* Pods_Gleem_Dating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8F3E4B4629E9A75FE42665 /* Pods_Gleem_Dating.framework */; };
@@ -130,10 +132,12 @@
 		112B5BB424AED764008B2887 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		112B5BB624AF8BE3008B2887 /* MyStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStaticView.swift; sourceTree = "<group>"; };
 		112B5BB824B02C9B008B2887 /* AttributeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeViewModel.swift; sourceTree = "<group>"; };
-		112B5BBA24B21B6B008B2887 /* ChartView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView2.swift; sourceTree = "<group>"; };
 		1161383C24B3BF38003F87DC /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		1161383E24B3C6A1003F87DC /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		1161384024B3CC3C003F87DC /* FavoriteUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUser.swift; sourceTree = "<group>"; };
+		1161384424B42424003F87DC /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		119EB0EE24B4CA6000844302 /* LikedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedView.swift; sourceTree = "<group>"; };
+		119EB0F024B4D78000844302 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		148F8E47BB0FB24D89F287C2 /* Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating-Gleem_DatingUITests/Pods-Gleem_Dating-Gleem_DatingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		18EC2BD23B165D06CCF2EDBF /* Pods-Gleem_Dating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating.debug.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating.debug.xcconfig"; sourceTree = "<group>"; };
 		1A523AB4C67D5F55CDC394E4 /* Pods-Gleem_Dating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gleem_Dating.release.xcconfig"; path = "Target Support Files/Pods-Gleem_Dating/Pods-Gleem_Dating.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 		112B5B3024A90C05008B2887 /* Gleem_Dating */ = {
 			isa = PBXGroup;
 			children = (
+				112B5B6C24A90CF7008B2887 /* observer.swift */,
 				112B5B3124A90C05008B2887 /* AppDelegate.swift */,
 				112B5B3324A90C05008B2887 /* SceneDelegate.swift */,
 				112B5B3824A90C05008B2887 /* ContentView.swift */,
@@ -207,14 +212,12 @@
 				112B5B4224A90C06008B2887 /* Info.plist */,
 				112B5B3524A90C05008B2887 /* Gleem_Dating.xcdatamodeld */,
 				112B5B3C24A90C06008B2887 /* Preview Content */,
-				112B5B6C24A90CF7008B2887 /* observer.swift */,
 				112B5B7A24AAB4DE008B2887 /* Model */,
 				112B5B7D24AAB554008B2887 /* Helper */,
 				112B5B9024AAB68A008B2887 /* Views */,
 				112B5B9524AAB6B6008B2887 /* API */,
 				112B5B9A24AAB718008B2887 /* Service */,
 				112B5B9D24AAB7EC008B2887 /* ViewModel */,
-				112B5B9E24AAB81C008B2887 /* SessionStore.swift */,
 			);
 			path = Gleem_Dating;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				112B5BA824AD5CEE008B2887 /* Keyboard.swift */,
 				112B5BAA24AD8120008B2887 /* Modifier.swift */,
 				112B5BB024AE97D4008B2887 /* LoadingView.swift */,
+				1161384424B42424003F87DC /* ImageLoader.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -288,8 +292,9 @@
 				112B5BA224AC2DB2008B2887 /* AttrButtonView.swift */,
 				112B5BA624AD4702008B2887 /* UploadView.swift */,
 				112B5BB624AF8BE3008B2887 /* MyStaticView.swift */,
-				112B5BBA24B21B6B008B2887 /* ChartView2.swift */,
 				1161383E24B3C6A1003F87DC /* FavoriteView.swift */,
+				119EB0EE24B4CA6000844302 /* LikedView.swift */,
+				119EB0F024B4D78000844302 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 		112B5B9D24AAB7EC008B2887 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				112B5B9E24AAB81C008B2887 /* SessionStore.swift */,
 				112B5BA424AD4480008B2887 /* UploadViewModel.swift */,
 				112B5B9B24AAB7BF008B2887 /* UserViewModel.swift */,
 				112B5BAE24AE960B008B2887 /* VoteViewModel.swift */,
@@ -432,7 +438,7 @@
 				};
 			};
 			buildConfigurationList = 112B5B2924A90C05008B2887 /* Build configuration list for PBXProject "Gleem_Dating" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -606,11 +612,13 @@
 				112B5B7F24AAB56A008B2887 /* Utils.swift in Sources */,
 				1161383F24B3C6A1003F87DC /* FavoriteView.swift in Sources */,
 				112B5B3424A90C05008B2887 /* SceneDelegate.swift in Sources */,
+				119EB0F124B4D78000844302 /* CardView.swift in Sources */,
 				112B5B8D24AAB644008B2887 /* SafariView.swift in Sources */,
 				1161383D24B3BF38003F87DC /* FavoriteViewModel.swift in Sources */,
 				112B5B3924A90C05008B2887 /* ContentView.swift in Sources */,
 				112B5BB524AED764008B2887 /* ChartViewModel.swift in Sources */,
 				112B5B3724A90C05008B2887 /* Gleem_Dating.xcdatamodeld in Sources */,
+				119EB0EF24B4CA6000844302 /* LikedView.swift in Sources */,
 				112B5B8924AAB5FA008B2887 /* SearchBar.swift in Sources */,
 				112B5B7C24AAB52A008B2887 /* SearchBarView.swift in Sources */,
 				112B5BAF24AE960B008B2887 /* VoteViewModel.swift in Sources */,
@@ -624,7 +632,7 @@
 				112B5B8F24AAB667008B2887 /* SettingView.swift in Sources */,
 				112B5B7524A9258F008B2887 /* SwipeDetailsView.swift in Sources */,
 				112B5BAB24AD8120008B2887 /* Modifier.swift in Sources */,
-				112B5BBB24B21B6F008B2887 /* ChartView2.swift in Sources */,
+				1161384524B42424003F87DC /* ImageLoader.swift in Sources */,
 				112B5B9C24AAB7BF008B2887 /* UserViewModel.swift in Sources */,
 				112B5BA524AD4481008B2887 /* UploadViewModel.swift in Sources */,
 				112B5BB924B02C9B008B2887 /* AttributeViewModel.swift in Sources */,
@@ -726,7 +734,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -780,7 +788,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -800,6 +808,7 @@
 				DEVELOPMENT_TEAM = CSE9343A58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Gleem_Dating/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -821,6 +830,7 @@
 				DEVELOPMENT_TEAM = CSE9343A58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Gleem_Dating/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

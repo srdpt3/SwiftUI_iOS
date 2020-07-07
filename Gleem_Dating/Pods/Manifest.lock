@@ -1,5 +1,5 @@
 PODS:
-  - AAInfographics (4.0.0)
+  - AAInfographics (5.0.1)
   - abseil/algorithm (0.20200225.0):
     - abseil/algorithm/algorithm (= 0.20200225.0)
     - abseil/algorithm/container (= 0.20200225.0)
@@ -376,9 +376,9 @@ PODS:
   - ProgressHUD (13.4)
   - PromisesObjC (1.2.9)
   - Protobuf (3.12.0)
-  - SDWebImage (5.8.1):
-    - SDWebImage/Core (= 5.8.1)
-  - SDWebImage/Core (5.8.1)
+  - SDWebImage (5.8.3):
+    - SDWebImage/Core (= 5.8.3)
+  - SDWebImage/Core (5.8.3)
   - SDWebImageSwiftUI (1.5.0):
     - SDWebImage (~> 5.7)
 
@@ -433,7 +433,7 @@ SPEC REPOS:
     - SDWebImageSwiftUI
 
 SPEC CHECKSUMS:
-  AAInfographics: bbeed03caece4ee3b5e557d734967394e9bcdb11
+  AAInfographics: 4f95dfdeb1a1642ab26365b9b40b83693eb5b83d
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   FBSDKCoreKit: b46507dc8b8cefed31d644e74d7cc30e2a715ef8
@@ -463,7 +463,7 @@ SPEC CHECKSUMS:
   ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
-  SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
+  SDWebImage: 112503ec94a5a2a41869503844a15e8d8f1ead5c
   SDWebImageSwiftUI: 43687ffe232ddd33fe0659498b7ca9884fdd6b35
 
 PODFILE CHECKSUM: e153c8c90895073249041c1c26f948fb6cf8de49

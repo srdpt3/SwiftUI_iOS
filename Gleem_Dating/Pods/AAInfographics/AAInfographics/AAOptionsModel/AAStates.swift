@@ -1,9 +1,9 @@
 //
-//  AAOptions.swift
+//  AAStates.swift
 //  AAInfographicsDemo
 //
-//  Created by AnAn on 2019/8/31.
-//  Copyright © 2019 An An. All rights reserved.
+//  Created by AnAn on 2020/1/21.
+//  Copyright © 2020 An An. All rights reserved.
 //*************** ...... SOURCE CODE ...... ***************
 //***...................................................***
 //*** https://github.com/AAChartModel/AAChartKit        ***
@@ -30,105 +30,21 @@
  
  */
 
-import UIKit
+import Foundation
 
-public class AAOptions: AAObject {
-    public var chart: AAChart?
-    public var title: AATitle?
-    public var subtitle: AASubtitle?
-    public var xAxis: AAXAxis?
-    public var yAxis: AAYAxis?
-    public var xAxisArray: [AAXAxis]?
-    public var yAxisArray: [AAYAxis]?
-    public var tooltip: AATooltip?
-    public var plotOptions: AAPlotOptions?
-    public var series: [AASeriesElement]?
-    public var legend: AALegend?
-    public var pane: AAPane?
-    public var colors: [Any]?
-    public var touchEventEnabled: Bool?
+public class AAStates: AAObject {
+    public var hover: AAHover?
+    public var select: AASelect?
     
     @discardableResult
-    public func chart(_ prop: AAChart?) -> AAOptions {
-        chart = prop
+    public func hover(_ prop: AAHover) -> AAStates {
+        hover = prop
         return self
     }
     
     @discardableResult
-    public func title(_ prop: AATitle?) -> AAOptions {
-        title = prop
-        return self
-    }
-    
-    @discardableResult
-    public func subtitle(_ prop: AASubtitle?) -> AAOptions {
-        subtitle = prop
-        return self
-    }
-    
-    @discardableResult
-    public func xAxis(_ prop: AAXAxis?) -> AAOptions {
-        xAxis = prop
-        return self
-    }
-    
-    @discardableResult
-    public func yAxis(_ prop: AAYAxis?) -> AAOptions {
-        yAxis = prop
-        return self
-    }
-    
-    @discardableResult
-    public func xAxisArray(_ prop: [AAXAxis]?) -> AAOptions {
-        xAxisArray = prop
-        return self
-    }
-    
-    @discardableResult
-    public func yAxisArray(_ prop: [AAYAxis]?) -> AAOptions {
-        yAxisArray = prop
-        return self
-    }
-    
-    @discardableResult
-    public func tooltip(_ prop: AATooltip?) -> AAOptions {
-        tooltip = prop
-        return self
-    }
-    
-    @discardableResult
-    public func plotOptions(_ prop: AAPlotOptions?) -> AAOptions {
-        plotOptions = prop
-        return self
-    }
-    
-    @discardableResult
-    public func series(_ prop: [AASeriesElement]?) -> AAOptions {
-        series = prop
-        return self
-    }
-    
-    @discardableResult
-    public func legend(_ prop: AALegend?) -> AAOptions {
-        legend = prop
-        return self
-    }
-    
-    @discardableResult
-    public func pane(_ prop: AAPane?) -> AAOptions {
-        pane = prop
-        return self
-    }
-    
-    @discardableResult
-    public func colors(_ prop: [Any]?) -> AAOptions {
-        colors = prop
-        return self
-    }
-    
-    @discardableResult
-    public func touchEventEnabled(_ prop: Bool?) -> AAOptions {
-        touchEventEnabled = prop
+    public func select(_ prop: AASelect) -> AAStates {
+        select = prop
         return self
     }
     
@@ -137,3 +53,100 @@ public class AAOptions: AAObject {
     }
 }
 
+public class AAHover: AAObject {
+    public var enabled: Bool?
+    public var borderColor: String?
+    public var brightness: Float?
+    public var color: String?
+    public var halo: AAHalo?
+    
+    @discardableResult
+    public func enabled(_ prop: Bool) -> AAHover {
+        enabled = prop
+        return self
+    }
+    
+    @discardableResult
+    public func borderColor(_ prop: String) -> AAHover {
+        borderColor = prop
+        return self
+    }
+    
+    @discardableResult
+    public func brightness(_ prop: Float) -> AAHover {
+        brightness = prop
+        return self
+    }
+    
+    @discardableResult
+    public func color(_ prop: String) -> AAHover {
+        color = prop
+        return self
+    }
+    
+    @discardableResult
+    public func halo(_ prop: AAHalo) -> AAHover {
+        halo = prop
+        return self
+    }
+    
+    public override init() {
+        
+    }
+}
+
+public class AASelect: AAObject {
+    public var borderColor: String?
+    public var color: String?
+    public var halo: AAHalo?
+    
+    @discardableResult
+    public func borderColor(_ prop: String) -> AASelect {
+        borderColor = prop
+        return self
+    }
+    
+    @discardableResult
+    public func color(_ prop: String) -> AASelect {
+        color = prop
+        return self
+    }
+    
+    @discardableResult
+    public func halo(_ prop: AAHalo) -> AASelect {
+        halo = prop
+        return self
+    }
+    
+    public override init() {
+        
+    }
+}
+
+public class AAHalo: AAObject {
+    public var attributes: [String: Any]?
+    public var opacity: Float?
+    public var size: Float?
+    
+    @discardableResult
+    public func attributes(_ prop: [String: Any]) -> AAHalo {
+        attributes = prop
+        return self
+    }
+    
+    @discardableResult
+    public func opacity(_ prop: Float) -> AAHalo {
+        opacity = prop
+        return self
+    }
+    
+    @discardableResult
+    public func size(_ prop: Float) -> AAHalo {
+        size = prop
+        return self
+    }
+    
+    public override init() {
+        
+    }
+}

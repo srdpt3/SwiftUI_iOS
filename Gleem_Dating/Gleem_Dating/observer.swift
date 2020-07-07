@@ -19,11 +19,11 @@ class observer : ObservableObject{
     var index = -1;
     
     
-//    init() {
-//        DispatchQueue.main.async {
-//            self.reload()
-//        }
-//    }
+    init() {
+        DispatchQueue.main.async {
+            self.reload()
+        }
+    }
     
     func reload(){
         self.isLoading = true

@@ -30,7 +30,7 @@
  
  */
 
-import UIKit
+import Foundation
 
 public class AASeries: AAObject {
     public var borderRadius: Float?
@@ -38,10 +38,12 @@ public class AASeries: AAObject {
     public var stacking: String?
     public var animation: AAAnimation?
     public var keys: [String]?
-    public var colorByPoint: Bool? //决定了图表是否给每个数据列或每个点分配一个颜色，默认值是 false， 即默认是给每个数据类分配颜色，
-    public var connectNulls: Bool? //设置折线是否断点重连
+    public var colorByPoint: Bool?
+    public var connectNulls: Bool? //Whether reconnects the broken line of the chart
     public var events: [String: Any]?
     public var shadow: AAShadow?
+    public var dataLabels: AADataLabels?
+
     
     @discardableResult
     public func borderRadius(_ prop: Float?) -> AASeries {
@@ -56,8 +58,8 @@ public class AASeries: AAObject {
     }
     
     @discardableResult
-    public func stacking(_ prop: String?) -> AASeries {
-        stacking = prop
+    public func stacking(_ prop: AAChartStackingType?) -> AASeries {
+        stacking = prop?.rawValue
         return self
     }
     
@@ -94,6 +96,12 @@ public class AASeries: AAObject {
     @discardableResult
     public func shadow(_ prop: AAShadow) -> AASeries {
         shadow = prop
+        return self
+    }
+    
+    @discardableResult
+    public func dataLabels(_ prop: AADataLabels) -> AASeries {
+        dataLabels = prop
         return self
     }
     

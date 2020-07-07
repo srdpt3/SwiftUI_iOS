@@ -36,7 +36,7 @@ import WebKit
 let kUserContentMessageNameMouseOver = "mouseover"
 
 @objc public protocol AAChartViewDelegate: NSObjectProtocol {
-    @objc optional func aaChartViewDidFinishedLoad (_ aaChartView: AAChartView)
+    @objc optional func aaChartViewDidFinishLoad (_ aaChartView: AAChartView)
     @objc optional func aaChartView(_ aaChartView: AAChartView, moveOverEventMessage: AAMoveOverEventMessageModel)
 }
 
@@ -49,8 +49,26 @@ public class AAMoveOverEventMessageModel: NSObject {
     public var index: Int?
 }
 
+//Refer to: https://stackoverflow.com/questions/26383031/wkwebview-causes-my-view-controller-to-leak
+class AALeakAvoider : NSObject, WKScriptMessageHandler {
+    weak var delegate : WKScriptMessageHandler?
+    
+    init(delegate:WKScriptMessageHandler) {
+        self.delegate = delegate
+        super.init()
+    }
+    
+    func userContentController(
+        _ userContentController: WKUserContentController,
+        didReceive message: WKScriptMessage
+    ) {
+        self.delegate?.userContentController(userContentController, didReceive: message)
+    }
+}
+
+
 public class AAChartView: WKWebView {
-    public var delegate: AAChartViewDelegate?
+    public weak var delegate: AAChartViewDelegate?
     
     public var scrollEnabled: Bool? {
         willSet {
@@ -74,7 +92,7 @@ public class AAChartView: WKWebView {
         willSet {
             if optionsJson != nil {
                 let jsStr = "setChartSeriesHidden('\(newValue!)')"
-                evaluateJavaScriptWithFunctionNameString(jsStr)
+                safeEvaluateJavaScriptString(jsStr)
             }
         }
     }
@@ -84,7 +102,7 @@ public class AAChartView: WKWebView {
         willSet {
             if optionsJson != nil {
                 let jsStr = "setTheChartViewContentWidth('\(newValue!)')"
-                evaluateJavaScriptWithFunctionNameString(jsStr)
+                safeEvaluateJavaScriptString(jsStr)
             }
         }
     }
@@ -94,12 +112,13 @@ public class AAChartView: WKWebView {
         willSet {
             if optionsJson != nil {
                 let jsStr = "setTheChartViewContentHeight('\(newValue!)')"
-                evaluateJavaScriptWithFunctionNameString(jsStr)
+                safeEvaluateJavaScriptString(jsStr)
             }
         }
     }
     
     private var optionsJson: String?
+    private var touchEventEnabled = false
     
     override private init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
@@ -108,14 +127,10 @@ public class AAChartView: WKWebView {
         self.navigationDelegate = self
     }
     
-   convenience public init() {
-    let userContentController = WKUserContentController()
-    let configuration = WKWebViewConfiguration()
-    configuration.userContentController = userContentController
-    
-    self.init(frame: .zero, configuration: configuration)
-    
-    configuration.userContentController.add(self, name: kUserContentMessageNameMouseOver)
+    convenience public init() {
+        let configuration = WKWebViewConfiguration()
+        configuration.userContentController = WKUserContentController()
+        self.init(frame: .zero, configuration: configuration)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -123,11 +138,13 @@ public class AAChartView: WKWebView {
     }
     
     private func drawChart() {
-        evaluateJavaScriptWithFunctionNameString(optionsJson!)
+        safeEvaluateJavaScriptString(optionsJson!)
     }
     
-    private func evaluateJavaScriptWithFunctionNameString (_ jsString: String) {
+    private func safeEvaluateJavaScriptString (_ jsString: String) {
         self.evaluateJavaScript(jsString, completionHandler: { (item, error) in
+            
+            #if DEBUG
             if error != nil {
                 let objcError = error! as NSError
                 let errorUserInfo = objcError.userInfo
@@ -135,7 +152,7 @@ public class AAChartView: WKWebView {
                 let errorInfo =
                 """
                 
-                ☠️☠️💀☠️☠️WARNING!!!!!!!!!!!!!!!!!!!! FBI WARNING !!!!!!!!!!!!!!!!!!!! WARNING☠️☠️💀☠️☠️
+                ☠️☠️💀☠️☠️WARNING!!!!!!!!!!!!!!!!!!!! FBI WARNING !!!!!!!!!!!!!!!!!!!!WARNING☠️☠️💀☠️☠️
                 ==========================================================================================
                 ------------------------------------------------------------------------------------------
                 code = \(objcError.code);
@@ -148,24 +165,45 @@ public class AAChartView: WKWebView {
                 WKJavaScriptExceptionSourceURL = \(errorUserInfo["WKJavaScriptExceptionSourceURL"] ?? "");
                 ------------------------------------------------------------------------------------------
                 ==========================================================================================
-                ☠️☠️💀☠️☠️WARNING!!!!!!!!!!!!!!!!!!!! FBI WARNING !!!!!!!!!!!!!!!!!!!! WARNING☠️☠️💀☠️☠️
+                ☠️☠️💀☠️☠️WARNING!!!!!!!!!!!!!!!!!!!! FBI WARNING !!!!!!!!!!!!!!!!!!!!WARNING☠️☠️💀☠️☠️
                 
                 """
                 print(errorInfo)
             }
+            #endif
+            
         })
     }
     
     private func configureTheJavaScriptStringWithOptions(_ aaOptions: AAOptions) {
-        var modelJsonStr = aaOptions.toJSON()!
-        modelJsonStr = modelJsonStr.replacingOccurrences(of: "\n", with: "") as String
+        let modelJsonStr = aaOptions.toJSON()!
         
-        let jsString = NSString.localizedStringWithFormat("loadTheHighChartView('%@','%f','%f');",
-                                                          modelJsonStr,
-                                                          contentWidth ?? 0,
-                                                          contentHeight ?? 0)
-        optionsJson = jsString as String;
+        if     aaOptions.touchEventEnabled == true
+            && self.touchEventEnabled == false {
+            
+            self.touchEventEnabled = true
+            self.configuration.userContentController.add(AALeakAvoider.init(delegate: self), name: kUserContentMessageNameMouseOver)
+        }
+        
+        #if DEBUG
+        let modelJsonDic = aaOptions.toDic()!
+        let data = try? JSONSerialization.data(withJSONObject: modelJsonDic, options: .prettyPrinted)
+        if data != nil {
+            let prettyPrintedModelJson = String(data: data!, encoding: String.Encoding.utf8)
+            print("""
+                -----------🖨🖨🖨 console log AAOptions JSON information of AAChartView 🖨🖨🖨-----------:
+                \(prettyPrintedModelJson!)
+                """)
+        }
+        #endif
+        
+        optionsJson = "loadTheHighChartView('\(modelJsonStr)','\(contentWidth ?? 0)','\(contentHeight ?? 0)')"
     }
+
+    deinit {
+        self.configuration.userContentController.removeScriptMessageHandler(forName: kUserContentMessageNameMouseOver)
+    }
+
 }
 
 extension AAChartView {
@@ -180,8 +218,16 @@ extension AAChartView {
     /// Function of only refresh the chart data after the chart has been rendered
     ///
     /// - Parameter chartModel: chart model series  array
-    public func aa_onlyRefreshTheChartDataWithChartModelSeries(_ chartModelSeries: [[String: AnyObject]]) {
+    public func aa_onlyRefreshTheChartDataWithChartModelSeries(_ chartModelSeries: [AASeriesElement]) {
         aa_onlyRefreshTheChartDataWithChartOptionsSeries(chartModelSeries)
+    }
+    
+    /// Function of only refresh the chart data after the chart has been rendered
+    ///
+    /// - Parameter chartModel: chart model series  array
+    /// - Parameter animation: enable animation effect or not
+    public func aa_onlyRefreshTheChartDataWithChartModelSeries(_ chartModelSeries: [AASeriesElement], animation: Bool) {
+        aa_onlyRefreshTheChartDataWithChartOptionsSeries(chartModelSeries, animation: animation)
     }
     
     ///  Function of refreshing whole chart view content after the chart has been rendered
@@ -195,10 +241,10 @@ extension AAChartView {
     
     /// Function of drawing chart view
     ///
-    /// - Parameter aaOoptions: The instance object of AAOptions model
-    public func aa_drawChartWithChartOptions(_ aaOoptions: AAOptions) {
+    /// - Parameter aaOptions: The instance object of AAOptions model
+    public func aa_drawChartWithChartOptions(_ aaOptions: AAOptions) {
         if optionsJson == nil {
-            configureTheJavaScriptStringWithOptions(aaOoptions)
+            configureTheJavaScriptStringWithOptions(aaOptions)
             let path = Bundle(for: self.classForCoder)
                 .path(forResource: "AAChartView",
                       ofType: "html",
@@ -207,7 +253,7 @@ extension AAChartView {
             let urlRequest = NSURLRequest(url: urlStr) as URLRequest
             self.load(urlRequest)
         } else {
-            configureTheJavaScriptStringWithOptions(aaOoptions)
+            configureTheJavaScriptStringWithOptions(aaOptions)
             drawChart()
         }
     }
@@ -215,13 +261,25 @@ extension AAChartView {
     
     /// Function of only refresh the chart data after the chart has been rendered
     ///
-    /// - Parameter chartModelSeries: chart model series  array
-    public func aa_onlyRefreshTheChartDataWithChartOptionsSeries(_ chartModelSeries: [[String: AnyObject]]) {
-        var str = getJSONStringFromArray(array: chartModelSeries)
-        str = str.replacingOccurrences(of: "\n", with: "") as String
-        let jsStr = "onlyRefreshTheChartDataWithSeries('\(str)');"
-        evaluateJavaScriptWithFunctionNameString(jsStr)
+    /// - Parameter chartOptionsSeries: chart options series  array
+    public func aa_onlyRefreshTheChartDataWithChartOptionsSeries(_ chartOptionsSeries: [AASeriesElement]) {
+      aa_onlyRefreshTheChartDataWithChartOptionsSeries(chartOptionsSeries, animation: true)
     }
+    
+    /// Function of only refresh the chart data after the chart has been rendered
+    ///
+    /// - Parameter chartOptionsSeries: chart options series  array
+    /// - Parameter animation: enable animation effect or not
+    public func aa_onlyRefreshTheChartDataWithChartOptionsSeries(_ chartOptionsSeries: [AASeriesElement], animation: Bool) {
+        var seriesElementDicArr = [[String: AnyObject]]()
+        chartOptionsSeries.forEach { (aaSeriesElement) in
+            seriesElementDicArr.append(aaSeriesElement.toDic()!)
+        }
+        
+         let str = getJSONStringFromArray(array: seriesElementDicArr)
+         let jsStr = "onlyRefreshTheChartDataWithSeries('\(str)','\(animation)');"
+         safeEvaluateJavaScriptString(jsStr)
+     }
     
     
     ///  Function of refreshing whole chart view content after the chart has been rendered
@@ -244,39 +302,54 @@ extension AAChartView {
     /// - Parameter options: A configuration object for the new chart options as defined in the options section of the API.
     /// - Parameter redraw: Whether to redraw after updating the chart, the default is true
     public func aa_updateChart(options: AAObject, redraw: Bool) {
-        var classNameStr = options.classNameString
-        if classNameStr.contains(".") {
-            classNameStr = classNameStr.components(separatedBy: ".")[1];
-        }
-       
-        classNameStr = classNameStr.replacingOccurrences(of: "AA", with: "")
-
-        //convert fisrt character to be lowercase string
-        let firstChar = classNameStr.prefix(1)
-        let lowercaseFirstChar = firstChar.lowercased()
-        let index = classNameStr.index(classNameStr.startIndex, offsetBy: 1)
-        classNameStr = String(classNameStr.suffix(from: index))
-        let finalClassNameStr = lowercaseFirstChar + classNameStr
-        
+        let isOptionsClass: Bool = options is AAOptions
         let optionsDic = options.toDic()
-        let finalOptionsDic: [String : Any] = [finalClassNameStr: optionsDic as Any]
+        let finalOptionsDic: [String : Any]!
         
+        if isOptionsClass == true {
+            finalOptionsDic = optionsDic
+        } else {
+            var classNameStr = options.classNameString
+            if classNameStr.contains(".") {
+                classNameStr = classNameStr.components(separatedBy: ".")[1];
+            }
+            
+            classNameStr = classNameStr.replacingOccurrences(of: "AA", with: "")
+            
+            //convert fisrt character to be lowercase string
+            let firstChar = classNameStr.prefix(1)
+            let lowercaseFirstChar = firstChar.lowercased()
+            let index = classNameStr.index(classNameStr.startIndex, offsetBy: 1)
+            classNameStr = String(classNameStr.suffix(from: index))
+            let finalClassNameStr = lowercaseFirstChar + classNameStr
+            finalOptionsDic = [finalClassNameStr: optionsDic as Any]
+        }
+                
         let optionsStr = getJSONStringFromDictionary(dictionary: finalOptionsDic)
         let jsStr = "updateChart('\(optionsStr)','\(redraw)')"
-        evaluateJavaScriptWithFunctionNameString(jsStr)
+        safeEvaluateJavaScriptString(jsStr)
     }
     
-    
-    ///Same as the function `func aa_addPointToChartSeriesElement(elementIndex: Int, options: Any, redraw: Bool, shift: Bool, animation: Bool)`
-    ///
     public func aa_addPointToChartSeriesElement(elementIndex: Int, options: Any) {
-        aa_addPointToChartSeriesElement(elementIndex: elementIndex, options: options, shift: true)
+        aa_addPointToChartSeriesElement(
+            elementIndex: elementIndex,
+            options: options,
+            shift: true
+        )
     }
     
-    ///Same as the function `func aa_addPointToChartSeriesElement(elementIndex: Int, options: Any, redraw: Bool, shift: Bool, animation: Bool)`
-    ///
-    public func aa_addPointToChartSeriesElement(elementIndex: Int, options: Any,  shift: Bool) {
-        aa_addPointToChartSeriesElement(elementIndex: elementIndex, options: options, redraw: true, shift: shift, animation: true)
+    public func aa_addPointToChartSeriesElement(
+        elementIndex: Int,
+        options: Any,
+        shift: Bool
+    ) {
+        aa_addPointToChartSeriesElement(
+            elementIndex: elementIndex,
+            options: options,
+            redraw: true,
+            shift: shift,
+            animation: true
+        )
     }
     
     /// Add a new point to the data column after the chart has been rendered.
@@ -288,21 +361,45 @@ extension AAChartView {
     /// - Parameter redraw: The default is true, whether to redraw the icon after the operation is completed. When you need to add more than one point, it is highly recommended to set redraw to false and manually call chart.redraw() to redraw the chart after all operations have ended.
     /// - Parameter shift: The default is false. When this property is true, adding a new point will delete the first point in the data column (that is, keep the total number of data points in the data column unchanged). This property is very useful in the inspection chart
     /// - Parameter animation: The default is true, which means that when adding a point, it contains the default animation effect. This parameter can also be passed to the object form containing duration and easing. For details, refer to the animation related configuration.
-    public func aa_addPointToChartSeriesElement(elementIndex: Int, options: Any, redraw: Bool, shift: Bool, animation: Bool) {
+    public func aa_addPointToChartSeriesElement(
+        elementIndex: Int,
+        options: Any,
+        redraw: Bool,
+        shift: Bool,
+        animation: Bool
+    ) {
         var optionsStr = ""
         if options is Int || options is Float || options is Double {
             optionsStr = "\(options)"
         } else if options is [Any] {
             optionsStr = self.getJSONStringFromArray(array: options as! [Any])
-            optionsStr = optionsStr.replacingOccurrences(of: "\n", with: "")
         } else {
             let aaOption: AAObject = options as! AAObject
             optionsStr = aaOption.toJSON()!
-            optionsStr = optionsStr.replacingOccurrences(of: "\n", with: "")
         }
     
         let javaScriptStr = "addPointToChartSeries('\(elementIndex)','\(optionsStr)','\(redraw)','\(shift)','\(animation)')"
-        evaluateJavaScriptWithFunctionNameString(javaScriptStr)
+        safeEvaluateJavaScriptString(javaScriptStr)
+    }
+    
+    /// Add a new group of points to the data column after the chart has been rendered.
+    ///
+    public func aa_addPointsToChartSeriesArray(
+        optionsArr: [Any],
+        shift: Bool = true,
+        animation: Bool = true
+    ) {
+        for (index, options) in optionsArr.enumerated() {
+            aa_addPointToChartSeriesElement(
+                elementIndex: index,
+                options: options,
+                redraw: false,
+                shift: shift,
+                animation: false
+            )
+        }
+        
+        aa_redraw(animation: animation)
     }
     
     /// Add a new series element to the chart after the chart has been rendered.
@@ -313,7 +410,7 @@ extension AAChartView {
         let elementJson = element.toJSON()
         let pureElementJsonStr = AAJSStringPurer.pureJavaScriptFunctionString(elementJson!)
         let jsStr = "addElementToChartSeriesWithElement('\(pureElementJsonStr)')"
-        evaluateJavaScriptWithFunctionNameString(jsStr)
+        safeEvaluateJavaScriptString(jsStr)
     }
     
     /// Remove a specific series element from the chart after the chart has been rendered.
@@ -322,7 +419,7 @@ extension AAChartView {
     /// - Parameter elementIndex: chart series element index
     public func aa_removeElementFromChartSeries(elementIndex: Int) {
         let jsStr = "removeElementFromChartSeriesWithElementIndex('\(elementIndex)')"
-        evaluateJavaScriptWithFunctionNameString(jsStr)
+        safeEvaluateJavaScriptString(jsStr)
     }
     
     /// Show the series element content with index
@@ -330,7 +427,7 @@ extension AAChartView {
     /// - Parameter elementIndex: elementIndex element index
     public func aa_showTheSeriesElementContentWithSeriesElementIndex(_ elementIndex: NSInteger) {
         let jsStr = "showTheSeriesElementContentWithIndex('\(elementIndex)');"
-        evaluateJavaScriptWithFunctionNameString(jsStr)
+        safeEvaluateJavaScriptString(jsStr)
     }
     
     ///  Hide the series element content with index
@@ -338,7 +435,7 @@ extension AAChartView {
     /// - Parameter elementIndex: element index
     public func aa_hideTheSeriesElementContentWithSeriesElementIndex(_ elementIndex: NSInteger) {
         let jsStr = "hideTheSeriesElementContentWithIndex('\(elementIndex)');"
-        evaluateJavaScriptWithFunctionNameString(jsStr as String)
+        safeEvaluateJavaScriptString(jsStr as String)
     }
     
     ///  Evaluate JavaScript string function body
@@ -348,28 +445,104 @@ extension AAChartView {
         if optionsJson != nil {
             let pureJSFunctionStr = AAJSStringPurer.pureJavaScriptFunctionString(JSFunctionString)
             let jsFunctionNameStr = "evaluateTheJavaScriptStringFunction('\(pureJSFunctionStr)')"
-            evaluateJavaScriptWithFunctionNameString(jsFunctionNameStr)
+            safeEvaluateJavaScriptString(jsFunctionNameStr)
         }
+    }
+    
+    /// Update the X axis categories of chart
+    /// - Parameters:
+    ///   - categories: The X axis categories array
+    ///   - redraw: Redraw whole chart or not
+    public func aa_updateXAxisCategories(_ categories: [String], redraw: Bool = true) {
+        var originalJsArrStr = ""
+        for categoryElement in categories {
+            originalJsArrStr += "'\(categoryElement)',"
+        }
+        let finalJSArrStr = "[\(originalJsArrStr)]"
+        
+        let jsFunctionStr = "aaGlobalChart.xAxis[0].setCategories(\(finalJSArrStr),\(redraw));)"
+        safeEvaluateJavaScriptString(jsFunctionStr)
+    }
+    
+    /// Update the X axis Extremes
+    /// - Parameters:
+    ///   - min: X axis minimum
+    ///   - max: X axis maximum
+    public func aa_updateXAxisExtremes(min: Int, max: Int) {
+        let jsStr = "aaGlobalChart.xAxis[0].setExtremes(\(min), \(max))"
+        safeEvaluateJavaScriptString(jsStr)
+    }
+    
+    /// Redraw chart view
+    /// - Parameter animation: Have animation effect or not
+    public func aa_redraw(animation: Bool = true) {
+        let jsStr = "redrawWithAnimation('\(animation)')"
+        safeEvaluateJavaScriptString(jsStr)
+    }
+    
+    
+    /// Set the chart view content be adaptive to screen rotation with default animation effect
+    public func aa_adaptiveScreenRotation() {
+        let aaAnimation = AAAnimation()
+            .duration(800)
+            .easing(.easeOutQuart)
+        aa_adaptiveScreenRotationWithAnimation(aaAnimation)
+    }
+
+    /// Set the chart view content be adaptive to screen rotation with custom animation effect
+    /// Refer to https://api.highcharts.com.cn/highcharts#Chart.setSize
+    ///
+    /// - Parameter animation: The instance object of AAAnimation
+    public func aa_adaptiveScreenRotationWithAnimation(_ animation: AAAnimation) {
+        NotificationCenter.default.addObserver(
+            forName: UIDevice.orientationDidChangeNotification,
+            object: nil,
+            queue: nil) { [weak self] _ in
+                self?.handleDeviceOrientationChangeEventWithAnimation(animation)
+        }
+    }
+    
+    private func handleDeviceOrientationChangeEventWithAnimation(_ animation: AAAnimation) {
+        let animationJsonStr = animation.toJSON()!
+        let jsFuncStr = "changeChartSize('\(self.frame.size.width)','\(self.frame.size.height)','\(animationJsonStr)')"
+        self.safeEvaluateJavaScriptString(jsFuncStr)
     }
 }
 
 
 extension AAChartView: WKUIDelegate {
-    open func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        let alert = UIAlertController(title: "FBI WARNING", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { (action) in
+    open func webView(
+        _ webView: WKWebView,
+        runJavaScriptAlertPanelWithMessage message: String,
+        initiatedByFrame frame: WKFrameInfo,
+        completionHandler: @escaping () -> Void
+    ) {
+        let alertController = UIAlertController(
+            title: "FBI WARNING",
+            message: message,
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(
+            title: "Okay",
+            style: .default,
+            handler: { _ in
             completionHandler()
         }))
-        let rootVC = UIApplication.shared.keyWindow?.rootViewController
-        rootVC!.present(alert, animated: true, completion: nil)
-        print(message)
+
+        let alertHelperController = UIViewController()
+        self.addSubview(alertHelperController.view)
+        
+        alertHelperController.present(
+            alertController,
+            animated: true,
+            completion: nil)
     }
 }
 
 extension AAChartView:  WKNavigationDelegate {
     open func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         drawChart()
-        self.delegate?.aaChartViewDidFinishedLoad?(self)
+        self.delegate?.aaChartViewDidFinishLoad?(self)
     }
 }
 
@@ -400,7 +573,7 @@ extension AAChartView {
     
      func getJSONStringFromDictionary(dictionary: [String: Any]) -> String {
         if !JSONSerialization.isValidJSONObject(dictionary) {
-            print("String object is not valid Dictionary JSON String")
+            print("❌ String object is not valid Dictionary JSON String")
             return ""
         }
         
@@ -411,7 +584,7 @@ extension AAChartView {
     
     func getJSONStringFromArray(array: [Any]) -> String {
         if !JSONSerialization.isValidJSONObject(array) {
-            print("String object is not valid Array JSON String")
+            print("❌ String object is not valid Array JSON String")
             return ""
         }
         

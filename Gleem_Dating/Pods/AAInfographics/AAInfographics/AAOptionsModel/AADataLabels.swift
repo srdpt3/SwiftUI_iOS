@@ -30,10 +30,11 @@
  
  */
 
-import UIKit
+import Foundation
 
 public class AADataLabels: AAObject {
     public var enabled: Bool?
+    public var align: String?
     public var style: AAStyle?
     public var format: String?
     public var rotation: Float?
@@ -49,10 +50,19 @@ public class AADataLabels: AAObject {
     public var borderRadius: Float?
     public var borderWidth: Float?
     public var shape: String?
+    public var crop: Bool?
+    public var inside: Bool?
+    public var overflow: String?
     
     @discardableResult
     public func enabled(_ prop: Bool?) -> AADataLabels {
         enabled = prop
+        return self
+    }
+    
+    @discardableResult
+    public func align(_ prop: AAChartAlignType?) -> AADataLabels {
+        align = prop?.rawValue
         return self
     }
     
@@ -93,8 +103,8 @@ public class AADataLabels: AAObject {
     }
     
     @discardableResult
-    public func verticalAlign(_ prop: String?) -> AADataLabels {
-        verticalAlign = prop
+    public func verticalAlign(_ prop: AAChartVerticalAlignType?) -> AADataLabels {
+        verticalAlign = prop?.rawValue
         return self
     }
     
@@ -146,7 +156,26 @@ public class AADataLabels: AAObject {
         return self
     }
     
+    @discardableResult
+    public func crop(_ prop: Bool?) -> AADataLabels {
+        crop = prop
+        return self
+    }
+    
+    @discardableResult
+    public func inside(_ prop: Bool?) -> AADataLabels {
+        inside = prop
+        return self
+    }
+    
+    @discardableResult
+    public func overflow(_ prop: String?) -> AADataLabels {
+        overflow = prop
+        return self
+    }
+    
     public override init() {
+        
     }
 }
 
@@ -163,8 +192,10 @@ public class AAStyle: AAObject {
     }
     
     @discardableResult
-    public func fontSize(_ prop: Float) -> AAStyle {
-        fontSize = "\(prop)px"
+    public func fontSize(_ prop: Float?) -> AAStyle {
+        if prop != nil {
+            fontSize = "\(prop!)px"
+        }
         return self
     }
     
@@ -181,5 +212,6 @@ public class AAStyle: AAObject {
     }
     
     public override init() {
+        
     }
 }

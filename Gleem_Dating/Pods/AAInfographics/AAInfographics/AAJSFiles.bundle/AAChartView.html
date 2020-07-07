@@ -6,40 +6,43 @@
             <script src="AAHighchartsMore.js"></script>
             <script src="AAFunnel.js"></script>
             <script src="AAEasing.js"></script>
+<!--            <script src="https://code.highcharts.com/highcharts.js"></script>-->
+<!--            <script src="https://code.highcharts.com/highcharts-more.js"></script>-->
+<!--            <script src="https://code.highcharts.com/modules/funnel.js"></script>-->
             <style>*{
                 -webkit-user-select: none;
                 user-select: none;
             }
                 </style>
             </head>
-    <body>
+    <body style="margin:0px 0px 0px 0px;">
         <div id="container" style="width:100%; height: 100%;"></div>
         <script>
-            var aaGlobalChart;
+            let aaGlobalChart;
             function loadTheHighChartView(sender, receivedWidth, receivedHeight) {
-                var aaOptions = JSON.parse(sender);
+                let aaOptions = JSON.parse(sender);
                 if (aaOptions.xAxisArray) {
                     aaOptions.xAxis = aaOptions.xAxisArray
                 }
-                
                 if (aaOptions.yAxisArray) {
                     aaOptions.yAxis = aaOptions.yAxisArray
                 }
                 
-                var o = document.getElementById('container'); //获得元素
+                let container = document.getElementById('container');
                 if (receivedWidth != 0) {
-                    o.style.width = receivedWidth; //设置宽度
+                    container.style.width = receivedWidth;
                 }
                 if(receivedHeight != 0) {
-                    o.style.height = receivedHeight; //设置高度
+                    container.style.height = receivedHeight;
                 }
                 
                 aaOptions.credits = {
                     enabled: false
-                }; //去掉表格右下角版权信息
+                };
                 
-                //全局配置(可通过全局配置设置主题)https://api.hcharts.cn/highcharts#Highcharts.setOptions
-                var globalOptions = {
+                //Global options(you can configure chart themes by it)
+                //refer to https://api.hcharts.cn/highcharts#Highcharts.setOptions
+                let globalOptions = {
                     lang: {
                         thousandsSep: ",",
                         resetZoom: "ResetZoom"
@@ -57,34 +60,37 @@
             };
 
         function configurePlotOptions(aaOptions) {
-            var aaPlotOptions = aaOptions.plotOptions;
-            var animation = aaPlotOptions.series.animation;
+            let aaPlotOptions = aaOptions.plotOptions;
+            let animation = aaPlotOptions.series.animation;
             if (animation) {
-                var animationEasingType = animation.easing;
+                let animationEasingType = animation.easing;
                 animation.easing = configureTheChartAnimationEasingType(animationEasingType);
             }
             
-            // 添加鼠标事件
+            // configure chart touch event
             if (aaOptions.touchEventEnabled == true && aaPlotOptions.series) {
                 configureChartTouchEvent(aaPlotOptions);
             }
         }
         
         function configureChartTouchEvent(aaPlotOptions) {
-            var mouseOverFunc = function(){
+            let mouseOverFunc = function() {
                 //console.log(this)
-                var message = {
+                let message = {
                     name: this.series.name,
                     y :this.y,
                     x: this.x,
-                    category:this.category,
-                    offset:{plotX:this.plotX,plotY:this.plotY},
+                    category: this.category,
+                    offset: {
+                        plotX: this.plotX,
+                        plotY: this.plotY
+                    },
                     index: this.index,
                 };
             window.webkit.messageHandlers.mouseover.postMessage(message);
             };
             
-            var seriesPoint = {
+            let seriesPoint = {
                 events:{
                     mouseOver: mouseOverFunc,
                 }
@@ -111,50 +117,57 @@
             } 
         }
         
-        function onlyRefreshTheChartDataWithSeries(receivedSeries) {
-            var receivedSeriesArr = JSON.parse(receivedSeries);
-            var seriesArrLength = receivedSeriesArr.length;
-            for (var i = 0; i < seriesArrLength; i++) {
-                var receivedSeriesElementData = receivedSeriesArr[i].data;
-                // 获取series
-                var seriesElement = aaGlobalChart.series[i];
-                // 执行只刷新数据的函数
-                seriesElement.setData(receivedSeriesElementData);
+        function onlyRefreshTheChartDataWithSeries(receivedSeries, animation) {
+            let receivedSeriesArr = JSON.parse(receivedSeries);
+            let seriesArrLength = receivedSeriesArr.length;
+            for (let i = 0; i < seriesArrLength; i++) {
+                let receivedSeriesElementData = receivedSeriesArr[i].data;
+                let seriesElement = aaGlobalChart.series[i];
+                seriesElement.setData(receivedSeriesElementData, false);
             }
+            
+            let animationBool = (animation == "true") ? true:false;
+            aaGlobalChart.redraw(animationBool);
         }
         
         function updateChart(optionsStr, redraw) {
-            var options = JSON.parse(optionsStr);
+            let options = JSON.parse(optionsStr);
             aaGlobalChart.update(options,redraw);
         }
         
         function addPointToChartSeries(elementIndex, optionsStr, redraw, shift, animation) {
-            var options = JSON.parse(optionsStr);
-            var redrawBool = (redraw == "true") ? true:false;
-            var shiftBool = (shift == "true") ? true:false;
-            var animationBool = (animation == "true") ? true:false;
+            let options = JSON.parse(optionsStr);
+            let redrawBool = (redraw == "true") ? true:false;
+            let shiftBool = (shift == "true") ? true:false;
+            let animationBool = (animation == "true") ? true:false;
             
-            var seriesElement = aaGlobalChart.series[elementIndex];
+            let seriesElement = aaGlobalChart.series[elementIndex];
             seriesElement.addPoint(options, redrawBool, shiftBool, animationBool);
+        }
+        
+        function redrawWithAnimation(animation) {
+            let animationBool = (animation == "true") ? true:false;
+            aaGlobalChart.redraw(animationBool);
         }
         
         //pragma mark -- setter method
         function setTheChartViewContentWidth(receivedWidth) {
-            var container = document.getElementById('container'); //获得元素
-            container.style.width = receivedWidth; //设置宽度
+            let container = document.getElementById('container');
+            container.style.width = receivedWidth;
             aaGlobalChart.reflow();
         }
         
         function setTheChartViewContentHeight(receivedHeight) {
-            var container = document.getElementById('container'); //获得元素
-            container.style.height = receivedHeight; //设置高度
+            let container = document.getElementById('container');
+            container.style.height = receivedHeight;
             aaGlobalChart.reflow();
         }
         
         function setChartSeriesHidden(hidden) {
-            for (var i = 0; i < aaGlobalChart.series.length; i++) {
-                var seriesElement = aaGlobalChart.series[i];
-                if (hidden == true) {
+            let seriesLength = aaGlobalChart.series.length;
+            for (let i = 0; i < seriesLength; i++) {
+                let seriesElement = aaGlobalChart.series[i];
+                if (hidden == "true") {
                     seriesElement.hide();
                 } else {
                     seriesElement.show();
@@ -163,22 +176,22 @@
         }
         
         function showTheSeriesElementContentWithIndex(elementIndex) {
-            var seriesElement = aaGlobalChart.series[elementIndex];
+            let seriesElement = aaGlobalChart.series[elementIndex];
             seriesElement.show();
         }
         
         function hideTheSeriesElementContentWithIndex(elementIndex) {
-            var seriesElement = aaGlobalChart.series[elementIndex];
+            let seriesElement = aaGlobalChart.series[elementIndex];
             seriesElement.hide();
         }
         
         function addElementToChartSeriesWithElement(elementStr) {
-            var seriesElement = JSON.parse(elementStr);
+            let seriesElement = JSON.parse(elementStr);
             aaGlobalChart.addSeries(seriesElement);
         }
         
         function removeElementFromChartSeriesWithElementIndex(elementIndex) {
-            var seriesElement = aaGlobalChart.series[elementIndex];
+            let seriesElement = aaGlobalChart.series[elementIndex];
             if (seriesElement) {
                 seriesElement.remove(true);
             }
@@ -186,6 +199,21 @@
         
         function evaluateTheJavaScriptStringFunction(jsStringFunction) {
             eval(jsStringFunction);
+        }
+        
+        function changeChartSize(receivedWidth, receivedHeight, receivedAnimation) {
+            let container = document.getElementById('container');
+            container.style.width = receivedWidth;
+            container.style.height = receivedHeight;
+            
+            let aaAnimation;
+            if (receivedAnimation) {
+                aaAnimation = JSON.parse(receivedAnimation);
+                let animationEasingType = aaAnimation.easing;
+                aaAnimation.easing = configureTheChartAnimationEasingType(animationEasingType);
+            }
+            
+            aaGlobalChart.setSize(receivedWidth, receivedHeight, aaAnimation);
         }
         
             </script>

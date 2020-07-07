@@ -7,9 +7,6 @@
 //
 
 import SwiftUI
-
-import SwiftUI
-
 struct UploadView: View {
     
     // intializing Four Image cards...

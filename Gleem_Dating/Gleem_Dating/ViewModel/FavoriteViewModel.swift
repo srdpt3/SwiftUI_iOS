@@ -11,10 +11,10 @@ import SwiftUI
 class FavoriteViewModel: ObservableObject {
     @Published var isSucess = false
     @Published var liked : Bool = false
-    @Published var isLoading = false
+
     @Published var favoriteUsers : [User] = []
     @Published var error: NSError?
-    
+    @Published var isLoading = false
     
     var splitted: [[User]] = []
     
@@ -91,9 +91,11 @@ class FavoriteViewModel: ObservableObject {
                 
                 self.favoriteUsers.append(decoderPost)
             }
+            self.isLoading = false
+
         }
+        
 //        self.splitted = self.favoriteUsers.chunked(3)
-        isLoading = false
 
 
     }

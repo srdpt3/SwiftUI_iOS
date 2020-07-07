@@ -13,6 +13,7 @@ struct SwipeView : View {
     
     @EnvironmentObject var obser : observer
     @State var vote  = false
+
     var body : some View{
         
         GeometryReader{ geo in
@@ -26,7 +27,7 @@ struct SwipeView : View {
                         //                ForEach(self.users) {i in
                         
                         
-                        SwipeDetailsView(name: i.username, age: i.age, image: i.profileImageUrl, height: geo.size.height - 100)
+                        SwipeDetailsView( name: i.username, age: i.age, image: i.profileImageUrl, height: geo.size.height - 100)
                             
                             .gesture(DragGesture()
                                 
@@ -49,7 +50,7 @@ struct SwipeView : View {
                                 })
                         ).offset(x: i.swipe)
                             //                                             .rotationEffect(.init(degrees: 0))
-                            
+                            .animation(.spring())
                             .rotationEffect(.init(degrees: i.swipe == 0 ? 0 : (i.swipe > 0 ? 5 : -5)))
                         //                        .animation(
                         //
